@@ -360,8 +360,7 @@ function About() {
   <img
     src="/images/evan-portrait.jpg"
     alt="Evan"
-    className="absolute inset-0 h-full w-full object-cover object-center grayscale opacity-55 brightness-[0.58] contrast-[1.15]"
-  />
+    className="absolute inset-0 h-full w-full object-cover object-center grayscale opacity-70 brightness-[0.78] contrast-[1.08]"
 
   <div className="absolute inset-0 bg-gradient-to-r from-black/25 via-black/40 to-[#030303]" />
 
