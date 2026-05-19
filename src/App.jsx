@@ -346,7 +346,7 @@ function About() {
 
       <div className="relative z-10 mx-auto max-w-[1500px]">
       <div className="mb-12 flex items-end justify-between border-b border-white/10 pb-8 md:mb-16">
-  <h2 className="text-2xl font-black tracking-[-0.04em] text-white md:text-3xl">
+  <h2 className="text-xl font-bold tracking-[-0.04em] text-white md:text-3xl">
     个人简介
   </h2>
 
@@ -367,7 +367,7 @@ function About() {
   <img
     src="/images/evan-portrait.jpg"
     alt="Evan"
-    className="absolute inset-0 h-full w-full object-cover object-center grayscale opacity-75 brightness-[0.86] contrast-[1.05]"
+    className="absolute inset-0 h-full w-full object-cover object-center grayscale opacity-75 brightness-[0.92] contrast-[1.05]"
   />
 
   <div className="absolute inset-0 bg-gradient-to-r from-black/25 via-black/40 to-black/80" />
@@ -406,7 +406,7 @@ function About() {
               >
                 <div className="absolute -left-[25px] top-2 h-4 w-4 rounded-full border border-white/20 bg-white/70" />
 
-                <div className="rounded-[1.5rem] border border-white/10 bg-white/[0.03] p-6 backdrop-blur-xl">
+                <div className="rounded-[1.5rem] border border-white/10 bg-white/[0.02] p-6 backdrop-blur-xl">
                   <p className="text-3xl font-black text-white/25">
                     {item.year}
                   </p>
@@ -440,7 +440,7 @@ function Works() {
       <div className="relative z-10 mx-auto max-w-[1500px]">
         <SectionTitle num="02" label="WORKS" title="作品案例" desc="以抽卡式提案卡展示作品，让项目像一份份被解锁的设计档案。" />
 
-        <div className="mb-10 flex flex-wrap gap-3 md:mb-12">
+        <div className="mb-10 flex flex-wrap gap-3 md:mb-20">
           {categories.map((cat) => (
             <button key={cat} onClick={() => setActive(cat)} className={`rounded-full border px-4 py-2.5 text-xs tracking-[0.15em] transition md:px-5 md:py-3 md:text-sm ${active === cat ? "border-white bg-white text-black" : "border-white/10 bg-white/[0.035] text-white/55 hover:border-white/40 hover:text-white"}`}>
               {cat}
