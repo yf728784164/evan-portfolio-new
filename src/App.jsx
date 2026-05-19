@@ -303,13 +303,156 @@ function SectionTitle({ num, label, title, desc }) {
 }
 
 function About() {
-  const items = [
-    ["2019", "景德镇陶瓷大学 · 陶瓷艺术设计", "从材料、器型与工艺开始，建立对东方器物语言的基础判断。"],
-    ["2020", "入围第八届紫金奖文化创意设计综合赛", "开始将文化符号、产品体验与视觉叙事放进同一个设计系统。"],
-    ["2021", "中国陶瓷产品设计大赛银奖 / 英国生态设计奖铜奖", "从单件作品转向系列化产品、礼赠体系与可落地生产。"],
-    ["2022", "创办个人设计工作室", "围绕陶瓷、包装、品牌视觉与文创产品展开商业设计实践。"],
-    ["2023—2026", "商业项目与 AI 设计工作流并行", "用AI辅助概念生成、视觉推导、包装提案与产品叙事表达。"],
-  ];
+ const items = [
+      [
+        "2019",
+        "景德镇陶瓷大学 · 陶瓷艺术设计",
+        "从材料、器型与工艺开始，建立对东方器物语言的基础判断。",
+      ],
+      [
+        "2020",
+        "入围第八届紫金奖文化创意设计综合赛",
+        "开始将文化符号、产品体验与视觉叙事放进同一个设计系统。",
+      ],
+      [
+        "2021",
+        "中国陶瓷产品设计大赛银奖 / 英国生态设计奖铜奖",
+        "从单件作品转向系列化产品、礼赠体系与可落地生产。",
+      ],
+      [
+        "2022",
+        "创办个人设计工作室",
+        "围绕陶瓷、品牌视觉与数字文创产品展开商业设计实践。",
+      ],
+      [
+        "2023—至今",
+        "商业项目与 AI 设计工作流并行",
+        "用AI辅助概念生成、视觉推导、包装提案与产品叙事表达。",
+      ],
+    ];
+  
+    return (
+      <section
+        id="about"
+        className="relative overflow-hidden bg-[#030303] px-5 py-20 text-white md:px-10 md:py-28"
+      >
+        <ParticleField />
+  
+        <div className="absolute inset-0 bg-black/80" />
+  
+        {/* 巨大编号 */}
+        <div className="pointer-events-none absolute left-[-6vw] top-8 z-0 text-[36vw] font-black leading-none tracking-[-0.12em] text-white/[0.025] md:left-[-2vw] md:text-[18vw]">
+          01
+        </div>
+  
+        <div className="relative z-10 mx-auto max-w-[1500px]">
+          <SectionTitle
+            num="01"
+            label="ABOUT"
+            title="个人简介"
+            desc="永远将情绪瞬间作为设计核心。"
+          />
+  
+          <div className="grid gap-14 md:grid-cols-[0.92fr_1.08fr] md:gap-20 md:items-start">
+  
+            {/* 左侧档案馆叙事 */}
+            <motion.div
+              className="relative rounded-[2rem] border border-white/10 bg-white/[0.035] p-7 backdrop-blur-xl md:rounded-[2.5rem] md:p-10"
+              initial={{ opacity: 0, y: 34 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.85 }}
+            >
+              {/* 光点 */}
+              <div className="absolute right-7 top-7 h-2.5 w-2.5 rounded-full bg-white/70 shadow-[0_0_22px_rgba(255,255,255,0.65)]" />
+  
+              <p className="text-xs uppercase tracking-[0.45em] text-white/32">
+                DESIGN ARCHIVE / EMOTION INDEX
+              </p>
+  
+              <h3 className="mt-10 text-4xl font-black leading-[1.12] tracking-[-0.08em] text-white md:text-7xl">
+                将稍纵即逝的情绪，
+                <br />
+                变成可触碰的设计
+              </h3>
+  
+              <p className="mt-9 max-w-xl text-sm leading-8 tracking-[0.1em] text-white/50 md:text-base md:leading-9">
+                我的设计不是单纯追求风格，而是寻找人与物之间短暂却真实的感受。
+                陶瓷、包装、视觉与文创只是媒介，
+                真正被设计的是情绪被看见、被使用、被记住的方式。
+              </p>
+  
+              {/* 标签 */}
+              <div className="mt-12 flex flex-wrap gap-3">
+                {[
+                  "陶瓷产品",
+                  "包装系统",
+                  "品牌视觉",
+                  "文创落地",
+                  "AI设计流程",
+                ].map((item) => (
+                  <span
+                    key={item}
+                    className="rounded-full border border-white/10 bg-white/[0.035] px-4 py-2 text-xs tracking-[0.16em] text-white/52"
+                  >
+                    {item}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
+  
+            {/* 右侧竖向时间轴 */}
+            <div className="relative pl-6 md:pl-10">
+  
+              {/* 竖线 */}
+              <div className="absolute left-[5px] top-1 h-full w-px bg-gradient-to-b from-white/70 via-white/16 to-transparent md:left-[9px]" />
+  
+              {items.map(([year, title, text], index) => (
+                <motion.div
+                  key={year}
+                  className="group relative pb-10 last:pb-0 md:pb-12"
+                  initial={{ opacity: 0, x: 28 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{
+                    delay: index * 0.08,
+                    duration: 0.75,
+                  }}
+                >
+                  {/* 节点 */}
+                  <div className="absolute -left-[25px] top-1 grid h-5 w-5 place-items-center rounded-full border border-white/20 bg-[#030303] md:-left-[41px]">
+                    <span className="h-2 w-2 rounded-full bg-white/70 shadow-[0_0_18px_rgba(255,255,255,0.75)] transition group-hover:bg-white" />
+                  </div>
+  
+                  {/* 卡片 */}
+                  <div className="rounded-[1.6rem] border border-white/10 bg-white/[0.03] p-5 backdrop-blur-xl transition duration-500 group-hover:border-white/28 group-hover:bg-white/[0.055] md:p-6">
+  
+                    <div className="mb-5 flex items-center justify-between gap-5">
+                      <p className="text-3xl font-black tracking-[-0.08em] text-white/24 transition group-hover:text-white md:text-4xl">
+                        {year}
+                      </p>
+  
+                      <p className="text-[10px] uppercase tracking-[0.32em] text-white/26">
+                        ARCHIVE_{String(index + 1).padStart(2, "0")}
+                      </p>
+                    </div>
+  
+                    <h4 className="text-xl font-black tracking-[-0.05em] text-white md:text-2xl">
+                      {title}
+                    </h4>
+  
+                    <p className="mt-4 text-sm leading-7 tracking-[0.08em] text-white/48">
+                      {text}
+                    </p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section id="about" className="relative overflow-hidden bg-[#030303] px-5 py-20 text-white md:px-10 md:py-28">
