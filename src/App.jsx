@@ -345,12 +345,15 @@ function About() {
       <div className="absolute inset-0 bg-black/80" />
 
       <div className="relative z-10 mx-auto max-w-[1500px]">
-        <SectionTitle
-          num="01"
-          label="ABOUT"
-          title="个人简介"
-          desc="永远将情绪瞬间作为设计核心。"
-        />
+      <div className="mb-12 flex items-end justify-between border-b border-white/10 pb-8 md:mb-16">
+  <h2 className="text-2xl font-black tracking-[-0.04em] text-white md:text-3xl">
+    个人简介
+  </h2>
+
+  <p className="max-w-xl text-right text-sm leading-8 tracking-[0.12em] text-white/48">
+    永远将情绪瞬间作为设计核心。
+  </p>
+</div>
 
         <div className="grid gap-14 md:grid-cols-[0.92fr_1.08fr] md:gap-20">
 
@@ -364,7 +367,7 @@ function About() {
   <img
     src="/images/evan-portrait.jpg"
     alt="Evan"
-    className="absolute inset-0 h-full w-full object-cover object-center grayscale opacity-70 brightness-[0.78] contrast-[1.08]"
+    className="absolute inset-0 h-full w-full object-cover object-center grayscale opacity-75 brightness-[0.86] contrast-[1.05]"
   />
 
   <div className="absolute inset-0 bg-gradient-to-r from-black/25 via-black/40 to-black/80" />
@@ -381,9 +384,7 @@ function About() {
   </div>
 
   <div className="absolute bottom-8 left-8 z-20">
-    <div className="text-[26vw] font-thin leading-none tracking-[-0.12em] text-white/[0.08] md:text-[12vw]">
-      01
-    </div>
+  
 
     <div className="mt-2 text-xs tracking-[0.35em] text-white/20">
       EVAN PORTFOLIO
