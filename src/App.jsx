@@ -386,7 +386,6 @@ function About() {
       EVAN PORTFOLIO
     </div>
   </div>
-</motion.div>
           </motion.div>
 
           <div className="relative pl-8">
