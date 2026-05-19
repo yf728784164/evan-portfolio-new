@@ -356,14 +356,13 @@ function About() {
   transition={{ duration: 0.8 }}
   className="relative min-h-[620px] overflow-hidden rounded-[2.5rem] border border-white/10 bg-white/[0.02] md:min-h-[760px]"
 >
-
   <img
     src="/images/evan-portrait.jpg"
     alt="Evan"
     className="absolute inset-0 h-full w-full object-cover object-center grayscale opacity-70 brightness-[0.78] contrast-[1.08]"
+  />
 
-    <div className="absolute inset-0 bg-gradient-to-r from-black/25 via-black/40 to-black/80" />
-
+  <div className="absolute inset-0 bg-gradient-to-r from-black/25 via-black/40 to-black/80" />
   <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/30" />
 
   <div className="absolute left-8 top-8 z-20">
