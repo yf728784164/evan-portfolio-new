@@ -179,6 +179,7 @@ function ParticleField() {
 }
 
 function Nav() {
+  const [activeNav, setActiveNav] = useState("个人简介");
   const navItems = [
     { label: "个人简介", href: "#about" },
     { label: "作品案例", href: "#works" },
@@ -199,14 +200,18 @@ function Nav() {
 
         <div className="flex max-w-[74vw] items-center gap-1 overflow-x-auto rounded-full border border-white/12 bg-white/[0.045] px-2 py-2 shadow-[0_0_70px_rgba(255,255,255,0.06)] backdrop-blur-2xl [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:absolute md:left-1/2 md:top-6 md:max-w-none md:-translate-x-1/2 md:gap-2 md:px-4">
           {navItems.map((item, index) => (
-            <a
-              key={item.label}
-              href={item.href}
-              className="group relative shrink-0 rounded-full px-4 py-2 text-xs font-medium tracking-[0.08em] text-white/76 transition hover:bg-white hover:text-black md:px-10 md:text-sm"
-            >
-              {item.label}
-              {index === 0 && <span className="absolute bottom-0 left-1/2 h-1.5 w-1.5 -translate-x-1/2 translate-y-2 rounded-full bg-white" />}
-            </a>
+           <a
+           key={item.label}
+           href={item.href}
+           onClick={() => setActiveNav(item.label)}
+           className="group relative shrink-0 rounded-full px-4 py-2 text-xs font-medium tracking-[0.08em] text-white/76 transition hover:bg-white hover:text-black md:px-10 md:text-sm"
+         >
+           {item.label}
+         
+           {activeNav === item.label && (
+             <span className="absolute bottom-0 left-1/2 h-1.5 w-1.5 -translate-x-1/2 translate-y-2 rounded-full bg-white" />
+           )}
+         </a>
           ))}
         </div>
 
