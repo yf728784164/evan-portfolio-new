@@ -184,7 +184,7 @@ function LoadingScreen() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 1800);
+    }, 3000);
 
     return () => clearTimeout(timer);
   }, []);
@@ -196,13 +196,22 @@ function LoadingScreen() {
       className="fixed inset-0 z-[10000] flex items-center justify-center bg-[#030303] text-white"
       initial={{ y: 0 }}
       exit={{ y: "-100%" }}
-      animate={{ y: 0 }}
+      animate={{ y: loading ? 0 : "-100%" }}
     >
       <motion.div
         className="text-center"
         initial={{ opacity: 0, filter: "blur(18px)", scale: 0.96 }}
-        animate={{ opacity: 1, filter: "blur(0px)", scale: 1 }}
-        transition={{ duration: 0.8 }}
+        animate={{
+          opacity: 1,
+          filter: "blur(0px)",
+          scale: [1, 1.02, 1],
+        }}
+        
+        transition={{
+          duration: 2.4,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
       >
         <div className="text-5xl font-black tracking-[0.35em] md:text-8xl">
           EVAN
@@ -222,13 +231,13 @@ function LoadingScreen() {
         </motion.div>
 
         <motion.div
-          className="mt-5 text-xs tracking-[0.4em] text-white/30"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.5 }}
-        >
-          LOADING
-        </motion.div>
+  className="mt-5 text-xs tracking-[0.4em] text-white/30"
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  transition={{ delay: 0.5 }}
+>
+  00 — 100
+</motion.div>
       </motion.div>
     </motion.div>
   );
