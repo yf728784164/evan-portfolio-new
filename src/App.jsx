@@ -229,12 +229,12 @@ function CustomCursor() {
   return (
     <>
       <motion.div
-        className="pointer-events-none fixed left-0 top-0 z-[9999] hidden h-2 w-2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white mix-blend-difference md:block"
+        className="pointer-events-none fixed left-0 top-0 z-[9999] block h-2 w-2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white mix-blend-difference"
         style={{ x: dotX, y: dotY }}
       />
 
       <motion.div
-        className="pointer-events-none fixed left-0 top-0 z-[9998] hidden h-10 w-10 -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/40 mix-blend-difference md:block"
+        className="pointer-events-none fixed left-0 top-0 z-[9998] block h-10 w-10 -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/40 mix-blend-difference"
         style={{ x: smoothX, y: smoothY }}
         animate={{
           scale: clicking ? 0.72 : hover ? 2.1 : 1,
