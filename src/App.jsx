@@ -178,6 +178,88 @@ function ParticleField() {
   return <canvas ref={canvasRef} className="pointer-events-none absolute inset-0 z-0" />;
 }
 
+function CustomCursor() {
+  const dotX = useMotionValue(0);
+  const dotY = useMotionValue(0);
+  const ringX = useMotionValue(0);
+  const ringY = useMotionValue(0);
+  const [hover, setHover] = useState(false);
+  const [clicking, setClicking] = useState(false);
+
+  useEffect(() => {
+    const move = (e) => {
+      dotX.set(e.clientX);
+      dotY.set(e.clientY);
+      ringX.set(e.clientX);
+      ringY.set(e.clientY);
+    };
+
+    const down = () => setClicking(true);
+    const up = () => setClicking(false);
+
+    const enter = () => setHover(true);
+    const leave = () => setHover(false);
+
+    const targets = document.querySelectorAll("a, button, [data-cursor]");
+
+    window.addEventListener("mousemove", move);
+    window.addEventListener("mousedown", down);
+    window.addEventListener("mouseup", up);
+
+    targets.forEach((el) => {
+      el.addEventListener("mouseenter", enter);
+      el.addEventListener("mouseleave", leave);
+    });
+
+    return () => {
+      window.removeEventListener("mousemove", move);
+      window.removeEventListener("mousedown", down);
+      window.removeEventListener("mouseup", up);
+
+      targets.forEach((el) => {
+        el.removeEventListener("mouseenter", enter);
+        el.removeEventListener("mouseleave", leave);
+      });
+    };
+  }, [dotX, dotY, ringX, ringY]);
+
+  const smoothX = useTransform(ringX, (v) => v);
+  const smoothY = useTransform(ringY, (v) => v);
+
+  return (
+    <>
+      <motion.div
+        className="pointer-events-none fixed left-0 top-0 z-[9999] hidden h-2 w-2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white mix-blend-difference md:block"
+        style={{ x: dotX, y: dotY }}
+      />
+
+      <motion.div
+        className="pointer-events-none fixed left-0 top-0 z-[9998] hidden h-10 w-10 -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/40 mix-blend-difference md:block"
+        style={{ x: smoothX, y: smoothY }}
+        animate={{
+          scale: clicking ? 0.72 : hover ? 2.1 : 1,
+          opacity: hover ? 0.9 : 0.55,
+        }}
+        transition={{
+          type: "spring",
+          stiffness: 260,
+          damping: 24,
+          mass: 0.5,
+        }}
+      />
+
+      {clicking && (
+        <motion.div
+          className="pointer-events-none fixed left-0 top-0 z-[9997] hidden h-10 w-10 -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/30 md:block"
+          style={{ x: dotX, y: dotY }}
+          initial={{ scale: 0.4, opacity: 0.8 }}
+          animate={{ scale: 2.8, opacity: 0 }}
+          transition={{ duration: 0.45, ease: "easeOut" }}
+        />
+      )}
+    </>
+  );
+}
 function Nav() {
   const [activeNav, setActiveNav] = useState("个人简介");
   const navItems = [
@@ -222,7 +304,6 @@ function Nav() {
     </motion.nav>
   );
 }
-
 function Hero() {
   const mx = useMotionValue(0);
   const my = useMotionValue(0);
