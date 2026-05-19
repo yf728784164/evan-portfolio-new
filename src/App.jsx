@@ -178,6 +178,61 @@ function ParticleField() {
   return <canvas ref={canvasRef} className="pointer-events-none absolute inset-0 z-0" />;
 }
 
+function LoadingScreen() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 1800);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (!loading) return null;
+
+  return (
+    <motion.div
+      className="fixed inset-0 z-[10000] flex items-center justify-center bg-[#030303] text-white"
+      initial={{ y: 0 }}
+      exit={{ y: "-100%" }}
+      animate={{ y: 0 }}
+    >
+      <motion.div
+        className="text-center"
+        initial={{ opacity: 0, filter: "blur(18px)", scale: 0.96 }}
+        animate={{ opacity: 1, filter: "blur(0px)", scale: 1 }}
+        transition={{ duration: 0.8 }}
+      >
+        <div className="text-5xl font-black tracking-[0.35em] md:text-8xl">
+          EVAN
+        </div>
+
+        <div className="mt-6 text-xs tracking-[0.55em] text-white/35">
+          INITIALIZING ARCHIVE
+        </div>
+
+        <motion.div className="mx-auto mt-10 h-px w-64 overflow-hidden bg-white/10">
+          <motion.div
+            className="h-full bg-white"
+            initial={{ width: "0%" }}
+            animate={{ width: "100%" }}
+            transition={{ duration: 1.5, ease: "easeInOut" }}
+          />
+        </motion.div>
+
+        <motion.div
+          className="mt-5 text-xs tracking-[0.4em] text-white/30"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.5 }}
+        >
+          LOADING
+        </motion.div>
+      </motion.div>
+    </motion.div>
+  );
+}
 function CustomCursor() {
   const dotX = useMotionValue(0);
   const dotY = useMotionValue(0);
@@ -585,12 +640,16 @@ function Contact() {
 export default function App() {
   return (
     <main className="bg-[#030303] selection:bg-white selection:text-black">
-    <CustomCursor />
+
+      <LoadingScreen />
+      <CustomCursor />
+
       <Nav />
       <Hero />
       <About />
       <Works />
       <Contact />
+
     </main>
   );
 }
