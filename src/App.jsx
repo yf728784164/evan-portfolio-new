@@ -362,7 +362,7 @@ function About() {
     alt="Evan"
     className="absolute inset-0 h-full w-full object-cover object-center grayscale opacity-70 brightness-[0.78] contrast-[1.08]"
 
-  <div className="absolute inset-0 bg-gradient-to-r from-black/25 via-black/40 to-[#030303]" />
+    <div className="absolute inset-0 bg-gradient-to-r from-black/25 via-black/40 to-black/80" />
 
   <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/30" />
 
