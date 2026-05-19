@@ -349,44 +349,44 @@ function About() {
 
         <div className="grid gap-14 md:grid-cols-[0.92fr_1.08fr] md:gap-20">
 
-          <motion.div
-            className="rounded-[2rem] border border-white/10 bg-white/[0.03] p-7 backdrop-blur-xl"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <p className="text-xs tracking-[0.35em] text-white/30 uppercase">
-              DESIGN ARCHIVE
-            </p>
+        <motion.div
+  initial={{ opacity: 0, x: -50 }}
+  whileInView={{ opacity: 1, x: 0 }}
+  viewport={{ once: true, amount: 0.3 }}
+  transition={{ duration: 0.8 }}
+  className="relative min-h-[620px] overflow-hidden rounded-[2.5rem] border border-white/10 bg-white/[0.02] md:min-h-[760px]"
+>
 
-            <h3 className="mt-8 text-3xl font-black leading-[1.2] tracking-[-0.05em] md:text-5xl">
-              将稍纵即逝的情绪，
-              <br />
-              变成可触碰的设计
-            </h3>
+  <img
+    src="/images/evan-portrait.jpg"
+    alt="Evan"
+    className="absolute inset-0 h-full w-full object-cover object-center grayscale opacity-55 brightness-[0.58] contrast-[1.15]"
+  />
 
-            <p className="mt-8 text-sm leading-8 text-white/55">
-              我的设计不是单纯追求风格，而是寻找人与物之间短暂却真实的感受。
-              陶瓷、包装、视觉与文创只是媒介，
-              真正被设计的是情绪被看见、被使用、被记住的方式。
-            </p>
+  <div className="absolute inset-0 bg-gradient-to-r from-black/25 via-black/40 to-[#030303]" />
 
-            <div className="mt-10 flex flex-wrap gap-3">
-              {[
-                "陶瓷产品",
-                "包装系统",
-                "品牌视觉",
-                "文创落地",
-                "AI设计流程",
-              ].map((item) => (
-                <span
-                  key={item}
-                  className="rounded-full border border-white/10 px-4 py-2 text-xs text-white/50"
-                >
-                  {item}
-                </span>
-              ))}
-            </div>
+  <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/30" />
+
+  <div className="absolute left-8 top-8 z-20">
+    <p className="text-xs uppercase tracking-[0.45em] text-white/45">
+      DESIGN ARCHIVE
+    </p>
+
+    <p className="mt-4 text-sm tracking-[0.2em] text-white/35">
+      EMOTION INDEX
+    </p>
+  </div>
+
+  <div className="absolute bottom-8 left-8 z-20">
+    <div className="text-[26vw] font-thin leading-none tracking-[-0.12em] text-white/[0.08] md:text-[12vw]">
+      01
+    </div>
+
+    <div className="mt-2 text-xs tracking-[0.35em] text-white/20">
+      EVAN PORTFOLIO
+    </div>
+  </div>
+</motion.div>
           </motion.div>
 
           <div className="relative pl-8">
