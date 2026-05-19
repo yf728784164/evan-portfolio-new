@@ -585,6 +585,7 @@ function Contact() {
 export default function App() {
   return (
     <main className="bg-[#030303] selection:bg-white selection:text-black">
+    <CustomCursor />
       <Nav />
       <Hero />
       <About />
