@@ -685,7 +685,7 @@ export default function App() {
       <Hero />
       <About />
       <Works />
-      <Contact />
+     {/* <Contact /> */}
     </main>
   );
 }
