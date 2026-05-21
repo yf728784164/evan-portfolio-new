@@ -215,12 +215,15 @@ function LoadingScreen() {
   if (!loading) {
     return (
       <motion.div
-        initial={{ y: 0 }}
-        animate={{ y: "-100%" }}
-        transition={{
-          duration: 1,
-          ease: [0.76, 0, 0.24, 1],
-        }}
+  className="fixed inset-0 z-[10000] flex items-center justify-center bg-[#030303] text-white"
+  initial={{ y: 0 }}
+  animate={{ y: 0 }}
+  exit={{ y: "-100%" }}
+  transition={{
+    duration: 1.1,
+    ease: [0.76, 0, 0.24, 1],
+  }}
+></motion.div>
         className="fixed inset-0 z-[10000] bg-[#030303]"
       />
     );
