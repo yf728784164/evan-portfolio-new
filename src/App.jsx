@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
-import { AnimatePresence, motion, useMotionValue, useTransform } from "framer-motion";
+import { AnimatePresence, motion, useMotionValue, useTransform, useSpring } from "framer-motion";
 
 const categories = ["全部", "产品设计", "包装设计", "平面设计", "手绘设计"];
 
@@ -183,64 +183,37 @@ function LoadingScreen() {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-
     const duration = 3000;
     const start = Date.now();
-  
+
     const interval = setInterval(() => {
-  
       const elapsed = Date.now() - start;
-  
-      const percent = Math.min(
-        Math.floor((elapsed / duration) * 100),
-        100
-      );
-  
+      const percent = Math.min(Math.floor((elapsed / duration) * 100), 100);
+
       setProgress(percent);
-  
+
       if (percent >= 100) {
         clearInterval(interval);
-  
+
         setTimeout(() => {
           setLoading(false);
-        }, 400);
+        }, 300);
       }
-  
     }, 30);
-  
+
     return () => clearInterval(interval);
-  
   }, []);
 
-  if (!loading) {
-    return (
-      <motion.div
-  className="fixed inset-0 z-[10000] flex items-center justify-center bg-[#030303] text-white"
-  initial={{ y: 0 }}
-  animate={{ y: 0 }}
-  exit={{ y: "-100%" }}
-  transition={{
-    duration: 1.1,
-    ease: [0.76, 0, 0.24, 1],
-  }}
-></motion.div>
-        className="fixed inset-0 z-[10000] bg-[#030303]"
-      />
-    );
-  }
+  if (!loading) return null;
 
   return (
     <motion.div
       className="fixed inset-0 z-[10000] flex items-center justify-center bg-[#030303] text-white"
-      initial={{ y: 0 }}
-      exit={{ y: "-100%" }}
-      animate={{ y: 0 }}
+      initial={{ opacity: 1 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
     >
-      transition={{
-  duration: 1.1,
-  ease: [0.76, 0, 0.24, 1],
-}}
-<motion.div
+      <motion.div
         className="text-center"
         initial={{ opacity: 0, filter: "blur(18px)", scale: 0.96 }}
         animate={{
@@ -248,7 +221,6 @@ function LoadingScreen() {
           filter: "blur(0px)",
           scale: [1, 1.02, 1],
         }}
-        
         transition={{
           duration: 2.4,
           repeat: Infinity,
@@ -263,23 +235,23 @@ function LoadingScreen() {
           INITIALIZING ARCHIVE
         </div>
 
-        <motion.div className="mx-auto mt-10 h-px w-64 overflow-hidden bg-white/10">
-        <motion.div
-  className="h-full bg-white"
-  initial={{ width: "0%" }}
-  animate={{ width: `${progress}%` }}
-  transition={{ duration: 0.08, ease: "linear" }}
-/>
-        </motion.div>
+        <div className="mx-auto mt-10 h-px w-64 overflow-hidden bg-white/10">
+          <motion.div
+            className="h-full bg-white"
+            initial={{ width: "0%" }}
+            animate={{ width: `${progress}%` }}
+            transition={{ duration: 0.08, ease: "linear" }}
+          />
+        </div>
 
         <motion.div
-  className="mt-5 text-xs tracking-[0.4em] text-white/30"
-  initial={{ opacity: 0 }}
-  animate={{ opacity: 1 }}
-  transition={{ delay: 0.5 }}
->
-{String(progress).padStart(2, "0")}
-</motion.div>
+          className="mt-5 text-xs tracking-[0.4em] text-white/30"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.5 }}
+        >
+          {String(progress).padStart(2, "0")}
+        </motion.div>
       </motion.div>
     </motion.div>
   );
@@ -289,6 +261,19 @@ function CustomCursor() {
   const dotY = useMotionValue(0);
   const ringX = useMotionValue(0);
   const ringY = useMotionValue(0);
+
+  const smoothX = useSpring(ringX, {
+    stiffness: 260,
+    damping: 24,
+    mass: 0.5,
+  });
+
+  const smoothY = useSpring(ringY, {
+    stiffness: 260,
+    damping: 24,
+    mass: 0.5,
+  });
+
   const [hover, setHover] = useState(false);
   const [clicking, setClicking] = useState(false);
 
@@ -329,9 +314,6 @@ function CustomCursor() {
     };
   }, [dotX, dotY, ringX, ringY]);
 
-  const smoothX = useTransform(ringX, (v) => v);
-  const smoothY = useTransform(ringY, (v) => v);
-
   return (
     <>
       <motion.div
@@ -356,7 +338,7 @@ function CustomCursor() {
 
       {clicking && (
         <motion.div
-          className="pointer-events-none fixed left-0 top-0 z-[9997] hidden h-10 w-10 -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/30 md:block"
+          className="pointer-events-none fixed left-0 top-0 z-[9997] block h-10 w-10 -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/30"
           style={{ x: dotX, y: dotY }}
           initial={{ scale: 0.4, opacity: 0.8 }}
           animate={{ scale: 2.8, opacity: 0 }}
