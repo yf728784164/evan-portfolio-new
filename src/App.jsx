@@ -180,13 +180,36 @@ function ParticleField() {
 
 function LoadingScreen() {
   const [loading, setLoading] = useState(true);
+  const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 3000);
 
-    return () => clearTimeout(timer);
+    const duration = 3000;
+    const start = Date.now();
+  
+    const interval = setInterval(() => {
+  
+      const elapsed = Date.now() - start;
+  
+      const percent = Math.min(
+        Math.floor((elapsed / duration) * 100),
+        100
+      );
+  
+      setProgress(percent);
+  
+      if (percent >= 100) {
+        clearInterval(interval);
+  
+        setTimeout(() => {
+          setLoading(false);
+        }, 400);
+      }
+  
+    }, 30);
+  
+    return () => clearInterval(interval);
+  
   }, []);
 
   if (!loading) return null;
@@ -225,7 +248,7 @@ function LoadingScreen() {
           <motion.div
             className="h-full bg-white"
             initial={{ width: "0%" }}
-            animate={{ width: "100%" }}
+            animate={{ width: `${progress}%` }}
             transition={{ duration: 1.5, ease: "easeInOut" }}
           />
         </motion.div>
@@ -236,7 +259,7 @@ function LoadingScreen() {
   animate={{ opacity: 1 }}
   transition={{ delay: 0.5 }}
 >
-  00 — 100
+{String(progress).padStart(2, "0")}
 </motion.div>
       </motion.div>
     </motion.div>
