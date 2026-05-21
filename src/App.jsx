@@ -603,82 +603,81 @@ function About() {
 }
 
 function Works() {
-  const [active, setActive] = useState("全部");
-  const [selected, setSelected] = useState(null);
-  const filtered = useMemo(() => (active === "全部" ? projects : projects.filter((project) => project.category === active)), [active]);
-
   return (
-    <section id="works" className="relative overflow-hidden bg-[#030303] px-5 py-20 text-white md:px-10 md:py-28">
-      <ParticleField />
-      <div className="absolute inset-0 bg-black/78" />
-      <div className="relative z-10 mx-auto max-w-[1500px]">
-        <SectionTitle num="02" label="WORKS" title="作品案例" desc="以抽卡式提案卡展示作品，让项目像一份份被解锁的设计档案。" />
-
-        <div className="mb-10 flex flex-wrap gap-3 md:mb-20">
-          {categories.map((cat) => (
-            <button key={cat} onClick={() => setActive(cat)} className={`rounded-full border px-4 py-2.5 text-xs tracking-[0.15em] transition md:px-5 md:py-3 md:text-sm ${active === cat ? "border-white bg-white text-black" : "border-white/10 bg-white/[0.035] text-white/55 hover:border-white/40 hover:text-white"}`}>
-              {cat}
-            </button>
-          ))}
-        </div>
-
-        <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
-          {filtered.map((project, index) => (
-            <motion.button key={project.id} onClick={() => setSelected(project)} className="group overflow-hidden rounded-[1.6rem] border border-white/10 bg-white/[0.035] p-3 text-left backdrop-blur-xl transition hover:border-white/35 md:rounded-[2rem]" initial={{ opacity: 0, y: 34 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.06 }}>
-              <div className="relative aspect-[4/3] overflow-hidden rounded-[1.2rem] bg-white/[0.04] md:rounded-[1.4rem]">
-                <img src={project.image} alt={project.title} className="h-full w-full object-cover opacity-75 transition duration-700 group-hover:scale-105 group-hover:opacity-95" onError={(event) => { event.currentTarget.style.display = "none"; }} />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/75 to-transparent" />
-                <p className="absolute left-4 top-4 rounded-full border border-white/10 bg-black/30 px-3 py-1 text-[10px] tracking-[0.25em] text-white/55 backdrop-blur-xl md:left-5 md:top-5">PROJECT_{String(project.id).padStart(2, "0")}</p>
-              </div>
-              <div className="p-3 md:p-4">
-                <p className="mb-3 text-xs tracking-[0.3em] text-white/35">{project.tag}</p>
-                <h3 className="text-xl font-black tracking-[-0.06em] md:text-2xl">{project.title}</h3>
-                <p className="mt-4 line-clamp-2 text-sm leading-7 text-white/48">{project.intro}</p>
-              </div>
-            </motion.button>
-          ))}
-        </div>
+    <section
+      id="works"
+      className="relative min-h-screen overflow-hidden bg-[#030303] px-6 py-32 text-white md:px-16"
+    >
+      <div className="absolute inset-0 opacity-[0.03]">
+        <div className="h-full w-full bg-[linear-gradient(to_right,white_1px,transparent_1px),linear-gradient(to_bottom,white_1px,transparent_1px)] bg-[size:80px_80px]" />
       </div>
 
-      <AnimatePresence>
-        {selected && (
-          <motion.div className="fixed inset-0 z-[90] grid place-items-center bg-black/80 p-5 backdrop-blur-xl" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-            <motion.div className="max-w-3xl rounded-[2rem] border border-white/10 bg-[#080808] p-6 text-white shadow-2xl md:rounded-[2.5rem] md:p-8" initial={{ y: 60, scale: 0.96 }} animate={{ y: 0, scale: 1 }} exit={{ y: 60, scale: 0.96 }}>
-              <p className="mb-5 text-xs tracking-[0.35em] text-white/35">{selected.category} / {selected.tag}</p>
-              <h3 className="text-3xl font-black tracking-[-0.08em] md:text-5xl">{selected.title}</h3>
-              <p className="mt-6 text-sm leading-8 text-white/55 md:text-base md:leading-9">{selected.intro}</p>
-              <button onClick={() => setSelected(null)} className="mt-8 rounded-full border border-white/15 px-6 py-3 text-sm text-white/60 hover:bg-white hover:text-black md:mt-10">关闭</button>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </section>
-  );
-}
-
-function Contact() {
-  return (
-    <section id="contact" className="relative overflow-hidden bg-[#030303] px-5 py-20 text-white md:px-10 md:py-28">
-      <ParticleField />
-      <div className="absolute inset-0 bg-black/78" />
-      <div className="relative z-10 mx-auto max-w-[1500px]">
-        <SectionTitle num="03" label="CONTACT" title="合作联系" desc="开放合作方向：陶瓷产品设计、礼盒包装、品牌视觉、文创产品、AI辅助设计提案。" />
-        <div className="rounded-[2rem] border border-white/10 bg-white/[0.035] p-6 backdrop-blur-xl md:rounded-[2.5rem] md:p-12">
-          <h3 className="text-4xl font-black leading-[0.95] tracking-[-0.08em] md:text-8xl md:leading-[0.92] md:tracking-[-0.09em]">让情绪<br />进入产品</h3>
-          <div className="mt-10 grid grid-cols-1 gap-4 md:mt-12 md:grid-cols-2">
-            <a href="mailto:728784164@qq.com" className="rounded-2xl border border-white/10 px-5 py-4 text-sm text-white/62 transition hover:bg-white hover:text-black md:px-6 md:py-5">728784164@qq.com</a>
-            <div className="rounded-2xl border border-white/10 px-5 py-4 text-sm text-white/42 md:px-6 md:py-5">+86 18756636480</div>
+      <div className="relative z-10 max-w-6xl">
+        <div className="space-y-4">
+          <div className="text-xs tracking-[0.45em] text-white/30">
+            SELECTED WORKS
           </div>
+
+          <h2 className="max-w-md text-3xl font-semibold leading-tight md:text-5xl">
+            Archive of
+            <br />
+            Material, Emotion
+            <br />
+            & Narrative
+          </h2>
+
+          <p className="max-w-sm text-sm leading-7 text-white/40">
+            A curated selection of ceramic objects, visual systems and
+            contemporary cultural design experiments.
+          </p>
+        </div>
+
+        <div className="mt-20 space-y-6">
+          {[
+            {
+              title: "CERAMIC",
+              desc: "器物与情绪之间的控制实验",
+            },
+
+            {
+              title: "BRANDING",
+              desc: "品牌、包装与视觉叙事系统",
+            },
+
+            {
+              title: "CULTURAL OBJECT",
+              desc: "东方文化语境下的当代设计",
+            },
+          ].map((item, index) => (
+            <motion.div
+              key={index}
+              className="group rounded-[2rem] border border-white/10 bg-white/[0.03] p-8 transition-all duration-500 hover:border-white/20 hover:bg-white/[0.05]"
+            >
+              <div className="flex items-center justify-between">
+                <div>
+                  <div className="text-3xl font-bold tracking-[0.08em] md:text-5xl">
+                    {item.title}
+                  </div>
+
+                  <div className="mt-4 text-sm text-white/45 md:text-base">
+                    {item.desc}
+                  </div>
+                </div>
+
+                <div className="text-white/20 transition-all duration-500 group-hover:translate-x-2 group-hover:text-white">
+                  ↗
+                </div>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
   );
 }
-
 export default function App() {
   return (
     <main className="bg-[#030303] selection:bg-white selection:text-black">
-
       <LoadingScreen />
       <CustomCursor />
 
@@ -687,7 +686,6 @@ export default function App() {
       <About />
       <Works />
       <Contact />
-
     </main>
   );
 }
