@@ -221,7 +221,11 @@ function LoadingScreen() {
       exit={{ y: "-100%" }}
       animate={{ y: loading ? 0 : "-100%" }}
     >
-      <motion.div
+      transition={{
+  duration: 1.1,
+  ease: [0.76, 0, 0.24, 1],
+}}
+<motion.div
         className="text-center"
         initial={{ opacity: 0, filter: "blur(18px)", scale: 0.96 }}
         animate={{
@@ -245,12 +249,12 @@ function LoadingScreen() {
         </div>
 
         <motion.div className="mx-auto mt-10 h-px w-64 overflow-hidden bg-white/10">
-          <motion.div
-            className="h-full bg-white"
-            initial={{ width: "0%" }}
-            animate={{ width: `${progress}%` }}
-            transition={{ duration: 1.5, ease: "easeInOut" }}
-          />
+        <motion.div
+  className="h-full bg-white"
+  initial={{ width: "0%" }}
+  animate={{ width: `${progress}%` }}
+  transition={{ duration: 0.08, ease: "linear" }}
+/>
         </motion.div>
 
         <motion.div
