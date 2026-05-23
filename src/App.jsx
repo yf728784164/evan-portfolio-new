@@ -670,21 +670,21 @@ function Works() {
   return (
     <section
       id="works"
-      className="relative overflow-hidden bg-[#030303] px-5 py-20 text-white md:px-10 md:py-28"
+      className="relative overflow-hidden bg-[#030303] px-5 pb-20 pt-8 text-white md:px-10 md:pb-28 md:pt-12"
     >
       <ParticleField />
       <div className="absolute inset-0 bg-black/80" />
 
       <div className="relative z-10 mx-auto max-w-[1500px]">
-        <div className="mb-16 flex flex-col gap-5 border-b border-white/10 pb-8 md:flex-row md:items-end md:justify-between">
-          <div>
-            <p className="text-xs tracking-[0.45em] text-white/30">
-              SELECTED WORKS
-            </p>
-            <h2 className="mt-4 text-2xl font-bold tracking-[0.08em] text-white md:text-3xl">
-              作品案例
-            </h2>
-          </div>
+      <div className="mb-12 flex flex-col gap-5 border-b border-white/10 pb-8 md:mb-16 md:flex-row md:items-end md:justify-between">
+  <h2 className="text-xl font-bold tracking-[0.08em] text-white md:text-3xl">
+    作品案例
+  </h2>
+
+  <p className="max-w-xl text-right text-sm leading-8 tracking-[0.12em] text-white/48">
+    产品、包装与平面视觉的设计实践。
+  </p>
+</div>
 
           <p className="max-w-xl text-right text-sm leading-8 tracking-[0.08em] text-white/45">
             产品、包装与平面视觉的设计实践。
