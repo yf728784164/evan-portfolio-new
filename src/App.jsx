@@ -603,89 +603,107 @@ function About() {
 }
 
 function Works() {
+  const works = [
+    {
+      title: "2025阿里云中秋礼盒",
+      type: "PRODUCT DESIGN",
+      desc: "东方叙事与科技礼赠系统",
+      image: "/images/works/work-01.jpg",
+    },
+    {
+      title: "镇江博物馆 × 文创系统",
+      type: "CULTURAL PRODUCT",
+      desc: "地方文化的当代转译实验",
+      image: "/images/works/work-02.jpg",
+    },
+    {
+      title: "A TABLE × 餐桌文化品牌",
+      type: "BRANDING & PACKAGING",
+      desc: "关于餐桌文化的长期研究",
+      image: "/images/works/work-03.jpg",
+    },
+    {
+      title: "视觉系统实验",
+      type: "GRAPHIC DESIGN",
+      desc: "字体、版式与品牌视觉探索",
+      image: "/images/works/work-04.jpg",
+    },
+  ];
+
   return (
     <section
       id="works"
-      className="relative min-h-screen overflow-hidden bg-[#030303] px-6 py-32 text-white md:px-16"
+      className="relative overflow-hidden bg-[#030303] px-5 py-20 text-white md:px-10 md:py-28"
     >
-      <div className="absolute inset-0 opacity-[0.03]">
-        <div className="h-full w-full bg-[linear-gradient(to_right,white_1px,transparent_1px),linear-gradient(to_bottom,white_1px,transparent_1px)] bg-[size:80px_80px]" />
-      </div>
+      <ParticleField />
+      <div className="absolute inset-0 bg-black/80" />
 
-      <div className="relative z-10 max-w-6xl">
-        <div className="space-y-4">
-          <div className="text-xs tracking-[0.45em] text-white/30">
-            SELECTED WORKS
+      <div className="relative z-10 mx-auto max-w-[1500px]">
+        <div className="mb-12 flex flex-col gap-5 border-b border-white/10 pb-8 md:mb-16 md:flex-row md:items-end md:justify-between md:pb-10">
+          <div>
+            <p className="text-xs tracking-[0.45em] text-white/30">
+              SELECTED WORKS
+            </p>
+
+            <h2 className="mt-4 text-2xl font-bold tracking-[0.08em] text-white md:text-3xl">
+              作品案例
+            </h2>
           </div>
 
-          <h2 className="max-w-md text-3xl font-semibold leading-tight md:text-5xl">
-            Archive of
-            <br />
-            Material, Emotion
-            <br />
-            & Narrative
-          </h2>
-
-          <p className="max-w-sm text-sm leading-7 text-white/40">
-            A curated selection of ceramic objects, visual systems and
-            contemporary cultural design experiments.
+          <p className="max-w-sm text-right text-sm leading-7 tracking-[0.08em] text-white/45">
+            产品、包装、平面与文化叙事的设计实践。
           </p>
         </div>
 
-        <div className="mt-20 space-y-6">
-          {[
-            {
-              title: "CERAMIC",
-              desc: "器物与情绪之间的控制实验",
-            },
-
-            {
-              title: "BRANDING",
-              desc: "品牌、包装与视觉叙事系统",
-            },
-
-            {
-              title: "CULTURAL OBJECT",
-              desc: "东方文化语境下的当代设计",
-            },
-          ].map((item, index) => (
+        <div className="space-y-10">
+          {works.map((work, index) => (
             <motion.div
               key={index}
-              className="group rounded-[2rem] border border-white/10 bg-white/[0.03] p-8 transition-all duration-500 hover:border-white/20 hover:bg-white/[0.05]"
+              initial={{ opacity: 0, y: 36 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.25 }}
+              transition={{ duration: 0.8, delay: index * 0.08 }}
+              className="group grid overflow-hidden rounded-[2.2rem] border border-white/10 bg-white/[0.025] md:grid-cols-[0.72fr_1.28fr]"
             >
-              <div className="flex items-center justify-between">
+              <div className="flex min-h-[260px] flex-col justify-between p-7 md:min-h-[420px] md:p-10">
                 <div>
-                  <div className="text-3xl font-bold tracking-[0.08em] md:text-5xl">
-                    {item.title}
-                  </div>
+                  <p className="text-xs tracking-[0.35em] text-white/25">
+                    {String(index + 1).padStart(2, "0")}
+                  </p>
 
-                  <div className="mt-4 text-sm text-white/45 md:text-base">
-                    {item.desc}
-                  </div>
+                  <h3 className="mt-10 text-2xl font-semibold leading-tight tracking-[0.02em] text-white md:text-4xl">
+                    {work.title}
+                  </h3>
+
+                  <p className="mt-4 text-sm leading-7 text-white/45">
+                    {work.desc}
+                  </p>
                 </div>
 
-                <div className="text-white/20 transition-all duration-500 group-hover:translate-x-2 group-hover:text-white">
-                  ↗
+                <div className="flex items-end justify-between border-t border-white/10 pt-6">
+                  <p className="text-xs tracking-[0.35em] text-white/30">
+                    {work.type}
+                  </p>
+
+                  <span className="text-lg text-white/35 transition duration-500 group-hover:translate-x-2 group-hover:text-white">
+                    →
+                  </span>
                 </div>
+              </div>
+
+              <div className="relative min-h-[300px] overflow-hidden md:min-h-[420px]">
+                <img
+                  src={work.image}
+                  alt={work.title}
+                  className="h-full w-full object-cover opacity-70 grayscale transition duration-[1200ms] group-hover:scale-[1.04] group-hover:opacity-90"
+                />
+
+                <div className="absolute inset-0 bg-gradient-to-r from-[#030303]/50 via-transparent to-black/20" />
               </div>
             </motion.div>
           ))}
         </div>
       </div>
     </section>
-  );
-}
-export default function App() {
-  return (
-    <main className="bg-[#030303] selection:bg-white selection:text-black">
-      <LoadingScreen />
-      <CustomCursor />
-
-      <Nav />
-      <Hero />
-      <About />
-      <Works />
-     {/* <Contact /> */}
-    </main>
   );
 }
