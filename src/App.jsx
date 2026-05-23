@@ -707,3 +707,16 @@ function Works() {
     </section>
   );
 }
+export default function App() {
+  return (
+    <main className="bg-[#030303] selection:bg-white selection:text-black">
+      <LoadingScreen />
+      <CustomCursor />
+
+      <Nav />
+      <Hero />
+      <About />
+      <Works />
+    </main>
+  );
+}
