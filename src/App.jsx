@@ -604,24 +604,72 @@ function About() {
 
 function Works() {
   const productWorks = [
-    { title: "阿里云 × 新春文创", image: "/images/works/product-01.jpg", desc: "东方叙事与科技礼赠系统" },
-    { title: "陶瓷茶礼系统", image: "/images/works/product-02.jpg", desc: "器物、材料与礼赠体验" },
-    { title: "博物馆文创产品", image: "/images/works/product-03.jpg", desc: "文化符号的当代转译" },
-    { title: "A TABLE 餐桌实验", image: "/images/works/product-04.jpg", desc: "关于餐桌文化的长期研究" },
+    {
+      title: "阿里云 × 新春文创",
+      image: "/images/works/product-01.jpg",
+      desc: "东方叙事与科技礼赠系统",
+    },
+    {
+      title: "陶瓷茶礼系统",
+      image: "/images/works/product-02.jpg",
+      desc: "器物、材料与礼赠体验",
+    },
+    {
+      title: "博物馆文创产品",
+      image: "/images/works/product-03.jpg",
+      desc: "文化符号的当代转译",
+    },
+    {
+      title: "A TABLE 餐桌实验",
+      image: "/images/works/product-04.jpg",
+      desc: "关于餐桌文化的长期研究",
+    },
   ];
 
   const packageWorks = [
-    { title: "端午商务礼盒", image: "/images/works/package-01.jpg", desc: "东方节日与企业礼赠系统" },
-    { title: "中秋礼盒包装", image: "/images/works/package-02.jpg", desc: "月相、材质与视觉秩序" },
-    { title: "茶具包装系统", image: "/images/works/package-03.jpg", desc: "结构、开箱与仪式感" },
-    { title: "品牌礼盒提案", image: "/images/works/package-04.jpg", desc: "从视觉到落地生产" },
+    {
+      title: "端午商务礼盒",
+      image: "/images/works/package-01.jpg",
+      desc: "东方节日与企业礼赠系统",
+    },
+    {
+      title: "中秋礼盒包装",
+      image: "/images/works/package-02.jpg",
+      desc: "月相、材质与视觉秩序",
+    },
+    {
+      title: "茶具包装系统",
+      image: "/images/works/package-03.jpg",
+      desc: "结构、开箱与仪式感",
+    },
+    {
+      title: "品牌礼盒提案",
+      image: "/images/works/package-04.jpg",
+      desc: "从视觉到落地生产",
+    },
   ];
 
   const graphicWorks = [
-    { title: "品牌视觉系统", image: "/images/works/graphic-01.jpg", desc: "Logo / Typography / Layout" },
-    { title: "活动视觉 KV", image: "/images/works/graphic-02.jpg", desc: "情绪化传播视觉" },
-    { title: "字体与版式实验", image: "/images/works/graphic-03.jpg", desc: "秩序、留白与识别度" },
-    { title: "IP视觉延展", image: "/images/works/graphic-04.jpg", desc: "角色、图形与传播物料" },
+    {
+      title: "品牌视觉系统",
+      image: "/images/works/graphic-01.jpg",
+      desc: "Logo / Typography / Layout",
+    },
+    {
+      title: "活动视觉 KV",
+      image: "/images/works/graphic-02.jpg",
+      desc: "情绪化传播视觉",
+    },
+    {
+      title: "字体与版式实验",
+      image: "/images/works/graphic-03.jpg",
+      desc: "秩序、留白与识别度",
+    },
+    {
+      title: "IP视觉延展",
+      image: "/images/works/graphic-04.jpg",
+      desc: "角色、图形与传播物料",
+    },
   ];
 
   const WorkCard = ({ item, large = false }) => (
@@ -638,9 +686,6 @@ function Works() {
         src={item.image}
         alt={item.title}
         className="absolute inset-0 h-full w-full object-cover grayscale opacity-65 transition duration-[1200ms] group-hover:scale-[1.03] group-hover:opacity-85"
-        onError={(e) => {
-          e.currentTarget.style.display = "none";
-        }}
       />
 
       <div className="absolute inset-0 bg-gradient-to-t from-black via-black/25 to-transparent" />
@@ -649,6 +694,7 @@ function Works() {
         <h3 className="text-xl font-semibold tracking-[0.04em] text-white md:text-2xl">
           {item.title}
         </h3>
+
         <p className="mt-3 text-sm leading-7 text-white/45">
           {item.desc}
         </p>
@@ -659,7 +705,10 @@ function Works() {
   const SectionHead = ({ en, cn }) => (
     <div className="mb-8 flex items-end justify-between border-b border-white/10 pb-5">
       <div>
-        <p className="text-xs tracking-[0.45em] text-white/28">{en}</p>
+        <p className="text-xs tracking-[0.45em] text-white/28">
+          {en}
+        </p>
+
         <h3 className="mt-3 text-2xl font-semibold tracking-[0.08em] text-white md:text-3xl">
           {cn}
         </h3>
@@ -673,34 +722,36 @@ function Works() {
       className="relative overflow-hidden bg-[#030303] px-5 pb-20 pt-8 text-white md:px-10 md:pb-28 md:pt-12"
     >
       <ParticleField />
+
       <div className="absolute inset-0 bg-black/80" />
 
       <div className="relative z-10 mx-auto max-w-[1500px]">
-      <div className="mb-12 flex flex-col gap-5 border-b border-white/10 pb-8 md:mb-16 md:flex-row md:items-end md:justify-between">
-  <h2 className="text-xl font-bold tracking-[0.08em] text-white md:text-3xl">
-    作品案例
-  </h2>
+        <div className="mb-12 flex flex-col gap-5 border-b border-white/10 pb-8 md:mb-16 md:flex-row md:items-end md:justify-between">
+          <h2 className="text-xl font-bold tracking-[0.08em] text-white md:text-3xl">
+            作品案例
+          </h2>
 
-  <p className="max-w-xl text-right text-sm leading-8 tracking-[0.12em] text-white/48">
-    产品、包装与平面视觉的设计实践。
-  </p>
-</div>
-
-          <p className="max-w-xl text-right text-sm leading-8 tracking-[0.08em] text-white/45">
+          <p className="max-w-xl text-right text-sm leading-8 tracking-[0.12em] text-white/48">
             产品、包装与平面视觉的设计实践。
           </p>
         </div>
 
         {/* 产品设计 */}
         <div className="mb-24">
-          <SectionHead en="PRODUCT DESIGN" cn="产品设计" />
+          <SectionHead
+            en="PRODUCT DESIGN"
+            cn="产品设计"
+          />
 
           <div className="grid gap-5 md:grid-cols-[1.15fr_0.85fr]">
             <WorkCard item={productWorks[0]} large />
 
             <div className="grid gap-5">
               {productWorks.slice(1).map((item) => (
-                <WorkCard key={item.title} item={item} />
+                <WorkCard
+                  key={item.title}
+                  item={item}
+                />
               ))}
             </div>
           </div>
@@ -708,15 +759,23 @@ function Works() {
 
         {/* 包装设计 */}
         <div className="mb-24">
-          <SectionHead en="PACKAGING DESIGN" cn="包装设计" />
+          <SectionHead
+            en="PACKAGING DESIGN"
+            cn="包装设计"
+          />
 
           <div className="grid gap-5 md:grid-cols-2">
             {packageWorks.map((item, index) => (
               <div
                 key={item.title}
-                className={index === 0 ? "md:translate-y-12" : ""}
+                className={
+                  index === 0 ? "md:translate-y-12" : ""
+                }
               >
-                <WorkCard item={item} large={index === 1} />
+                <WorkCard
+                  item={item}
+                  large={index === 1}
+                />
               </div>
             ))}
           </div>
@@ -724,13 +783,20 @@ function Works() {
 
         {/* 平面设计 */}
         <div>
-          <SectionHead en="GRAPHIC DESIGN" cn="平面设计" />
+          <SectionHead
+            en="GRAPHIC DESIGN"
+            cn="平面设计"
+          />
 
           <div className="grid gap-5 md:grid-cols-4">
             {graphicWorks.map((item, index) => (
               <div
                 key={item.title}
-                className={index % 2 === 1 ? "md:translate-y-10" : ""}
+                className={
+                  index % 2 === 1
+                    ? "md:translate-y-10"
+                    : ""
+                }
               >
                 <WorkCard item={item} />
               </div>
