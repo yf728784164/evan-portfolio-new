@@ -521,7 +521,7 @@ function About() {
   </h2>
 
   <p className="max-w-xl text-left text-sm leading-7 tracking-[0.08em] text-white/48 md:text-right md:leading-8 md:tracking-[0.12em]">
-    永远将情绪瞬间作为设计核心。
+    永远将情绪瞬间作为设计核心
   </p>
 </div>
 
@@ -732,7 +732,7 @@ function Works() {
   </h2>
 
   <p className="max-w-xl text-left text-sm leading-7 tracking-[0.08em] text-white/48 md:text-right md:leading-8 md:tracking-[0.12em]">
-    产品、包装与平面视觉的设计实践。
+    产品、包装与平面视觉的设计实践
   </p>
 </div>
 
