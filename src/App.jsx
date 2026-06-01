@@ -515,13 +515,13 @@ function About() {
       <div className="absolute inset-0 bg-black/80" />
 
       <div className="relative z-10 mx-auto max-w-[1500px]">
-      <div className="mb-12 flex items-end justify-between border-b border-white/10 pb-8 md:mb-16">
-  <h2 className="text-xl font-bold tracking-[-0.04em] text-white md:text-3xl">
+      <div className="mb-12 flex flex-col gap-4 border-b border-white/10 pb-8 md:mb-16 md:flex-row md:items-end md:justify-between">
+  <h2 className="text-xl font-bold tracking-[0.08em] text-white md:text-3xl">
     个人简介
   </h2>
 
-  <p className="max-w-xl text-right text-sm leading-8 tracking-[0.12em] text-white/48">
-    永远将情绪瞬间作为设计核心
+  <p className="max-w-xl text-left text-sm leading-7 tracking-[0.08em] text-white/48 md:text-right md:leading-8 md:tracking-[0.12em]">
+    永远将情绪瞬间作为设计核心。
   </p>
 </div>
 
