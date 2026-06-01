@@ -680,7 +680,7 @@ function Works() {
               </div>
 
               <div className="absolute bottom-6 left-6 right-6 md:bottom-8 md:left-8 md:right-8">
-                <div className="mb-8 flex items-end justify-between border-b border-white/10 pb-6">
+              <div className="mb-8 border-b border-white/10 pb-6">
                   <div>
                     <h3 className="text-2xl font-bold tracking-[0.08em] text-white md:text-4xl">
                       {item.title}
@@ -691,9 +691,6 @@ function Works() {
                     </p>
                   </div>
 
-                  <div className="text-5xl font-black tracking-[-0.08em] text-white/18 md:text-7xl">
-                    {item.count}
-                  </div>
                 </div>
 
                 <div className="flex items-center justify-between">
