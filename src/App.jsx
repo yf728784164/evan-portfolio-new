@@ -663,7 +663,7 @@ function Works() {
               <img
                 src={item.image}
                 alt={item.title}
-               className="absolute inset-0 h-full w-full object-contain object-center opacity-90 transition duration-[1200ms] group-hover:scale-[1.03] group-hover:opacity-100 md:object-cover"
+              className="absolute inset-0 h-full w-full object-contain object-center opacity-100 transition duration-[1200ms] group-hover:scale-[1.03] md:object-cover"
                 onError={(e) => {
                   e.currentTarget.style.display = "none";
                 }}
