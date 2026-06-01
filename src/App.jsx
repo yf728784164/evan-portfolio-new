@@ -680,28 +680,23 @@ function Works() {
               </div>
 
               <div className="absolute bottom-6 left-6 right-6 md:bottom-8 md:left-8 md:right-8">
-              <div className="mb-8 border-b border-white/10 pb-6">
-                  <div>
-                    <h3 className="text-2xl font-bold tracking-[0.08em] text-white md:text-4xl">
-                      {item.title}
-                    </h3>
+              
 
-                    <p className="mt-3 text-xs tracking-[0.35em] text-white/35">
-                      {item.en}
-                    </p>
-                  </div>
+                <div className="flex items-end justify-between">
+  <div>
+    <h3 className="text-2xl font-bold tracking-[0.08em] text-white md:text-4xl">
+      {item.title}
+    </h3>
 
-                </div>
+    <p className="mt-3 text-xs tracking-[0.35em] text-white/35">
+      {item.en}
+    </p>
+  </div>
 
-                <div className="flex items-center justify-between">
-                  <p className="text-xs tracking-[0.35em] text-white/30">
-                    PROJECTS
-                  </p>
-
-                  <span className="text-sm tracking-[0.18em] text-white/45 transition duration-500 group-hover:translate-x-2 group-hover:text-white">
-                    查看项目 →
-                  </span>
-                </div>
+  <span className="text-sm tracking-[0.18em] text-white/45 transition duration-500 group-hover:translate-x-2 group-hover:text-white">
+    查看项目 →
+  </span>
+</div>
               </div>
             </motion.a>
           ))}
