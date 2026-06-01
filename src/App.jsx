@@ -607,8 +607,7 @@ function Works() {
     {
       title: "产品设计",
       en: "PRODUCT DESIGN",
-      count: "05",
-      image: "/images/works/product-01.jpg",
+      image: "/images/works/dunhuang-huama.jpg",
     },
     {
       title: "包装设计",
@@ -664,7 +663,7 @@ function Works() {
               <img
                 src={item.image}
                 alt={item.title}
-                className="absolute inset-0 h-full w-full object-cover grayscale opacity-55 transition duration-[1200ms] group-hover:scale-[1.03] group-hover:opacity-80"
+                className="absolute inset-0 h-full w-full object-cover object-center opacity-90 transition duration-[1200ms] group-hover:scale-[1.03] group-hover:opacity-100"
                 onError={(e) => {
                   e.currentTarget.style.display = "none";
                 }}
