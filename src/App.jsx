@@ -620,12 +620,11 @@ function Works() {
       count: "06",
       image: "/images/works/graphic-01.jpg",
     },
-    {
-      title: "插画手绘",
-      en: "ILLUSTRATION",
-      count: "05",
-      image: "/images/works/illustration-01.jpg",
-    },
+   {
+  title: "插画手绘",
+  en: "ILLUSTRATION",
+  image: "/images/works/illustration-cover.jpg",
+},
   ];
 
   return (
