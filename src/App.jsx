@@ -190,63 +190,56 @@ function LoadingScreen() {
     return () => clearTimeout(timer);
   }, []);
 
-  <AnimatePresence>
-  {loading && (
-    <motion.div
-      className="fixed inset-0 z-[10000] flex items-center justify-center bg-[#030303]"
-      initial={{ opacity: 1 }}
-      animate={{ opacity: 1 }}
-      exit={{
-        opacity: 0,
-      }}
-      transition={{
-        duration: 1.4,
-        ease: [0.22, 1, 0.36, 1],
-      }}
-    >
-
   return (
-    <motion.div
-      className="fixed inset-0 z-[10000] flex items-center justify-center bg-[#030303]"
-      initial={{ opacity: 1 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.9, ease: [0.76, 0, 0.24, 1] }}
-    >
-      <motion.div
-        className="text-center"
-        initial={{ opacity: 0, y: 18, scale: 0.98 }}
-        animate={{ opacity: 1, y: 0, scale: 1 }}
-        transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
-      >
-        <div className="flex justify-center gap-2 text-5xl font-black tracking-[0.22em] md:text-7xl">
-          {letters.map((letter, index) => (
-            <motion.span
-              key={index}
-              initial={{ color: "rgba(255,255,255,0.16)" }}
-              animate={{ color: "rgba(255,255,255,1)" }}
-              transition={{
-                duration: 1.15,
-                delay: 0.25 + index * 0.32,
-                ease: [0.22, 1, 0.36, 1],
-              }}
-            >
-              {letter}
-            </motion.span>
-          ))}
-        </div>
-
-        <motion.p
-          className="mt-6 text-xs tracking-[0.35em] text-white/38"
-          initial={{ opacity: 0, y: 8 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.7, duration: 0.9 }}
+    <AnimatePresence>
+      {loading && (
+        <motion.div
+          className="fixed inset-0 z-[10000] flex items-center justify-center bg-[#030303]"
+          initial={{ opacity: 1 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{
+            duration: 1.4,
+            ease: [0.22, 1, 0.36, 1],
+          }}
         >
-          Collection of Works 2026
-        </motion.p>
-      </motion.div>
-    </motion.div>
+          <motion.div
+            className="text-center"
+            initial={{ opacity: 0, y: 18, scale: 0.98 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <div className="flex justify-center gap-2 text-5xl font-black tracking-[0.22em] md:text-7xl">
+              {letters.map((letter, index) => (
+                <motion.span
+                  key={index}
+                  initial={{ color: "rgba(255,255,255,0.16)" }}
+                  animate={{ color: "rgba(255,255,255,1)" }}
+                  transition={{
+                    duration: 1.15,
+                    delay: 0.25 + index * 0.32,
+                    ease: [0.22, 1, 0.36, 1],
+                  }}
+                >
+                  {letter}
+                </motion.span>
+              ))}
+            </div>
+
+            <motion.p
+              className="mt-6 text-xs tracking-[0.35em] text-white/38"
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1.7, duration: 0.9 }}
+            >
+              Collection of Works 2026
+            </motion.p>
+          </motion.div>
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
+}
 function CustomCursor() {
   const dotX = useMotionValue(0);
   const dotY = useMotionValue(0);
@@ -390,27 +383,16 @@ function Hero() {
   const titleY = useTransform(my, [-650, 650], [-12, 12]);
 
   return (
-  <motion.section
-  <motion.section
-  id="home"
-  className="relative flex min-h-screen items-center overflow-hidden"
-  initial={{
-    opacity: 0,
-    y: 20,
-  }}
-  animate={{
-    opacity: 1,
-    y: 0,
-  }}
-  transition={{
-    duration: 1.6,
-    delay: 0.4,
-    ease: [0.22, 1, 0.36, 1],
-  }}
->
-</motion.section>
+    <motion.section
       id="top"
       className="relative flex min-h-screen items-center justify-center overflow-hidden bg-[#030303] px-5 py-28 text-white md:px-10"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{
+        duration: 1.6,
+        delay: 0.4,
+        ease: [0.22, 1, 0.36, 1],
+      }}
       onMouseMove={(event) => {
         mx.set(event.clientX - window.innerWidth / 2);
         my.set(event.clientY - window.innerHeight / 2);
@@ -460,15 +442,19 @@ function Hero() {
         </h1>
         <p className="mt-8 text-sm tracking-[0.28em] text-white/55 md:mt-10 md:text-lg md:tracking-[0.55em]">设计｜开发｜创意</p>
       </motion.div>
-
-      <motion.div className="absolute bottom-[7%] left-1/2 z-20 flex -translate-x-1/2 flex-col items-center gap-4 text-xs tracking-[0.2em] text-white/54 md:bottom-[8%] md:gap-5 md:text-sm md:tracking-[0.24em]" initial={{ opacity: 0, y: 22 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 2.1, duration: 0.8 }}>
-        <span>向下滚动</span>
-        <span className="h-10 w-px bg-gradient-to-b from-white/70 to-transparent md:h-12" />
-        <span className="grid h-9 w-5 place-items-center rounded-full border border-white/25 md:h-10 md:w-6">
-          <span className="h-1.5 w-1.5 rounded-full bg-white/70" />
-        </span>
-      </motion.div>
-   </motion.section>
+      <motion.div
+  className="absolute bottom-[7%] left-1/2 z-20 flex -translate-x-1/2 flex-col items-center gap-4 text-xs tracking-[0.2em] text-white/54 md:bottom-[8%] md:gap-5 md:text-sm md:tracking-[0.24em]"
+  initial={{ opacity: 0, y: 22 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ delay: 2.1, duration: 0.8 }}
+>
+  <span>向下滚动</span>
+  <span className="h-10 w-px bg-gradient-to-b from-white/70 to-transparent md:h-12" />
+  <span className="grid h-9 w-5 place-items-center rounded-full border border-white/25 md:h-10 md:w-6">
+    <span className="h-1.5 w-1.5 rounded-full bg-white/70" />
+  </span>
+</motion.div>
+    </motion.section>
   );
 }
 
