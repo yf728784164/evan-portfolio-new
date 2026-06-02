@@ -842,10 +842,27 @@ export default function App() {
           <Nav />
           <Hero />
           <About />
-          <Works onOpenProduct={() => setPage("product")} />
+          <Works
+  onOpenProduct={() => {
+    setPage("product");
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }, 50);
+  }}
+/>
         </>
       ) : (
-        <ProductDesignPage onBack={() => setPage("home")} />
+       <ProductDesignPage
+  onBack={() => {
+    setPage("home");
+    setTimeout(() => {
+      document.getElementById("works")?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }, 50);
+  }}
+/>
       )}
     </main>
   );
