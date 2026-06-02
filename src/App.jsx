@@ -180,6 +180,7 @@ function ParticleField() {
 
 function LoadingScreen() {
   const [loading, setLoading] = useState(true);
+  const letters = ["Y", "E", "F", "E", "I"];
   <motion.h1
   className="text-5xl font-black tracking-[0.22em] md:text-7xl"
   initial={{
