@@ -180,7 +180,28 @@ function ParticleField() {
 
 function LoadingScreen() {
   const [loading, setLoading] = useState(true);
-  const letters = ["Y", "E", "F", "E", "I"];
+  <motion.h1
+  className="text-5xl font-black tracking-[0.22em] md:text-7xl"
+  initial={{
+    backgroundPosition: "0% 50%",
+  }}
+  animate={{
+    backgroundPosition: "100% 50%",
+  }}
+  transition={{
+    duration: 2.8,
+    ease: [0.22, 1, 0.36, 1],
+  }}
+  style={{
+    backgroundImage:
+      "linear-gradient(90deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.15) 35%, rgba(255,255,255,1) 50%, rgba(255,255,255,0.15) 65%, rgba(255,255,255,0.15) 100%)",
+    backgroundSize: "200% 100%",
+    WebkitBackgroundClip: "text",
+    WebkitTextFillColor: "transparent",
+  }}
+>
+  YEFEI
+</motion.h1>
 
   useEffect(() => {
     const timer = setTimeout(() => {
