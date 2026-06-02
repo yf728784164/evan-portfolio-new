@@ -180,79 +180,42 @@ function ParticleField() {
 
 function LoadingScreen() {
   const [loading, setLoading] = useState(true);
-  const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    const duration = 3000;
-    const start = Date.now();
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 3000);
 
-    const interval = setInterval(() => {
-      const elapsed = Date.now() - start;
-      const percent = Math.min(Math.floor((elapsed / duration) * 100), 100);
-
-      setProgress(percent);
-
-      if (percent >= 100) {
-        clearInterval(interval);
-
-        setTimeout(() => {
-          setLoading(false);
-        }, 300);
-      }
-    }, 30);
-
-    return () => clearInterval(interval);
+    return () => clearTimeout(timer);
   }, []);
 
   if (!loading) return null;
 
+  const letters = ["Y", "E", "F", "E", "I"];
+
   return (
     <motion.div
-      className="fixed inset-0 z-[10000] flex items-center justify-center bg-[#030303] text-white"
+      className="fixed inset-0 z-[10000] flex items-center justify-center bg-[#030303]"
       initial={{ opacity: 1 }}
-      animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
     >
-      <motion.div
-        className="text-center"
-        initial={{ opacity: 0, filter: "blur(18px)", scale: 0.96 }}
-        animate={{
-          opacity: 1,
-          filter: "blur(0px)",
-          scale: [1, 1.02, 1],
-        }}
-        transition={{
-          duration: 2.4,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-      >
-        <div className="text-5xl font-black tracking-[0.35em] md:text-8xl">
-          EVAN
-        </div>
-
-        <div className="mt-6 text-xs tracking-[0.55em] text-white/35">
-          INITIALIZING ARCHIVE
-        </div>
-
-        <div className="mx-auto mt-10 h-px w-64 overflow-hidden bg-white/10">
-          <motion.div
-            className="h-full bg-white"
-            initial={{ width: "0%" }}
-            animate={{ width: `${progress}%` }}
-            transition={{ duration: 0.08, ease: "linear" }}
-          />
-        </div>
-
-        <motion.div
-          className="mt-5 text-xs tracking-[0.4em] text-white/30"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.5 }}
-        >
-          {String(progress).padStart(2, "0")}
-        </motion.div>
-      </motion.div>
+      <div className="flex gap-3 text-6xl font-black tracking-[0.28em] md:text-8xl">
+        {letters.map((letter, index) => (
+          <motion.span
+            key={index}
+            initial={{ color: "rgba(255,255,255,0.18)" }}
+            animate={{ color: "rgba(255,255,255,1)" }}
+            transition={{
+              duration: 0.7,
+              delay: index * 0.45,
+              ease: [0.76, 0, 0.24, 1],
+            }}
+          >
+            {letter}
+          </motion.span>
+        ))}
+      </div>
     </motion.div>
   );
 }
