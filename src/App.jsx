@@ -831,6 +831,23 @@ function ProductDesignPage({ onBack }) {
 }
 export default function App() {
   const [page, setPage] = useState("home");
+  const [targetScroll, setTargetScroll] = useState(null);
+
+  useEffect(() => {
+    if (page === "product") {
+      window.scrollTo({ top: 0, behavior: "auto" });
+    }
+
+    if (page === "home" && targetScroll === "works") {
+      setTimeout(() => {
+        document.getElementById("works")?.scrollIntoView({
+          behavior: "auto",
+          block: "start",
+        });
+        setTargetScroll(null);
+      }, 120);
+    }
+  }, [page, targetScroll]);
 
   return (
     <main className="bg-[#030303] selection:bg-white selection:text-black">
@@ -841,17 +858,16 @@ export default function App() {
         {page === "home" ? (
           <motion.div
             key="home"
-            initial={{ opacity: 0, filter: "blur(8px)" }}
-            animate={{ opacity: 1, filter: "blur(0px)" }}
-            exit={{ opacity: 0, filter: "blur(8px)" }}
-            transition={{ duration: 0.45, ease: [0.76, 0, 0.24, 1] }}
+            initial={{ opacity: 0, y: 24, filter: "blur(10px)" }}
+            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            exit={{ opacity: 0, y: -24, filter: "blur(10px)" }}
+            transition={{ duration: 0.55, ease: [0.76, 0, 0.24, 1] }}
           >
             <Nav />
             <Hero />
             <About />
             <Works
               onOpenProduct={() => {
-                window.scrollTo({ top: 0, behavior: "auto" });
                 setPage("product");
               }}
             />
@@ -859,20 +875,15 @@ export default function App() {
         ) : (
           <motion.div
             key="product"
-            initial={{ opacity: 0, filter: "blur(8px)" }}
-            animate={{ opacity: 1, filter: "blur(0px)" }}
-            exit={{ opacity: 0, filter: "blur(8px)" }}
-            transition={{ duration: 0.45, ease: [0.76, 0, 0.24, 1] }}
+            initial={{ opacity: 0, y: 24, filter: "blur(10px)" }}
+            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            exit={{ opacity: 0, y: -24, filter: "blur(10px)" }}
+            transition={{ duration: 0.55, ease: [0.76, 0, 0.24, 1] }}
           >
             <ProductDesignPage
               onBack={() => {
+                setTargetScroll("works");
                 setPage("home");
-                setTimeout(() => {
-                  document.getElementById("works")?.scrollIntoView({
-                    behavior: "auto",
-                    block: "start",
-                  });
-                }, 50);
               }}
             />
           </motion.div>
