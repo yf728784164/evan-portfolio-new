@@ -646,7 +646,7 @@ function Works() {
           </h2>
 
           <p className="max-w-xl text-left text-sm leading-7 tracking-[0.08em] text-white/48 md:text-right md:leading-8 md:tracking-[0.12em]">
-            产品、包装、平面与插画创作的设计实践。
+            产品、包装、平面与插画创作的设计实践
           </p>
         </div>
 
