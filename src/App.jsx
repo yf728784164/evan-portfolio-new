@@ -469,7 +469,7 @@ function Hero() {
           <span className="h-1.5 w-1.5 rounded-full bg-white/70" />
         </span>
       </motion.div>
-    </section>
+   </motion.section>
   );
 }
 
