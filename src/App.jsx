@@ -247,7 +247,6 @@ function LoadingScreen() {
       </motion.div>
     </motion.div>
   );
-}
 function CustomCursor() {
   const dotX = useMotionValue(0);
   const dotY = useMotionValue(0);
