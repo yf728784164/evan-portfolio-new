@@ -806,21 +806,33 @@ function ProductDesignPage({ onBack }) {
                   </p>
                 </div>
 
-                <div className="space-y-6">
-                  <div className="min-h-[320px] rounded-[1.5rem] border border-white/10 bg-white/[0.03] flex items-center justify-center text-xs tracking-[0.3em] text-white/25">
-                    项目封面图
-                  </div>
+                <div className="space-y-5">
+  <div className="aspect-[16/9] overflow-hidden rounded-[1.5rem] border border-white/10 bg-white/[0.035]">
+    <div className="flex h-full items-center justify-center text-xs tracking-[0.3em] text-white/25">
+      项目封面图
+    </div>
+  </div>
 
-                  <div className="grid gap-4 md:grid-cols-2">
-                    <div className="min-h-[180px] rounded-[1rem] border border-white/10 bg-white/[0.03] flex items-center justify-center text-xs tracking-[0.25em] text-white/25">
-                      设计过程
-                    </div>
+  <div className="grid gap-5 md:grid-cols-2">
+    <div className="aspect-square overflow-hidden rounded-[1.25rem] border border-white/10 bg-white/[0.035]">
+      <div className="flex h-full items-center justify-center text-xs tracking-[0.25em] text-white/25">
+        设计过程
+      </div>
+    </div>
 
-                    <div className="min-h-[180px] rounded-[1rem] border border-white/10 bg-white/[0.03] flex items-center justify-center text-xs tracking-[0.25em] text-white/25">
-                      作品展示
-                    </div>
-                  </div>
-                </div>
+    <div className="aspect-square overflow-hidden rounded-[1.25rem] border border-white/10 bg-white/[0.035]">
+      <div className="flex h-full items-center justify-center text-xs tracking-[0.25em] text-white/25">
+        图案 / 细节
+      </div>
+    </div>
+  </div>
+
+  <div className="aspect-[21/9] overflow-hidden rounded-[1.25rem] border border-white/10 bg-white/[0.035]">
+    <div className="flex h-full items-center justify-center text-xs tracking-[0.25em] text-white/25">
+      作品展示
+    </div>
+  </div>
+</div>
               </div>
             </motion.article>
           ))}
