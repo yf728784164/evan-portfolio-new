@@ -180,42 +180,58 @@ function ParticleField() {
 
 function LoadingScreen() {
   const [loading, setLoading] = useState(true);
+  const letters = ["Y", "E", "F", "E", "I"];
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 3000);
+    }, 3600);
 
     return () => clearTimeout(timer);
   }, []);
 
   if (!loading) return null;
 
-  const letters = ["Y", "E", "F", "E", "I"];
-
   return (
     <motion.div
       className="fixed inset-0 z-[10000] flex items-center justify-center bg-[#030303]"
       initial={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
       animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.9, ease: [0.76, 0, 0.24, 1] }}
     >
-      <div className="flex gap-3 text-6xl font-black tracking-[0.28em] md:text-8xl">
-        {letters.map((letter, index) => (
-          <motion.span
-            key={index}
-            initial={{ color: "rgba(255,255,255,0.18)" }}
-            animate={{ color: "rgba(255,255,255,1)" }}
-            transition={{
-              duration: 0.7,
-              delay: index * 0.45,
-              ease: [0.76, 0, 0.24, 1],
-            }}
-          >
-            {letter}
-          </motion.span>
-        ))}
-      </div>
+      <motion.div
+        className="text-center"
+        initial={{ opacity: 0, y: 18, scale: 0.98 }}
+        animate={{ opacity: 1, y: 0, scale: 1 }}
+        transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
+      >
+        <div className="flex justify-center gap-2 text-5xl font-black tracking-[0.22em] md:text-7xl">
+          {letters.map((letter, index) => (
+            <motion.span
+              key={index}
+              initial={{ color: "rgba(255,255,255,0.16)" }}
+              animate={{ color: "rgba(255,255,255,1)" }}
+              transition={{
+                duration: 1.15,
+                delay: 0.25 + index * 0.32,
+                ease: [0.22, 1, 0.36, 1],
+              }}
+            >
+              {letter}
+            </motion.span>
+          ))}
+        </div>
+
+        <motion.p
+          className="mt-6 text-xs tracking-[0.35em] text-white/38"
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1.7, duration: 0.9 }}
+        >
+          Collection of Works 2026
+        </motion.p>
+      </motion.div>
     </motion.div>
   );
 }
