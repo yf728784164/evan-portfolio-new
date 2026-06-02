@@ -604,27 +604,27 @@ function About() {
 
 function Works() {
   const workCategories = [
-    {
-      title: "产品设计",
-      en: "PRODUCT DESIGN",
-      image: "/images/works/dunhuang-huama.jpg",
-    },
-    {
-  title: "包装设计",
-  en: "PACKAGING DESIGN",
-  image: "/images/works/aliyun-midautumn.jpg",
-},
-    {
-  title: "平面设计",
-  en: "GRAPHIC DESIGN",
-  image: "/images/works/graphic-cover.jpg",
-},
-   {
-  title: "插画手绘",
-  en: "ILLUSTRATION",
-  image: "/images/works/illustration-cover.jpg",
-},
-  ];
+  {
+    title: "产品设计",
+    en: "PRODUCT DESIGN",
+    image: "/images/works/product-cover.jpg",
+  },
+  {
+    title: "包装设计",
+    en: "PACKAGING DESIGN",
+    image: "/images/works/package-cover.jpg",
+  },
+  {
+    title: "平面设计",
+    en: "GRAPHIC DESIGN",
+    image: "/images/works/graphic-cover.jpg",
+  },
+  {
+    title: "插画手绘",
+    en: "ILLUSTRATION",
+    image: "/images/works/illustration-cover.jpg",
+  },
+]
 
   return (
     <section
@@ -663,7 +663,7 @@ function Works() {
 <img
   src={item.image}
   alt={item.title}
-  className="absolute inset-0 h-full w-full object-contain object-center opacity-100 transition duration-[1200ms] group-hover:scale-[1.03]"
+  className="absolute inset-0 h-full w-full object-cover object-center opacity-100 transition duration-[1200ms] group-hover:scale-[1.03]"
 />
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-black/10" />
               <div className="absolute inset-0 bg-gradient-to-r from-black/35 via-transparent to-black/20" />
