@@ -864,10 +864,13 @@ export default function App() {
         {page === "home" ? (
           <motion.div
             key="home"
-            initial={{ opacity: 0, y: 18, filter: "blur(8px)" }}
-            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-            exit={{ opacity: 0, y: -18, filter: "blur(8px)" }}
-            transition={{ duration: 0.65, ease: [0.76, 0, 0.24, 1] }}
+            initial={{ opacity: 0, y: 32, scale: 0.985 }}
+animate={{ opacity: 1, y: 0, scale: 1 }}
+exit={{ opacity: 0, y: -32, scale: 0.985 }}
+transition={{
+  duration: 0.9,
+  ease: [0.22, 1, 0.36, 1],
+}}
           >
             <Nav />
             <Hero />
