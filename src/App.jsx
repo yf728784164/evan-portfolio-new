@@ -615,11 +615,10 @@ function Works() {
   image: "/images/works/aliyun-midautumn.jpg",
 },
     {
-      title: "平面设计",
-      en: "GRAPHIC DESIGN",
-      count: "06",
-      image: "/images/works/graphic-01.jpg",
-    },
+  title: "平面设计",
+  en: "GRAPHIC DESIGN",
+  image: "/images/works/graphic-cover.jpg",
+},
    {
   title: "插画手绘",
   en: "ILLUSTRATION",
@@ -658,15 +657,14 @@ function Works() {
               viewport={{ once: true, amount: 0.25 }}
               transition={{ duration: 0.8, delay: index * 0.08 }}
             >
-              <img
-                src={item.image}
-                alt={item.title}
-              className="absolute inset-0 h-full w-full object-contain object-center opacity-100 transition duration-[1200ms] group-hover:scale-[1.03] md:object-cover"
-                onError={(e) => {
-                  e.currentTarget.style.display = "none";
-                }}
-              />
-
+             {item.title === "插画手绘" && (
+  <div className="absolute inset-0 bg-[#f7f7f5]" />
+)}
+<img
+  src={item.image}
+  alt={item.title}
+  className="absolute inset-0 h-full w-full object-contain object-center opacity-100 transition duration-[1200ms] group-hover:scale-[1.03]"
+/>
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-black/10" />
               <div className="absolute inset-0 bg-gradient-to-r from-black/35 via-transparent to-black/20" />
 
