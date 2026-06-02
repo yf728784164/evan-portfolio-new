@@ -837,33 +837,47 @@ export default function App() {
       <LoadingScreen />
       <CustomCursor />
 
-      {page === "home" ? (
-        <>
-          <Nav />
-          <Hero />
-          <About />
-          <Works
-  onOpenProduct={() => {
-    setPage("product");
-    setTimeout(() => {
-     window.scrollTo({ top: 0, behavior: "auto" });
-    }, 50);
-  }}
-/>
-        </>
-      ) : (
-       <ProductDesignPage
-  onBack={() => {
-    setPage("home");
-    setTimeout(() => {
-     document.getElementById("works")?.scrollIntoView({
-  behavior: "auto",
-  block: "start",
-});
-    }, 50);
-  }}
-/>
-      )}
+      <AnimatePresence mode="wait">
+        {page === "home" ? (
+          <motion.div
+            key="home"
+            initial={{ opacity: 0, filter: "blur(8px)" }}
+            animate={{ opacity: 1, filter: "blur(0px)" }}
+            exit={{ opacity: 0, filter: "blur(8px)" }}
+            transition={{ duration: 0.45, ease: [0.76, 0, 0.24, 1] }}
+          >
+            <Nav />
+            <Hero />
+            <About />
+            <Works
+              onOpenProduct={() => {
+                window.scrollTo({ top: 0, behavior: "auto" });
+                setPage("product");
+              }}
+            />
+          </motion.div>
+        ) : (
+          <motion.div
+            key="product"
+            initial={{ opacity: 0, filter: "blur(8px)" }}
+            animate={{ opacity: 1, filter: "blur(0px)" }}
+            exit={{ opacity: 0, filter: "blur(8px)" }}
+            transition={{ duration: 0.45, ease: [0.76, 0, 0.24, 1] }}
+          >
+            <ProductDesignPage
+              onBack={() => {
+                setPage("home");
+                setTimeout(() => {
+                  document.getElementById("works")?.scrollIntoView({
+                    behavior: "auto",
+                    block: "start",
+                  });
+                }, 50);
+              }}
+            />
+          </motion.div>
+        )}
+      </AnimatePresence>
     </main>
   );
 }
