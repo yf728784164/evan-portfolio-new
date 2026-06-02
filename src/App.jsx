@@ -846,7 +846,7 @@ export default function App() {
   onOpenProduct={() => {
     setPage("product");
     setTimeout(() => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
+     window.scrollTo({ top: 0, behavior: "auto" });
     }, 50);
   }}
 />
@@ -856,10 +856,10 @@ export default function App() {
   onBack={() => {
     setPage("home");
     setTimeout(() => {
-      document.getElementById("works")?.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
+     document.getElementById("works")?.scrollIntoView({
+  behavior: "auto",
+  block: "start",
+});
     }, 50);
   }}
 />
