@@ -602,7 +602,7 @@ function About() {
   );
 }
 
-function Works() {
+function Works({ onOpenProduct }) {
   const workCategories = [
 {
   title: "产品设计",
@@ -654,7 +654,13 @@ function Works() {
           {workCategories.map((item, index) => (
             <motion.a
               key={item.title}
-              href={`#${item.en.toLowerCase().replaceAll(" ", "-")}`}
+              href="#works"
+onClick={(e) => {
+  if (item.title === "产品设计") {
+    e.preventDefault();
+    onOpenProduct();
+  }
+}}
               className="group relative min-h-[420px] overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.025] md:min-h-[520px]"
               initial={{ opacity: 0, y: 36 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -707,16 +713,140 @@ function Works() {
     </section>
   );
 }
+function ProductDesignPage({ onBack }) {
+  const projects = [
+    {
+      num: "01",
+      museum: "敦煌研究院文创",
+      title: "敦煌花马·甜春集新春茶礼",
+      type: "文创茶礼 / 陶瓷产品设计 / 礼盒设计",
+      intro:
+        "以敦煌壁画中的花马意象为灵感来源，将传统吉祥文化与新春茶礼结合，通过柔和的色彩、花卉纹样与陶瓷器型设计，重构年轻化的新春礼赠体验。",
+    },
+    {
+      num: "02",
+      museum: "河南博物馆文创",
+      title: "灵餮御茗文创茶礼",
+      type: "文创茶礼 / 陶瓷产品设计",
+      intro: "项目介绍预留。",
+    },
+    {
+      num: "03",
+      museum: "西安博物院文创",
+      title: "奉进遗珍文创茶礼",
+      type: "文创茶礼 / 陶瓷产品设计",
+      intro: "项目介绍预留。",
+    },
+    {
+      num: "04",
+      museum: "Christmas Party",
+      title: "Ceramic Dinner Plate",
+      type: "餐具设计 / 陶瓷产品设计",
+      intro: "项目介绍预留。",
+    },
+  ];
+
+  return (
+    <section className="relative min-h-screen overflow-hidden bg-[#030303] px-5 py-20 text-white md:px-10 md:py-28">
+      <ParticleField />
+      <div className="absolute inset-0 bg-black/80" />
+
+      <div className="relative z-10 mx-auto max-w-[1500px]">
+        <button
+          onClick={onBack}
+          className="mb-10 text-xs tracking-[0.3em] text-white/45 transition hover:text-white"
+        >
+          ← 返回作品案例
+        </button>
+
+        <div className="mb-14 border-b border-white/10 pb-8">
+          <p className="text-xs tracking-[0.45em] text-white/30">
+            PRODUCT DESIGN
+          </p>
+
+          <h1 className="mt-4 text-3xl font-bold tracking-[0.08em] md:text-5xl">
+            产品设计
+          </h1>
+
+          <p className="mt-6 max-w-2xl text-sm leading-8 tracking-[0.08em] text-white/45">
+            围绕陶瓷、餐桌文化与文创礼品展开的产品设计实践。
+          </p>
+        </div>
+
+        <div className="space-y-16">
+          {projects.map((project) => (
+            <motion.article
+              key={project.num}
+              initial={{ opacity: 0, y: 36 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="rounded-[2rem] border border-white/10 bg-white/[0.025] p-6 md:p-10"
+            >
+              <div className="grid gap-10 md:grid-cols-[0.8fr_1.2fr]">
+                <div>
+                  <p className="text-5xl font-black text-white/15">
+                    {project.num}
+                  </p>
+
+                  <p className="mt-8 text-xs tracking-[0.35em] text-white/35">
+                    {project.museum}
+                  </p>
+
+                  <h2 className="mt-4 text-2xl font-bold leading-tight tracking-[0.04em] md:text-4xl">
+                    {project.title}
+                  </h2>
+
+                  <p className="mt-5 text-sm leading-8 text-white/45">
+                    {project.type}
+                  </p>
+
+                  <p className="mt-8 text-sm leading-8 text-white/55">
+                    {project.intro}
+                  </p>
+                </div>
+
+                <div className="space-y-6">
+                  <div className="min-h-[320px] rounded-[1.5rem] border border-white/10 bg-white/[0.03] flex items-center justify-center text-xs tracking-[0.3em] text-white/25">
+                    项目封面图
+                  </div>
+
+                  <div className="grid gap-4 md:grid-cols-2">
+                    <div className="min-h-[180px] rounded-[1rem] border border-white/10 bg-white/[0.03] flex items-center justify-center text-xs tracking-[0.25em] text-white/25">
+                      设计过程
+                    </div>
+
+                    <div className="min-h-[180px] rounded-[1rem] border border-white/10 bg-white/[0.03] flex items-center justify-center text-xs tracking-[0.25em] text-white/25">
+                      作品展示
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
 export default function App() {
+  const [page, setPage] = useState("home");
+
   return (
     <main className="bg-[#030303] selection:bg-white selection:text-black">
       <LoadingScreen />
       <CustomCursor />
 
-      <Nav />
-      <Hero />
-      <About />
-      <Works />
+      {page === "home" ? (
+        <>
+          <Nav />
+          <Hero />
+          <About />
+          <Works onOpenProduct={() => setPage("product")} />
+        </>
+      ) : (
+        <ProductDesignPage onBack={() => setPage("home")} />
+      )}
     </main>
   );
 }
