@@ -610,11 +610,10 @@ function Works() {
       image: "/images/works/dunhuang-huama.jpg",
     },
     {
-      title: "包装设计",
-      en: "PACKAGING DESIGN",
-      count: "08",
-      image: "/images/works/package-01.jpg",
-    },
+  title: "包装设计",
+  en: "PACKAGING DESIGN",
+  image: "/images/works/aliyun-midautumn.jpg",
+},
     {
       title: "平面设计",
       en: "GRAPHIC DESIGN",
