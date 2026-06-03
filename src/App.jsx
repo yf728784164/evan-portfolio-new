@@ -930,9 +930,13 @@ const processDescriptions = [
       ))}
     </div>
   </div>
+
 </div>
-    </section>
-  );
+
+</main>
+</div>
+</section>
+);
 }
 export default function App() {
   const [page, setPage] = useState("home");
