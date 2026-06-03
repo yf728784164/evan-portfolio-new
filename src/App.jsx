@@ -869,20 +869,14 @@ const processDescriptions = [
 
           
 
-    <div className="mt-5 grid gap-4">
-      {currentProject.gallery?.map((img, index) => (
-        <div
-          key={index}
-          className="aspect-[16/9] overflow-hidden rounded-[1rem] border border-white/10 bg-white/[0.035]"
-        >
-          <img
-            src={img}
-            alt=""
-            className="h-full w-full object-cover"
-          />
-        </div>
-      ))}
-    </div>
+    <div className="grid gap-6 md:grid-cols-[0.7fr_1fr]">
+  <div className="rounded-[1.5rem] border border-white/10 bg-white/[0.025] p-6">
+    <h3 className="text-sm font-semibold tracking-[0.16em] text-white/70">
+      设计背景
+    </h3>
+    <p className="mt-4 text-sm leading-8 text-white/50">
+      {currentProject.background || "设计背景预留。"}
+    </p>
   </div>
 
   <div className="rounded-[1.5rem] border border-white/10 bg-white/[0.025] p-6">
@@ -926,8 +920,8 @@ const processDescriptions = [
       ))}
     </div>
   </div>
-
 </div>
+
 <div className="rounded-[1.5rem] border border-white/10 bg-white/[0.025] p-6">
   <h3 className="text-sm font-semibold tracking-[0.16em] text-white/70">
     作品展示
