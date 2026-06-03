@@ -737,6 +737,18 @@ function ProductDesignPage({ onBack }) {
       museum: "敦煌研究院文创",
       title: "敦煌花马·甜春集新春茶礼",
       type: "文创茶礼 / 陶瓷产品设计 / 礼盒设计",
+    
+      cover: "/images/projects/dunhuang/cover.png",
+    
+      process: [
+        "/images/projects/dunhuang/process-01.png",
+        "/images/projects/dunhuang/process-02.png",
+      ],
+    
+      gallery: [
+        "/images/projects/dunhuang/cover.png",
+      ],
+    
       intro:
         "以敦煌壁画中的花马意象为灵感来源，将传统吉祥文化与新春茶礼结合，通过柔和的色彩、花卉纹样与陶瓷器型设计，重构年轻化的新春礼赠体验。",
     },
@@ -791,73 +803,100 @@ function ProductDesignPage({ onBack }) {
         </div>
 
         <div className="space-y-16">
-          {projects.map((project) => (
-            <motion.article
-              key={project.num}
-              initial={{ opacity: 0, y: 36 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="rounded-[2rem] border border-white/10 bg-white/[0.025] p-6 md:p-10"
-            >
-              <div className="grid gap-10 md:grid-cols-[0.8fr_1.2fr]">
-                <div>
-                  <p className="text-5xl font-black text-white/15">
-                    {project.num}
-                  </p>
+         {projects.map((project) => (
+  <motion.article
+    key={project.num}
+    initial={{ opacity: 0, y: 36 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.8 }}
+    className="rounded-[2rem] border border-white/10 bg-white/[0.025] p-6 md:p-10"
+  >
+    <div className="grid gap-10 md:grid-cols-[0.8fr_1.2fr]">
+      <div>
+        <p className="text-5xl font-black text-white/15">
+          {project.num}
+        </p>
 
-                  <p className="mt-8 text-xs tracking-[0.35em] text-white/35">
-                    {project.museum}
-                  </p>
+        <p className="mt-8 text-xs tracking-[0.35em] text-white/35">
+          {project.museum}
+        </p>
 
-                  <h2 className="mt-4 text-2xl font-bold leading-tight tracking-[0.04em] md:text-4xl">
-                    {project.title}
-                  </h2>
+        <h2 className="mt-4 text-2xl font-bold leading-tight tracking-[0.04em] md:text-4xl">
+          {project.title}
+        </h2>
 
-                  <p className="mt-5 text-sm leading-8 text-white/45">
-                    {project.type}
-                  </p>
+        <p className="mt-5 text-sm leading-8 text-white/45">
+          {project.type}
+        </p>
 
-                  <p className="mt-8 text-sm leading-8 text-white/55">
-                    {project.intro}
-                  </p>
-                </div>
-
-                <div className="space-y-5">
-  <div className="aspect-[16/9] overflow-hidden rounded-[1.5rem] border border-white/10 bg-white/[0.035]">
-    <div className="flex h-full items-center justify-center text-xs tracking-[0.3em] text-white/25">
-      项目封面图
-    </div>
-  </div>
-
-  <div className="grid gap-5 md:grid-cols-2">
-    <div className="aspect-square overflow-hidden rounded-[1.25rem] border border-white/10 bg-white/[0.035]">
-      <div className="flex h-full items-center justify-center text-xs tracking-[0.25em] text-white/25">
-        设计过程
+        <p className="mt-8 text-sm leading-8 text-white/55">
+          {project.intro}
+        </p>
       </div>
-    </div>
 
-    <div className="aspect-square overflow-hidden rounded-[1.25rem] border border-white/10 bg-white/[0.035]">
-      <div className="flex h-full items-center justify-center text-xs tracking-[0.25em] text-white/25">
-        图案 / 细节
-      </div>
-    </div>
-  </div>
+      <div className="space-y-5">
+        <div className="aspect-[16/9] overflow-hidden rounded-[1.5rem] border border-white/10 bg-white/[0.035]">
+          {project.cover ? (
+            <img
+              src={project.cover}
+              alt={project.title}
+              className="h-full w-full object-cover"
+            />
+          ) : (
+            <div className="flex h-full items-center justify-center text-xs tracking-[0.3em] text-white/25">
+              项目封面图
+            </div>
+          )}
+        </div>
 
-  <div className="aspect-[21/9] overflow-hidden rounded-[1.25rem] border border-white/10 bg-white/[0.035]">
-    <div className="flex h-full items-center justify-center text-xs tracking-[0.25em] text-white/25">
-      作品展示
-    </div>
-  </div>
-</div>
+        <div className="grid gap-5 md:grid-cols-2">
+          <div className="aspect-square overflow-hidden rounded-[1.25rem] border border-white/10 bg-white/[0.035]">
+            {project.process?.[0] ? (
+              <img
+                src={project.process[0]}
+                alt=""
+                className="h-full w-full object-cover"
+              />
+            ) : (
+              <div className="flex h-full items-center justify-center text-xs tracking-[0.25em] text-white/25">
+                设计过程
               </div>
-            </motion.article>
-          ))}
+            )}
+          </div>
+
+          <div className="aspect-square overflow-hidden rounded-[1.25rem] border border-white/10 bg-white/[0.035]">
+            {project.gallery?.[0] ? (
+              <img
+                src={project.gallery[0]}
+                alt=""
+                className="h-full w-full object-cover"
+              />
+            ) : (
+              <div className="flex h-full items-center justify-center text-xs tracking-[0.25em] text-white/25">
+                图案 / 细节
+              </div>
+            )}
+          </div>
+        </div>
+
+        <div className="aspect-[21/9] overflow-hidden rounded-[1.25rem] border border-white/10 bg-white/[0.035]">
+          {project.gallery?.[1] ? (
+            <img
+              src={project.gallery[1]}
+              alt=""
+              className="h-full w-full object-cover"
+            />
+          ) : (
+            <div className="flex h-full items-center justify-center text-xs tracking-[0.25em] text-white/25">
+              作品展示
+            </div>
+          )}
         </div>
       </div>
-    </section>
-  );
-}
+    </div>
+  </motion.article>
+))}
 export default function App() {
   const [page, setPage] = useState("home");
   const [homeScrollY, setHomeScrollY] = useState(0);
