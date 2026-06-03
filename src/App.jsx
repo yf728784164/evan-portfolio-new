@@ -854,7 +854,7 @@ function ProductDesignPage({ onBack }) {
                 设计过程
               </h3>
 
-              <div className="mt-5 grid gap-4 md:grid-cols-2">
+             <div className="mt-5 grid gap-4 md:grid-cols-2">
   {[
     "文化元素提取",
     "图案设计",
@@ -889,8 +889,6 @@ function ProductDesignPage({ onBack }) {
     </div>
   ))}
 </div>
-                ))}
-              </div>
             </div>
           </div>
         </main>
