@@ -781,78 +781,8 @@ function ProductDesignPage({ onBack }) {
       <ParticleField />
       <div className="absolute inset-0 bg-black/82" />
 
-      <div className="relative z-10 mx-auto grid max-w-[1680px] gap-8 lg:grid-cols-[0.9fr_1.45fr]">
-        <aside className="space-y-6">
-          <button
-            onClick={onBack}
-            className="text-xs tracking-[0.25em] text-white/45 transition hover:text-white"
-          >
-            ← 返回作品案例
-          </button>
-
-          <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.025]">
-            <div className="relative aspect-[16/10] overflow-hidden border-b border-white/10">
-              {currentProject.cover ? (
-                <img
-                  src={currentProject.cover}
-                  alt={currentProject.title}
-                  className="h-full w-full object-cover"
-                />
-              ) : (
-                <div className="flex h-full items-center justify-center text-xs tracking-[0.3em] text-white/25">
-                  PRODUCT DESIGN
-                </div>
-              )}
-
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/35 to-transparent" />
-
-              <div className="absolute bottom-6 left-6 right-6">
-                <p className="text-xs tracking-[0.35em] text-white/45">
-                  PRODUCT DESIGN
-                </p>
-                <h1 className="mt-3 text-3xl font-bold tracking-[0.06em] md:text-4xl">
-                  产品设计
-                </h1>
-              </div>
-            </div>
-
-            
-              <div className="grid grid-cols-2 gap-3 md:grid-cols-4 lg:grid-cols-2 xl:grid-cols-4">
-                {projects.map((project, index) => (
-                  <div
-                    key={project.num}
-                    className={`group overflow-hidden rounded-[1rem] border bg-white/[0.025] ${
-                      index === 0 ? "border-white/50" : "border-white/10"
-                    }`}
-                  >
-                    <div className="aspect-[4/3] overflow-hidden bg-white/[0.03]">
-                      {project.cover ? (
-                        <img
-                          src={project.cover}
-                          alt={project.title}
-                          className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
-                        />
-                      ) : (
-                        <div className="flex h-full items-center justify-center text-[10px] tracking-[0.25em] text-white/20">
-                          IMAGE
-                        </div>
-                      )}
-                    </div>
-
-                    <div className="p-3">
-                      <p className="text-sm font-semibold leading-snug text-white/80">
-                        {project.title}
-                      </p>
-                      <p className="mt-2 text-[11px] tracking-[0.12em] text-white/35">
-                        {project.type}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </aside>
+     <div className="relative z-10 mx-auto max-w-[1680px]">
+        
 
         <main className="space-y-8">
           <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.025]">
