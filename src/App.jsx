@@ -779,7 +779,6 @@ function ProductDesignPage({ onBack }) {
   ];
 
   const currentProject = projects[0];
-
 const processDescriptions = [
   "提取敦煌翼马文化元素",
   "马卡龙色系重构传统纹样",
@@ -915,7 +914,7 @@ const processDescriptions = [
             </h3>
 
             <div className="mt-5 grid gap-4 md:grid-cols-3">
-              {[currentProject.cover, ...(currentProject.process || [])].map(
+            {currentProject.gallery?.map(
                 (img, index) => (
                   <div
                     key={index}
