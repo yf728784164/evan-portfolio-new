@@ -867,11 +867,7 @@ const processDescriptions = [
             </div>
           </div>
 
-          <div className="grid gap-6 md:grid-cols-[1fr_0.85fr]">
-  <div className="rounded-[1.5rem] border border-white/10 bg-white/[0.025] p-6">
-    <h3 className="text-sm font-semibold tracking-[0.16em] text-white/70">
-      作品展示
-    </h3>
+          
 
     <div className="mt-5 grid gap-4">
       {currentProject.gallery?.map((img, index) => (
@@ -903,7 +899,7 @@ const processDescriptions = [
       ].map((step, index) => (
         <div
           key={step}
-          className="grid grid-cols-[88px_1fr] gap-3 overflow-hidden rounded-[1rem] border border-white/10 bg-white/[0.035] p-3"
+          className="grid grid-cols-[72px_1fr] gap-3 overflow-hidden rounded-[1rem] border border-white/10 bg-white/[0.035] p-3"
         >
           <div className="aspect-square overflow-hidden rounded-[0.75rem] bg-white/[0.04]">
             <img
@@ -914,7 +910,7 @@ const processDescriptions = [
           </div>
 
           <div>
-            <p className="text-2xl font-black text-white/22">
+            <p className="text-xl font-black text-white/22">
               0{index + 1}
             </p>
 
@@ -932,7 +928,26 @@ const processDescriptions = [
   </div>
 
 </div>
+<div className="rounded-[1.5rem] border border-white/10 bg-white/[0.025] p-6">
+  <h3 className="text-sm font-semibold tracking-[0.16em] text-white/70">
+    作品展示
+  </h3>
 
+  <div className="mt-5 grid gap-4 md:grid-cols-3">
+    {currentProject.gallery?.map((img, index) => (
+      <div
+        key={index}
+        className="aspect-[4/3] overflow-hidden rounded-[1rem] border border-white/10"
+      >
+        <img
+          src={img}
+          alt=""
+          className="h-full w-full object-cover"
+        />
+      </div>
+    ))}
+  </div>
+</div>
 </main>
 </div>
 </section>
