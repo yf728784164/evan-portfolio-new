@@ -816,22 +816,7 @@ function ProductDesignPage({ onBack }) {
               </div>
             </div>
 
-            <div className="p-5 md:p-6">
-              <div className="mb-5 flex items-center justify-between">
-                <p className="text-sm tracking-[0.12em] text-white/65">
-                  产品设计作品
-                </p>
-
-                <div className="flex gap-2">
-                  <button className="grid h-9 w-9 place-items-center rounded-full border border-white/10 text-white/40">
-                    ‹
-                  </button>
-                  <button className="grid h-9 w-9 place-items-center rounded-full border border-white/10 text-white/40">
-                    ›
-                  </button>
-                </div>
-              </div>
-
+            
               <div className="grid grid-cols-2 gap-3 md:grid-cols-4 lg:grid-cols-2 xl:grid-cols-4">
                 {projects.map((project, index) => (
                   <div
