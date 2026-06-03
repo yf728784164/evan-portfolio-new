@@ -733,21 +733,25 @@ onClick={(e) => {
 function ProductDesignPage({ onBack }) {
   const projects = [
     {
-      num: "01",
-      museum: "敦煌研究院文创",
-      title: "敦煌花马·甜春集新春茶礼",
-      en: "DUNHUANG FLORAL STEED SPRING TEA SET",
-      type: "新春茶礼 / 陶瓷设计",
-      cover: "/images/projects/dunhuang/cover.jpg",
-      process: [
-        "/images/projects/dunhuang/process-01.jpg",
-        "/images/projects/dunhuang/process-02.jpg",
-      ],
-      intro:
-        "以敦煌壁画中的花马意象为灵感来源，将传统吉祥文化与新春茶礼结合，通过柔和的色彩、花卉纹样与陶瓷器型设计，重构年轻化的新春礼赠体验。",
-      background:
-        "敦煌文化拥有丰富的图像资源与精神内涵，而传统新春礼品往往停留在符号堆叠与节庆装饰层面。本项目尝试从敦煌花马形象出发，以“甜春集”为主题，将新春祝福、茶文化与当代审美进行融合。",
-    },
+  num: "01",
+  museum: "敦煌研究院文创",
+  title: "敦煌花马·甜春集新春茶礼",
+
+  cover: "/images/projects/dunhuang/cover.jpg",
+
+  process: [
+    "/images/projects/dunhuang/process-01.jpg",
+    "/images/projects/dunhuang/process-02.jpg",
+    "/images/projects/dunhuang/process-03.jpg",
+    "/images/projects/dunhuang/process-04.jpg",
+  ],
+
+  gallery: [
+    "/images/projects/dunhuang/gallery-01.jpg",
+    "/images/projects/dunhuang/gallery-02.jpg",
+    "/images/projects/dunhuang/gallery-03.jpg",
+  ],
+},
     {
       num: "02",
       museum: "河南博物馆文创",
@@ -775,6 +779,13 @@ function ProductDesignPage({ onBack }) {
   ];
 
   const currentProject = projects[0];
+
+const processDescriptions = [
+  "提取敦煌翼马文化元素",
+  "马卡龙色系重构传统纹样",
+  "圆润器型搭配点心碟组合",
+  "全新礼盒配色与开箱体验",
+];
 
   return (
     <section className="relative min-h-screen overflow-hidden bg-[#030303] px-5 py-20 text-white md:px-10 md:py-24">
@@ -890,8 +901,8 @@ function ProductDesignPage({ onBack }) {
                       {step}
                     </p>
                     <p className="mt-3 text-xs leading-6 text-white/42">
-                      内容与图片预留。
-                    </p>
+  {processDescriptions[index]}
+</p>
                   </div>
                 ))}
               </div>
