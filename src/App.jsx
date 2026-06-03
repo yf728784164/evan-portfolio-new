@@ -736,166 +736,263 @@ function ProductDesignPage({ onBack }) {
       num: "01",
       museum: "敦煌研究院文创",
       title: "敦煌花马·甜春集新春茶礼",
-      type: "文创茶礼 / 陶瓷产品设计 / 礼盒设计",
-    
+      en: "DUNHUANG FLORAL STEED SPRING TEA SET",
+      type: "新春茶礼 / 陶瓷设计",
       cover: "/images/projects/dunhuang/cover.jpg",
-    
       process: [
         "/images/projects/dunhuang/process-01.jpg",
         "/images/projects/dunhuang/process-02.jpg",
       ],
-    
-      gallery: [
-        "/images/projects/dunhuang/cover.jpg",
-      ],
-    
       intro:
         "以敦煌壁画中的花马意象为灵感来源，将传统吉祥文化与新春茶礼结合，通过柔和的色彩、花卉纹样与陶瓷器型设计，重构年轻化的新春礼赠体验。",
+      background:
+        "敦煌文化拥有丰富的图像资源与精神内涵，而传统新春礼品往往停留在符号堆叠与节庆装饰层面。本项目尝试从敦煌花马形象出发，以“甜春集”为主题，将新春祝福、茶文化与当代审美进行融合。",
     },
     {
       num: "02",
       museum: "河南博物馆文创",
       title: "灵餮御茗文创茶礼",
-      type: "文创茶礼 / 陶瓷产品设计",
+      en: "MUSEUM CULTURAL TEA GIFT",
+      type: "文创茶礼 / 陶瓷设计",
       intro: "项目介绍预留。",
     },
     {
       num: "03",
       museum: "西安博物院文创",
       title: "奉进遗珍文创茶礼",
-      type: "文创茶礼 / 陶瓷产品设计",
+      en: "CULTURAL HERITAGE TEA GIFT",
+      type: "文创茶礼 / 陶瓷设计",
       intro: "项目介绍预留。",
     },
     {
       num: "04",
       museum: "Christmas Party",
       title: "Ceramic Dinner Plate",
-      type: "餐具设计 / 陶瓷产品设计",
+      en: "CHRISTMAS PARTY CERAMIC DINNER PLATE",
+      type: "餐具设计 / 陶瓷设计",
       intro: "项目介绍预留。",
     },
   ];
 
+  const currentProject = projects[0];
+
   return (
-    <section className="relative min-h-screen overflow-hidden bg-[#030303] px-5 py-20 text-white md:px-10 md:py-28">
+    <section className="relative min-h-screen overflow-hidden bg-[#030303] px-5 py-20 text-white md:px-10 md:py-24">
       <ParticleField />
-      <div className="absolute inset-0 bg-black/80" />
+      <div className="absolute inset-0 bg-black/82" />
 
-      <div className="relative z-10 mx-auto max-w-[1500px]">
-        <button
-          onClick={onBack}
-          className="mb-10 text-xs tracking-[0.3em] text-white/45 transition hover:text-white"
-        >
-          ← 返回作品案例
-        </button>
+      <div className="relative z-10 mx-auto grid max-w-[1680px] gap-8 lg:grid-cols-[0.9fr_1.45fr]">
+        <aside className="space-y-6">
+          <button
+            onClick={onBack}
+            className="text-xs tracking-[0.25em] text-white/45 transition hover:text-white"
+          >
+            ← 返回作品案例
+          </button>
 
-        <div className="mb-14 border-b border-white/10 pb-8">
-          <p className="text-xs tracking-[0.45em] text-white/30">
-            PRODUCT DESIGN
-          </p>
-
-          <h1 className="mt-4 text-3xl font-bold tracking-[0.08em] md:text-5xl">
-            产品设计
-          </h1>
-
-          <p className="mt-6 max-w-2xl text-sm leading-8 tracking-[0.08em] text-white/45">
-            围绕陶瓷、餐桌文化与文创礼品展开的产品设计实践。
-          </p>
-        </div>
-
-        <div className="space-y-16">
-  {projects.map((project) => (
-    <motion.article
-      key={project.num}
-      initial={{ opacity: 0, y: 36 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.8 }}
-      className="rounded-[2rem] border border-white/10 bg-white/[0.025] p-6 md:p-10"
-    >
-      <div className="grid gap-10 md:grid-cols-[0.8fr_1.2fr]">
-        <div>
-          <p className="text-5xl font-black text-white/15">{project.num}</p>
-
-          <p className="mt-8 text-xs tracking-[0.35em] text-white/35">
-            {project.museum}
-          </p>
-
-          <h2 className="mt-4 text-2xl font-bold leading-tight tracking-[0.04em] md:text-4xl">
-            {project.title}
-          </h2>
-
-          <p className="mt-5 text-sm leading-8 text-white/45">
-            {project.type}
-          </p>
-
-          <p className="mt-8 text-sm leading-8 text-white/55">
-            {project.intro}
-          </p>
-        </div>
-
-        <div className="space-y-5">
-          <div className="aspect-[16/9] overflow-hidden rounded-[1.5rem] border border-white/10 bg-white/[0.035]">
-            {project.cover ? (
-              <img
-                src={project.cover}
-                alt={project.title}
-                className="h-full w-full object-cover"
-              />
-            ) : (
-              <div className="flex h-full items-center justify-center text-xs tracking-[0.3em] text-white/25">
-                项目封面图
-              </div>
-            )}
-          </div>
-
-          <div className="grid gap-5 md:grid-cols-2">
-            <div className="aspect-square overflow-hidden rounded-[1.25rem] border border-white/10 bg-white/[0.035]">
-              {project.process?.[0] ? (
+          <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.025]">
+            <div className="relative aspect-[16/10] overflow-hidden border-b border-white/10">
+              {currentProject.cover ? (
                 <img
-                  src={project.process[0]}
-                  alt=""
+                  src={currentProject.cover}
+                  alt={currentProject.title}
                   className="h-full w-full object-cover"
                 />
               ) : (
-                <div className="flex h-full items-center justify-center text-xs tracking-[0.25em] text-white/25">
-                  设计过程
+                <div className="flex h-full items-center justify-center text-xs tracking-[0.3em] text-white/25">
+                  PRODUCT DESIGN
                 </div>
               )}
+
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/35 to-transparent" />
+
+              <div className="absolute bottom-6 left-6 right-6">
+                <p className="text-xs tracking-[0.35em] text-white/45">
+                  PRODUCT DESIGN
+                </p>
+                <h1 className="mt-3 text-3xl font-bold tracking-[0.06em] md:text-4xl">
+                  产品设计
+                </h1>
+              </div>
             </div>
 
-            <div className="aspect-square overflow-hidden rounded-[1.25rem] border border-white/10 bg-white/[0.035]">
-              {project.process?.[1] ? (
+            <div className="p-5 md:p-6">
+              <div className="mb-5 flex items-center justify-between">
+                <p className="text-sm tracking-[0.12em] text-white/65">
+                  产品设计作品
+                </p>
+
+                <div className="flex gap-2">
+                  <button className="grid h-9 w-9 place-items-center rounded-full border border-white/10 text-white/40">
+                    ‹
+                  </button>
+                  <button className="grid h-9 w-9 place-items-center rounded-full border border-white/10 text-white/40">
+                    ›
+                  </button>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-2 gap-3 md:grid-cols-4 lg:grid-cols-2 xl:grid-cols-4">
+                {projects.map((project, index) => (
+                  <div
+                    key={project.num}
+                    className={`group overflow-hidden rounded-[1rem] border bg-white/[0.025] ${
+                      index === 0 ? "border-white/50" : "border-white/10"
+                    }`}
+                  >
+                    <div className="aspect-[4/3] overflow-hidden bg-white/[0.03]">
+                      {project.cover ? (
+                        <img
+                          src={project.cover}
+                          alt={project.title}
+                          className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
+                        />
+                      ) : (
+                        <div className="flex h-full items-center justify-center text-[10px] tracking-[0.25em] text-white/20">
+                          IMAGE
+                        </div>
+                      )}
+                    </div>
+
+                    <div className="p-3">
+                      <p className="text-sm font-semibold leading-snug text-white/80">
+                        {project.title}
+                      </p>
+                      <p className="mt-2 text-[11px] tracking-[0.12em] text-white/35">
+                        {project.type}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </aside>
+
+        <main className="space-y-8">
+          <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.025]">
+            <div className="relative aspect-[16/9] overflow-hidden">
+              {currentProject.cover ? (
                 <img
-                  src={project.process[1]}
-                  alt=""
+                  src={currentProject.cover}
+                  alt={currentProject.title}
                   className="h-full w-full object-cover"
                 />
               ) : (
-                <div className="flex h-full items-center justify-center text-xs tracking-[0.25em] text-white/25">
-                  图案 / 细节
+                <div className="flex h-full items-center justify-center text-xs tracking-[0.3em] text-white/25">
+                  PROJECT COVER
                 </div>
               )}
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
+            </div>
+
+            <div className="grid gap-8 p-6 md:grid-cols-[0.9fr_1fr] md:p-8">
+              <div>
+                <p className="text-xs tracking-[0.35em] text-white/45">
+                  {currentProject.museum}
+                </p>
+                <h2 className="mt-4 text-3xl font-bold tracking-[0.04em] md:text-4xl">
+                  {currentProject.title}
+                </h2>
+                <p className="mt-3 text-xs tracking-[0.16em] text-white/45">
+                  {currentProject.en}
+                </p>
+
+                <div className="mt-6 flex flex-wrap gap-2">
+                  {["产品设计", "陶瓷设计", "文化创意", "礼赠设计"].map(
+                    (tag) => (
+                      <span
+                        key={tag}
+                        className="rounded-full border border-white/12 px-3 py-1 text-xs text-white/55"
+                      >
+                        {tag}
+                      </span>
+                    )
+                  )}
+                </div>
+              </div>
+
+              <div>
+                <h3 className="text-sm font-semibold tracking-[0.16em] text-white/70">
+                  项目介绍
+                </h3>
+                <p className="mt-4 text-sm leading-8 text-white/55">
+                  {currentProject.intro}
+                </p>
+              </div>
             </div>
           </div>
 
-          <div className="aspect-[21/9] overflow-hidden rounded-[1.25rem] border border-white/10 bg-white/[0.035]">
-            {project.gallery?.[0] ? (
-              <img
-                src={project.gallery[0]}
-                alt=""
-                className="h-full w-full object-cover"
-              />
-            ) : (
-              <div className="flex h-full items-center justify-center text-xs tracking-[0.25em] text-white/25">
-                作品展示
+          <div className="grid gap-6 md:grid-cols-[0.7fr_1fr]">
+            <div className="rounded-[1.5rem] border border-white/10 bg-white/[0.025] p-6">
+              <h3 className="text-sm font-semibold tracking-[0.16em] text-white/70">
+                设计背景
+              </h3>
+              <p className="mt-4 text-sm leading-8 text-white/50">
+                {currentProject.background || "设计背景预留。"}
+              </p>
+            </div>
+
+            <div className="rounded-[1.5rem] border border-white/10 bg-white/[0.025] p-6">
+              <h3 className="text-sm font-semibold tracking-[0.16em] text-white/70">
+                设计过程
+              </h3>
+
+              <div className="mt-5 grid gap-4 md:grid-cols-2">
+                {[
+                  "文化元素提取",
+                  "图案设计",
+                  "器型与产品设计",
+                  "包装与礼赠体验",
+                ].map((step, index) => (
+                  <div
+                    key={step}
+                    className="rounded-[1rem] border border-white/10 bg-white/[0.035] p-4"
+                  >
+                    <p className="text-3xl font-black text-white/22">
+                      0{index + 1}
+                    </p>
+                    <p className="mt-2 text-sm font-semibold text-white/75">
+                      {step}
+                    </p>
+                    <p className="mt-3 text-xs leading-6 text-white/42">
+                      内容与图片预留。
+                    </p>
+                  </div>
+                ))}
               </div>
-            )}
+            </div>
           </div>
-        </div>
-      </div>
-    </motion.article>
-  ))}
-</div>
+
+          <div className="rounded-[1.5rem] border border-white/10 bg-white/[0.025] p-6">
+            <h3 className="text-sm font-semibold tracking-[0.16em] text-white/70">
+              作品展示
+            </h3>
+
+            <div className="mt-5 grid gap-4 md:grid-cols-3">
+              {[currentProject.cover, ...(currentProject.process || [])].map(
+                (img, index) => (
+                  <div
+                    key={index}
+                    className="aspect-[4/3] overflow-hidden rounded-[1rem] border border-white/10 bg-white/[0.035]"
+                  >
+                    {img ? (
+                      <img
+                        src={img}
+                        alt=""
+                        className="h-full w-full object-cover"
+                      />
+                    ) : (
+                      <div className="flex h-full items-center justify-center text-xs tracking-[0.25em] text-white/25">
+                        IMAGE
+                      </div>
+                    )}
+                  </div>
+                )
+              )}
+            </div>
+          </div>
+        </main>
       </div>
     </section>
   );
