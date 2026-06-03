@@ -869,7 +869,7 @@ const processDescriptions = [
 
           
 
-   <div className="grid gap-6 md:grid-cols-[0.7fr_1fr]">
+  <div className="grid gap-6 md:grid-cols-[0.7fr_1fr]">
   <div className="rounded-[1.5rem] border border-white/10 bg-white/[0.025] p-6">
     <h3 className="text-sm font-semibold tracking-[0.16em] text-white/70">
       设计背景
@@ -893,38 +893,24 @@ const processDescriptions = [
       ].map((step, index) => (
         <div
           key={step}
-          className="overflow-hidden rounded-[1rem] border border-white/10 bg-white/[0.035]"
+          className="rounded-[1rem] border border-white/10 bg-white/[0.035] p-4"
         >
-          <div className="aspect-[4/3] overflow-hidden">
-            <img
-              src={currentProject.process[index]}
-              alt={step}
-              className="h-full w-full object-cover"
-            />
-          </div>
+          <p className="text-3xl font-black text-white/22">
+            0{index + 1}
+          </p>
 
-          <div className="p-4">
-            <p className="text-2xl font-black text-white/22">
-              0{index + 1}
-            </p>
+          <p className="mt-2 text-sm font-semibold text-white/75">
+            {step}
+          </p>
 
-            <p className="mt-2 text-sm font-semibold text-white/75">
-              {step}
-            </p>
-
-            <p className="mt-2 text-xs leading-5 text-white/42">
-              {processDescriptions[index]}
-            </p>
-          </div>
+          <p className="mt-3 text-xs leading-6 text-white/42">
+            {processDescriptions[index]}
+          </p>
         </div>
       ))}
     </div>
   </div>
 </div>
-
-</main>
-</div>
-</section>
 );
 }
 export default function App() {
