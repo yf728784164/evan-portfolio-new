@@ -733,100 +733,70 @@ onClick={(e) => {
 function ProductDesignPage({ onBack }) {
   const projects = [
     {
-  num: "01",
-  museum: "敦煌研究院文创",
-  title: "敦煌花马·甜春集新春茶礼",
-
-  cover: "/images/projects/dunhuang/cover.jpg",
-
-  process: [
-    "/images/projects/dunhuang/process-01.jpg",
-    "/images/projects/dunhuang/process-02.jpg",
-    "/images/projects/dunhuang/process-03.jpg",
-    "/images/projects/dunhuang/process-04.jpg",
-  ],
-
-  gallery: [
-    "/images/projects/dunhuang/gallery-01.jpg",
-    "/images/projects/dunhuang/gallery-02.jpg",
-    "/images/projects/dunhuang/gallery-03.jpg",
-  ],
-},
-    {
-      num: "02",
-      museum: "河南博物馆文创",
-      title: "灵餮御茗文创茶礼",
-      en: "MUSEUM CULTURAL TEA GIFT",
+      num: "01",
+      museum: "敦煌研究院文创",
+      title: "敦煌花马·甜春集新春茶礼",
+      en: "DUNHUANG FLORAL STEED SPRING TEA SET",
       type: "文创茶礼 / 陶瓷设计",
       intro: "项目介绍预留。",
-    },
-    {
-      num: "03",
-      museum: "西安博物院文创",
-      title: "奉进遗珍文创茶礼",
-      en: "CULTURAL HERITAGE TEA GIFT",
-      type: "文创茶礼 / 陶瓷设计",
-      intro: "项目介绍预留。",
-    },
-    {
-      num: "04",
-      museum: "Christmas Party",
-      title: "Ceramic Dinner Plate",
-      en: "CHRISTMAS PARTY CERAMIC DINNER PLATE",
-      type: "餐具设计 / 陶瓷设计",
-      intro: "项目介绍预留。",
+      background: "设计背景预留。",
+      cover: "/images/projects/dunhuang/cover.jpg",
+      process: [
+        "/images/projects/dunhuang/process-01.jpg",
+        "/images/projects/dunhuang/process-02.jpg",
+        "/images/projects/dunhuang/process-03.jpg",
+        "/images/projects/dunhuang/process-04.jpg",
+      ],
+      gallery: [
+        "/images/projects/dunhuang/gallery-01.jpg",
+        "/images/projects/dunhuang/gallery-02.jpg",
+        "/images/projects/dunhuang/gallery-03.jpg",
+      ],
     },
   ];
 
   const currentProject = projects[0];
-const processDescriptions = [
-  "提取敦煌翼马文化元素",
-  "马卡龙色系重构传统纹样",
-  "圆润器型搭配点心碟组合",
-  "全新礼盒配色与开箱体验",
-];
+
+  const processDescriptions = [
+    "提取敦煌翼马文化元素",
+    "马卡龙色系重构传统纹样",
+    "圆润器型搭配点心碟组合",
+    "全新礼盒配色与开箱体验",
+  ];
 
   return (
     <section className="relative min-h-screen overflow-hidden bg-[#030303] px-5 py-20 text-white md:px-10 md:py-24">
       <ParticleField />
       <div className="absolute inset-0 bg-black/82" />
 
-     <div className="relative z-10 mx-auto max-w-[1680px]">
-        
-
+      <div className="relative z-10 mx-auto max-w-[1680px]">
         <main className="space-y-8">
-       <div className="relative flex h-[42vh] flex-col items-center justify-center text-center">
+          <div className="relative flex h-[42vh] flex-col items-center justify-center text-center">
+            <button
+              onClick={onBack}
+              className="absolute left-0 top-0 text-xs tracking-[0.25em] text-white/45 transition hover:text-white"
+            >
+              ← 返回作品案例
+            </button>
 
-  <button
-    onClick={onBack}
-    className="absolute left-0 top-0 text-xs tracking-[0.25em] text-white/45 transition hover:text-white"
-  >
-    ← 返回作品案例
-  </button>
+            <p className="text-xs tracking-[0.55em] text-white/30">
+              PRODUCT DESIGN
+            </p>
 
-  <p className="text-xs tracking-[0.55em] text-white/30">
-    PRODUCT DESIGN
-  </p>
+            <h1 className="mt-5 text-5xl font-bold tracking-[0.15em] text-white md:text-7xl">
+              产品设计
+            </h1>
 
-  <h1 className="mt-5 text-5xl font-bold tracking-[0.15em] text-white md:text-7xl">
-    产品设计
-  </h1>
+            <div className="mt-10 h-12 w-px bg-gradient-to-b from-white/40 to-transparent" />
+          </div>
 
-  <div className="mt-10 h-12 w-px bg-gradient-to-b from-white/40 to-transparent" />
-</div>
           <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.025]">
             <div className="relative aspect-[16/9] overflow-hidden">
-              {currentProject.cover ? (
-                <img
-                  src={currentProject.cover}
-                  alt={currentProject.title}
-                  className="h-full w-full object-cover"
-                />
-              ) : (
-                <div className="flex h-full items-center justify-center text-xs tracking-[0.3em] text-white/25">
-                  PROJECT COVER
-                </div>
-              )}
+              <img
+                src={currentProject.cover}
+                alt={currentProject.title}
+                className="h-full w-full object-cover"
+              />
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
             </div>
 
@@ -835,24 +805,24 @@ const processDescriptions = [
                 <p className="text-xs tracking-[0.35em] text-white/45">
                   {currentProject.museum}
                 </p>
+
                 <h2 className="mt-4 text-3xl font-bold tracking-[0.04em] md:text-4xl">
                   {currentProject.title}
                 </h2>
+
                 <p className="mt-3 text-xs tracking-[0.16em] text-white/45">
                   {currentProject.en}
                 </p>
 
                 <div className="mt-6 flex flex-wrap gap-2">
-                  {["产品设计", "陶瓷设计", "文化创意", "礼赠设计"].map(
-                    (tag) => (
-                      <span
-                        key={tag}
-                        className="rounded-full border border-white/12 px-3 py-1 text-xs text-white/55"
-                      >
-                        {tag}
-                      </span>
-                    )
-                  )}
+                  {["产品设计", "陶瓷设计", "文化创意", "礼赠设计"].map((tag) => (
+                    <span
+                      key={tag}
+                      className="rounded-full border border-white/12 px-3 py-1 text-xs text-white/55"
+                    >
+                      {tag}
+                    </span>
+                  ))}
                 </div>
               </div>
 
@@ -860,6 +830,7 @@ const processDescriptions = [
                 <h3 className="text-sm font-semibold tracking-[0.16em] text-white/70">
                   项目介绍
                 </h3>
+
                 <p className="mt-4 text-sm leading-8 text-white/55">
                   {currentProject.intro}
                 </p>
@@ -867,51 +838,53 @@ const processDescriptions = [
             </div>
           </div>
 
-          
+          <div className="grid gap-6 md:grid-cols-[0.7fr_1fr]">
+            <div className="rounded-[1.5rem] border border-white/10 bg-white/[0.025] p-6">
+              <h3 className="text-sm font-semibold tracking-[0.16em] text-white/70">
+                设计背景
+              </h3>
 
-  <div className="grid gap-6 md:grid-cols-[0.7fr_1fr]">
-  <div className="rounded-[1.5rem] border border-white/10 bg-white/[0.025] p-6">
-    <h3 className="text-sm font-semibold tracking-[0.16em] text-white/70">
-      设计背景
-    </h3>
-    <p className="mt-4 text-sm leading-8 text-white/50">
-      {currentProject.background || "设计背景预留。"}
-    </p>
-  </div>
+              <p className="mt-4 text-sm leading-8 text-white/50">
+                {currentProject.background}
+              </p>
+            </div>
 
-  <div className="rounded-[1.5rem] border border-white/10 bg-white/[0.025] p-6">
-    <h3 className="text-sm font-semibold tracking-[0.16em] text-white/70">
-      设计过程
-    </h3>
+            <div className="rounded-[1.5rem] border border-white/10 bg-white/[0.025] p-6">
+              <h3 className="text-sm font-semibold tracking-[0.16em] text-white/70">
+                设计过程
+              </h3>
 
-    <div className="mt-5 grid gap-4 md:grid-cols-2">
-      {[
-        "文化元素提取",
-        "图案设计",
-        "器型与产品设计",
-        "包装与礼赠体验",
-      ].map((step, index) => (
-        <div
-          key={step}
-          className="rounded-[1rem] border border-white/10 bg-white/[0.035] p-4"
-        >
-          <p className="text-3xl font-black text-white/22">
-            0{index + 1}
-          </p>
+              <div className="mt-5 grid gap-4 md:grid-cols-2">
+                {[
+                  "文化元素提取",
+                  "图案设计",
+                  "器型与产品设计",
+                  "包装与礼赠体验",
+                ].map((step, index) => (
+                  <div
+                    key={step}
+                    className="rounded-[1rem] border border-white/10 bg-white/[0.035] p-4"
+                  >
+                    <p className="text-3xl font-black text-white/22">
+                      0{index + 1}
+                    </p>
 
-          <p className="mt-2 text-sm font-semibold text-white/75">
-            {step}
-          </p>
+                    <p className="mt-2 text-sm font-semibold text-white/75">
+                      {step}
+                    </p>
 
-          <p className="mt-3 text-xs leading-6 text-white/42">
-            {processDescriptions[index]}
-          </p>
-        </div>
-      ))}
-    </div>
-  </div>
-</div>
-);
+                    <p className="mt-3 text-xs leading-6 text-white/42">
+                      {processDescriptions[index]}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </section>
+  );
 }
 export default function App() {
   const [page, setPage] = useState("home");
