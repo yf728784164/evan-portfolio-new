@@ -738,15 +738,15 @@ function ProductDesignPage({ onBack }) {
       title: "敦煌花马·甜春集新春茶礼",
       type: "文创茶礼 / 陶瓷产品设计 / 礼盒设计",
     
-      cover: "/images/projects/dunhuang/cover.png",
+      cover: "/images/projects/dunhuang/cover.jpg",
     
       process: [
-        "/images/projects/dunhuang/process-01.png",
-        "/images/projects/dunhuang/process-02.png",
+        "/images/projects/dunhuang/process-01.jpg",
+        "/images/projects/dunhuang/process-02.jpg",
       ],
     
       gallery: [
-        "/images/projects/dunhuang/cover.png",
+        "/images/projects/dunhuang/cover.jpg",
       ],
     
       intro:
