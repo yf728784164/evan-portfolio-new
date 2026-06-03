@@ -1,16 +1,48 @@
-# React + Vite
+# Evan Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern portfolio framework for designers and creative professionals.
 
-Currently, two official plugins are available:
+## Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Evan Portfolio is an open-source portfolio website built for designers, artists, and creators. It focuses on clean visual presentation, smooth interactions, and modern web experiences.
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Responsive design
+- Smooth page transitions
+- Interactive animations
+- Project showcase system
+- Mobile-friendly layout
+- Modern UI/UX
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS
+- Framer Motion
+
+## Roadmap
+
+- CMS integration
+- Multi-language support
+- Portfolio management tools
+- AI-assisted content generation
+
+## Installation
+
+```bash
+git clone https://github.com/yf728784164/evan-portfolio-new.git
+cd evan-portfolio-new
+npm install
+npm run dev
+```
+
+## Contributing
+
+Contributions and suggestions are welcome.
+
+## License
+
+MIT License
