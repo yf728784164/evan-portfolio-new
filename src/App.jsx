@@ -785,16 +785,24 @@ function ProductDesignPage({ onBack }) {
         
 
         <main className="space-y-8">
-        <div className="flex h-[45vh] flex-col items-center justify-center text-center">
-  <p className="text-xs tracking-[0.5em] text-white/35">
+       <div className="relative flex h-[42vh] flex-col items-center justify-center text-center">
+
+  <button
+    onClick={onBack}
+    className="absolute left-0 top-0 text-xs tracking-[0.25em] text-white/45 transition hover:text-white"
+  >
+    ← 返回作品案例
+  </button>
+
+  <p className="text-xs tracking-[0.55em] text-white/30">
     PRODUCT DESIGN
   </p>
 
-  <h1 className="mt-6 text-6xl font-black tracking-[0.15em] text-white md:text-8xl">
+  <h1 className="mt-5 text-5xl font-bold tracking-[0.15em] text-white md:text-7xl">
     产品设计
   </h1>
 
-  <div className="mt-10 h-12 w-px bg-gradient-to-b from-white/50 to-transparent" />
+  <div className="mt-10 h-12 w-px bg-gradient-to-b from-white/40 to-transparent" />
 </div>
           <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.025]">
             <div className="relative aspect-[16/9] overflow-hidden">
