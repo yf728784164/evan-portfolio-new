@@ -867,88 +867,70 @@ const processDescriptions = [
             </div>
           </div>
 
-          <div className="grid gap-6 md:grid-cols-[0.7fr_1fr]">
-            <div className="rounded-[1.5rem] border border-white/10 bg-white/[0.025] p-6">
-              <h3 className="text-sm font-semibold tracking-[0.16em] text-white/70">
-                设计背景
-              </h3>
-              <p className="mt-4 text-sm leading-8 text-white/50">
-                {currentProject.background || "设计背景预留。"}
-              </p>
-            </div>
+          <div className="grid gap-6 md:grid-cols-[1fr_0.85fr]">
+  <div className="rounded-[1.5rem] border border-white/10 bg-white/[0.025] p-6">
+    <h3 className="text-sm font-semibold tracking-[0.16em] text-white/70">
+      作品展示
+    </h3>
 
-            <div className="rounded-[1.5rem] border border-white/10 bg-white/[0.025] p-6">
-  <h3 className="text-sm font-semibold tracking-[0.16em] text-white/70">
-    设计过程
-  </h3>
-
-<div className="mt-5 grid gap-4 md:grid-cols-2">
-  {[
-    "文化元素提取",
-    "图案设计",
-    "器型与产品设计",
-    "包装与礼赠体验",
-  ].map((step, index) => (
-    <div
-      key={step}
-      className="rounded-[1rem] border border-white/10 bg-white/[0.035] overflow-hidden"
-    >
-      <div className="aspect-[16/9] overflow-hidden">
-        <img
-          src={currentProject.process[index]}
-          alt={step}
-          className="h-full w-full object-cover"
-        />
-      </div>
-
-      <div className="p-4">
-        <p className="text-3xl font-black text-white/22">
-          0{index + 1}
-        </p>
-
-        <p className="mt-2 text-sm font-semibold text-white/75">
-          {step}
-        </p>
-
-        <p className="mt-3 text-xs leading-6 text-white/42">
-          {processDescriptions[index]}
-        </p>
-      </div>
+    <div className="mt-5 grid gap-4">
+      {currentProject.gallery?.map((img, index) => (
+        <div
+          key={index}
+          className="aspect-[16/9] overflow-hidden rounded-[1rem] border border-white/10 bg-white/[0.035]"
+        >
+          <img
+            src={img}
+            alt=""
+            className="h-full w-full object-cover"
+          />
+        </div>
+      ))}
     </div>
-  ))}
-</div>
-</div>
-          <div className="rounded-[1.5rem] border border-white/10 bg-white/[0.025] p-6">
-            <h3 className="text-sm font-semibold tracking-[0.16em] text-white/70">
-              作品展示
-            </h3>
-            </div>
+  </div>
 
-            <div className="mt-5 grid gap-4 md:grid-cols-3">
-            {currentProject.gallery?.map(
-                (img, index) => (
-                  <div
-                    key={index}
-                    className="aspect-[4/3] overflow-hidden rounded-[1rem] border border-white/10 bg-white/[0.035]"
-                  >
-                    {img ? (
-                      <img
-                        src={img}
-                        alt=""
-                        className="h-full w-full object-cover"
-                      />
-                    ) : (
-                      <div className="flex h-full items-center justify-center text-xs tracking-[0.25em] text-white/25">
-                        IMAGE
-                      </div>
-                    )}
-                  </div>
-                )
-              )}
-            </div>
+  <div className="rounded-[1.5rem] border border-white/10 bg-white/[0.025] p-6">
+    <h3 className="text-sm font-semibold tracking-[0.16em] text-white/70">
+      设计过程
+    </h3>
+
+    <div className="mt-5 grid gap-3">
+      {[
+        "文化元素提取",
+        "图案设计",
+        "器型与产品设计",
+        "包装与礼赠体验",
+      ].map((step, index) => (
+        <div
+          key={step}
+          className="grid grid-cols-[88px_1fr] gap-3 overflow-hidden rounded-[1rem] border border-white/10 bg-white/[0.035] p-3"
+        >
+          <div className="aspect-square overflow-hidden rounded-[0.75rem] bg-white/[0.04]">
+            <img
+              src={currentProject.process[index]}
+              alt={step}
+              className="h-full w-full object-cover"
+            />
           </div>
-        </main>
-      </div>
+
+          <div>
+            <p className="text-2xl font-black text-white/22">
+              0{index + 1}
+            </p>
+
+            <p className="mt-1 text-sm font-semibold text-white/75">
+              {step}
+            </p>
+
+            <p className="mt-2 text-xs leading-5 text-white/42">
+              {processDescriptions[index]}
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</div>
     </section>
   );
 }
