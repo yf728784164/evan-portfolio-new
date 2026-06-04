@@ -797,7 +797,6 @@ function ProductDesignPage({ onBack }) {
                 alt={currentProject.title}
                 className="h-full w-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
             </div>
 
             <div className="grid gap-8 p-6 md:grid-cols-[0.9fr_1fr] md:p-8">
@@ -854,26 +853,25 @@ function ProductDesignPage({ onBack }) {
       设计过程
     </h3>
 
-<div className="mt-5 grid gap-3 md:grid-cols-2 max-w-[700px]">
+<div className="mt-5 grid max-w-[520px] grid-cols-2 gap-3">
      {["文化元素提取", "图案设计", "器型与产品设计", "包装与礼赠体验"].map((step, index) => (
         <div
           key={step}
-          className="overflow-hidden rounded-[0.9rem] border border-white/10 bg-white/[0.035] max-w-[320px]"
-        >
-          <div className="aspect-[16/9] overflow-hidden">
+         className="overflow-hidden rounded-[0.75rem] border border-white/10 bg-white/[0.035]"
+          <div className="aspect-square overflow-hidden">
             <img
               src={currentProject.process[index]}
               alt={step}
-              className="h-full w-full object-contain bg-[#030303]"
+              className="h-full w-full object-cover"
             />
           </div>
 
-          <div className="p-2.5">
-          <p className="text-lg font-black text-white/22">
+          <div className="p-2">
+          <p className="text-base font-black text-white/22">
               0{index + 1}
             </p>
 
-            <p className="mt-1 text-xs font-semibold text-white/75">
+            <p className="mt-1 text-[11px] font-semibold text-white/75">
               {step}
             </p>
 
