@@ -943,88 +943,10 @@ function ProductDesignPage({ onBack }) {
   </div>
 ))}
 
-              <div>
-                <h3 className="text-sm font-semibold tracking-[0.16em] text-white/70">
-                  项目介绍
-                </h3>
-
-                <p className="mt-4 text-sm leading-8 text-white/55">
-                  {currentProject.intro}
-                </p>
-              </div>
-            </main>
-          </div>
-
-          <div className="grid gap-6 md:grid-cols-[0.7fr_1fr]">
-  <div className="rounded-[1.5rem] border border-white/10 bg-white/[0.025] p-6">
-    <h3 className="text-sm font-semibold tracking-[0.16em] text-white/70">
-      设计背景
-    </h3>
-
-    <p className="mt-4 text-sm leading-8 text-white/50">
-      {currentProject.background}
-    </p>
-  </div>
-
-  <div className="rounded-[1.5rem] border border-white/10 bg-white/[0.025] p-6">
-    <h3 className="text-sm font-semibold tracking-[0.16em] text-white/70">
-      设计过程
-    </h3>
-
-<div className="mt-5 grid max-w-[520px] grid-cols-2 gap-3">
-     {(currentProject.processTitles || ["文化元素提取", "图案设计", "器型与产品设计", "包装与礼赠体验"]).map((step, index) => (
-        <div
-          key={step}
-         className="overflow-hidden rounded-[0.75rem] border border-white/10 bg-white/[0.035]"
-         >
-          <div className="aspect-square overflow-hidden">
-  <img
-              src={currentProject.process[index]}
-              alt={step}
-             className="h-full w-full object-contain"
-            />
-          </div>
-
-          <div className="p-2">
-          <p className="text-base font-black text-white/22">
-              0{index + 1}
-            </p>
-
-            <p className="mt-1 text-[11px] font-semibold text-white/75">
-              {step}
-            </p>
-
-            <p className="mt-1 text-[11px] leading-5 text-white/42">
-              {(currentProject.processDescriptions || processDescriptions)[index]}
-            </p>
-          </div>
-        </div>
-      ))}
-    </div>
-  </div>
-</div>
-
-<div className="rounded-[1.5rem] border border-white/10 bg-white/[0.025] p-6">
-  <h3 className="text-sm font-semibold tracking-[0.16em] text-white/70">
-    作品展示
-  </h3>
-
-  <div className="mt-5 grid gap-4 md:grid-cols-3">
-    {currentProject.gallery.map((img, index) => (
-      <div
-        key={index}
-        className="aspect-[4/3] overflow-hidden rounded-[1rem] border border-white/10"
-      >
-        <img
-          src={img}
-          alt=""
-          className="h-full w-full object-cover"
-        />
-      </div>
-           ))}
-        </main>
-      </div>
-    </section>
+             
+ </main>
+ </div>
+ </section>
   );
 }
 export default function App() {
