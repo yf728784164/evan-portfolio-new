@@ -864,7 +864,7 @@ function ProductDesignPage({ onBack }) {
             <img
               src={currentProject.process[index]}
               alt={step}
-              className="h-full w-full object-cover"
+              className="h-full w-full object-contain bg-[#030303]"
             />
           </div>
 
