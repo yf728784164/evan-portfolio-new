@@ -823,9 +823,6 @@ function ProductDesignPage({ onBack }) {
     "/images/projects/henan/gallery-01.jpg",
     "/images/projects/henan/gallery-02.jpg",
     "/images/projects/henan/gallery-03.jpg",
-    "/images/projects/henan/gallery-04.jpg",
-    "/images/projects/henan/gallery-05.jpg",
-    "/images/projects/henan/gallery-06.jpg",
   ],
 
   processTitles: [
