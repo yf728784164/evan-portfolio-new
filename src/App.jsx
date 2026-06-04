@@ -791,7 +791,7 @@ function ProductDesignPage({ onBack }) {
           </div>
 
           <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.025]">
-            <div className="relative aspect-[16/9] overflow-hidden">
+            <div className="aspect-square overflow-hidden">
               <img
                 src={currentProject.cover}
                 alt={currentProject.title}
@@ -854,11 +854,11 @@ function ProductDesignPage({ onBack }) {
       设计过程
     </h3>
 
-    <div className="mt-5 grid gap-3 md:grid-cols-2">
+    <div className="mt-5 grid gap-3 md:grid-cols-2 max-w-[700px]"
       {["文化元素提取", "图案设计", "器型与产品设计", "包装与礼赠体验"].map((step, index) => (
         <div
           key={step}
-          className="overflow-hidden rounded-[0.9rem] border border-white/10 bg-white/[0.035]"
+          className="overflow-hidden rounded-[0.9rem] border border-white/10 bg-white/[0.035] max-w-[320px]"
         >
           <div className="aspect-[16/9] overflow-hidden">
             <img
@@ -868,8 +868,8 @@ function ProductDesignPage({ onBack }) {
             />
           </div>
 
-          <div className="p-3">
-            <p className="text-xl font-black text-white/22">
+          <div className="p-2.5">
+          <p className="text-lg font-black text-white/22">
               0{index + 1}
             </p>
 
