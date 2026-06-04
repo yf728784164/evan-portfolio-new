@@ -834,7 +834,8 @@ function ProductDesignPage({ onBack }) {
           </div>
 
           {projects.map((project, projectIndex) => (
-            <div className="mb-16 pt-20">
+           <div key={project.title} className="space-y-8">
+  <div className="mb-16 pt-20">
   <p className="text-[120px] font-black leading-none text-white/6">
     {String(projectIndex + 1).padStart(2, "0")}
   </p>
