@@ -859,7 +859,7 @@ function ProductDesignPage({ onBack }) {
           key={step}
          className="overflow-hidden rounded-[0.75rem] border border-white/10 bg-white/[0.035]"
           <div className="aspect-square overflow-hidden">
-            <img
+  <img
               src={currentProject.process[index]}
               alt={step}
               className="h-full w-full object-cover"
