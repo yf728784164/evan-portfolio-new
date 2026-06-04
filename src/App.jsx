@@ -797,7 +797,8 @@ function ProductDesignPage({ onBack }) {
 },
   ];
 
-  const currentProject = projects[1];
+  const [activeProject, setActiveProject] = useState(0);
+const currentProject = projects[activeProject];
 
   const processDescriptions = [
     "提取敦煌翼马文化元素",
@@ -830,6 +831,21 @@ function ProductDesignPage({ onBack }) {
             </h1>
 
             <div className="mt-10 h-12 w-px bg-gradient-to-b from-white/40 to-transparent" />
+            <div className="mt-8 flex flex-wrap justify-center gap-3">
+  {projects.map((project, index) => (
+    <button
+      key={project.title}
+      onClick={() => setActiveProject(index)}
+      className={`rounded-full border px-4 py-2 text-xs tracking-[0.16em] transition ${
+        activeProject === index
+          ? "border-white/40 bg-white text-black"
+          : "border-white/12 bg-white/[0.035] text-white/45 hover:text-white"
+      }`}
+    >
+      {project.num || `0${index + 1}`} · {project.title}
+    </button>
+  ))}
+</div>
           </div>
 
           <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.025]">
@@ -896,7 +912,7 @@ function ProductDesignPage({ onBack }) {
     </h3>
 
 <div className="mt-5 grid max-w-[520px] grid-cols-2 gap-3">
-     {["文化元素提取", "图案设计", "器型与产品设计", "包装与礼赠体验"].map((step, index) => (
+     {(currentProject.processTitles || ["文化元素提取", "图案设计", "器型与产品设计", "包装与礼赠体验"]).map((step, index) => (
         <div
           key={step}
          className="overflow-hidden rounded-[0.75rem] border border-white/10 bg-white/[0.035]"
