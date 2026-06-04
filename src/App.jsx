@@ -790,7 +790,7 @@ function ProductDesignPage({ onBack }) {
             <div className="mt-10 h-12 w-px bg-gradient-to-b from-white/40 to-transparent" />
           </div>
 
-          <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.025]">
+          <div className="mx-auto w-full max-w-[1200px] overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.025]">
             <div className="aspect-square overflow-hidden">
               <img
                 src={currentProject.cover}
