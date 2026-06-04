@@ -854,7 +854,7 @@ function ProductDesignPage({ onBack }) {
       设计过程
     </h3>
 
-    <div className="mt-5 grid gap-3 md:grid-cols-2 max-w-[700px]"
+<div className="mt-5 grid gap-3 md:grid-cols-2 max-w-[700px]">
      {["文化元素提取", "图案设计", "器型与产品设计", "包装与礼赠体验"].map((step, index) => (
         <div
           key={step}
