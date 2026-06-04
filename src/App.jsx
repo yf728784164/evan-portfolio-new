@@ -839,6 +839,50 @@ function ProductDesignPage({ onBack }) {
     "构建东方茶文化使用场景",
   ],
 },
+{
+  id: "forest-fairytale",
+
+  title: "森屿童话",
+
+  subtitle: "FOREST FAIRYTALE AFTERNOON TEA SET",
+
+  tags: ["产品设计", "陶瓷设计", "插画设计", "生活方式设计"],
+
+  cover: "/images/projects/forest/cover.jpg",
+
+  intro:
+    "森屿童话是一套以自然森林与童话世界为灵感创作的下午茶具设计。项目围绕轻松、温暖与治愈的情绪体验展开，通过手绘插画语言构建出充满想象力的童话场景，将花卉、果实、小动物与自然元素融入器物设计之中。产品以清新的色彩搭配和轻盈的视觉表达呈现温暖愉悦的生活氛围，希望为用户创造兼具仪式感与陪伴感的下午茶时光。",
+
+  background:
+    "在快节奏的现代生活中，人们越来越重视情绪价值与精神陪伴。下午茶不仅是一种饮食习惯，更逐渐成为释放压力、享受生活的重要方式。本项目以“森屿童话”为主题，从自然森林与童话故事中汲取灵感，通过柔和的色彩体系与富有趣味性的插画元素，构建一个充满想象力与治愈感的器物世界。希望通过陶瓷产品传递轻松愉悦的生活态度，让日常使用过程成为感受美好与发现童趣的情绪体验。",
+
+  process: [
+    "/images/projects/forest/process-01.jpg",
+    "/images/projects/forest/process-02.jpg",
+    "/images/projects/forest/process-03.jpg",
+    "/images/projects/forest/process-04.jpg",
+  ],
+
+  gallery: [
+    "/images/projects/forest/gallery-01.jpg",
+    "/images/projects/forest/gallery-02.jpg",
+    "/images/projects/forest/gallery-03.jpg",
+  ],
+
+  processTitles: [
+    "主题概念构建",
+    "产品场景呈现",
+    "插画视觉设计",
+    "包装系统设计",
+  ],
+
+  processDescriptions: [
+    "构建森林童话主题故事与情绪表达",
+    "打造温暖治愈的下午茶生活场景",
+    "提炼角色与自然元素形成图案语言",
+    "建立统一完整的品牌包装视觉体系",
+  ],
+},
   ];
 
   const currentProject = projects[0];
