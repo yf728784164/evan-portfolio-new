@@ -753,6 +753,48 @@ function ProductDesignPage({ onBack }) {
         "/images/projects/dunhuang/gallery-03.jpg",
       ],
     },
+    {
+  id: "xian-double-fish",
+  title: "奉进遗珍·金蔓双鱼 错金银陶瓷茶礼",
+  subtitle: "GOLDEN VINE & DOUBLE FISH CERAMIC TEA GIFT SET",
+
+  tags: ["产品设计", "陶瓷设计", "文创设计", "包装设计"],
+
+  cover: "/images/projects/xian/cover.jpg",
+
+  intro:
+    "以西安博物院馆藏文物“李勉奉进双鱼纹蔓草花银盘”为设计灵感，提取双鱼纹样、蔓草纹饰与唐代金银器工艺特征，通过现代陶瓷设计语言进行创新转译。项目围绕茶礼场景展开，将传统纹样重构、器型开发与礼赠包装设计融为一体，在保留历史文化内涵的同时，赋予产品更符合当代审美与生活方式的表达，打造兼具文化价值与收藏意义的文创茶礼。",
+
+  background:
+    "唐代金银器工艺代表着中国古代工艺美术发展的高峰，其中西安博物院馆藏“李勉奉进双鱼纹蔓草花银盘”以精巧的双鱼构图、繁复的蔓草纹样及华丽的装饰工艺展现出盛唐时期的艺术魅力。随着传统文化与现代生活的不断融合，如何让馆藏文物以更加亲近当代用户的方式被感知与传播，成为文创设计的重要课题。本项目以馆藏文物为文化载体，通过现代陶瓷茶器设计重塑经典纹样与工艺语言，探索传统文化在当代礼赠场景中的创新表达。",
+
+  process: [
+    "/images/projects/xian/process-01.jpg",
+    "/images/projects/xian/process-02.jpg",
+    "/images/projects/xian/process-03.jpg",
+    "/images/projects/xian/process-04.jpg",
+  ],
+
+  gallery: [
+    "/images/projects/xian/gallery-01.jpg",
+    "/images/projects/xian/gallery-02.jpg",
+    "/images/projects/xian/gallery-03.jpg",
+  ],
+
+  processTitles: [
+    "馆藏文化研究",
+    "纹样重构设计",
+    "器型与工艺设计",
+    "包装与礼赠体验",
+  ],
+
+  processDescriptions: [
+    "提取双鱼纹银盘核心视觉元素",
+    "双鱼与蔓草纹样创新演绎",
+    "错金银工艺融入陶瓷茶器",
+    "构建完整文创茶礼系统",
+  ],
+},
   ];
 
   const currentProject = projects[0];
@@ -877,7 +919,7 @@ function ProductDesignPage({ onBack }) {
             </p>
 
             <p className="mt-1 text-[11px] leading-5 text-white/42">
-              {processDescriptions[index]}
+              {currentProject.processDescriptions[index]}
             </p>
           </div>
         </div>
