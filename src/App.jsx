@@ -798,7 +798,7 @@ function ProductDesignPage({ onBack }) {
 {
   id: "henan-fangding",
 
-  title: "鼎立中原·礼承华夏 杜岭方鼎陶瓷茶礼",
+  title: "河南博物院 杜岭方鼎陶瓷茶礼",
 
   subtitle: "DULING FANGDING CERAMIC TEA GIFT SET",
 
