@@ -795,6 +795,53 @@ function ProductDesignPage({ onBack }) {
     "构建完整文创茶礼系统",
   ],
 },
+{
+  id: "henan-fangding",
+
+  title: "鼎立中原·礼承华夏 杜岭方鼎陶瓷茶礼",
+
+  subtitle: "DULING FANGDING CERAMIC TEA GIFT SET",
+
+  tags: ["产品设计", "陶瓷设计", "文创设计", "文化创意"],
+
+  cover: "/images/projects/henan/cover.jpg",
+
+  intro:
+    "以河南博物院馆藏文物“杜岭方鼎”为设计灵感，提取商代青铜礼器的造型语言与纹饰特征，通过现代陶瓷工艺进行创新转化。项目围绕东方茶礼文化展开，将方鼎所承载的礼制精神、权力象征与审美价值融入茶器设计之中，在保留历史文化厚重感的同时，赋予产品符合当代生活方式的使用体验。通过器物视觉重构与文化元素创新表达，打造兼具文化传播价值与收藏价值的文创陶瓷茶礼。",
+
+  background:
+    "杜岭方鼎是中国早期青铜文明的重要代表之一，也是河南博物院极具代表性的馆藏文物。其庄重的造型结构、严谨的比例关系以及蕴含的礼制文化，展现了商代青铜器工艺与精神文化的高度成就。随着传统文化传播方式不断创新，如何将古代礼器文化以更加贴近现代生活的方式进行表达与传承，成为文创设计的重要方向。本项目以杜岭方鼎为文化原型，通过现代陶瓷设计语言重构传统礼器意象，探索中华礼制文化在当代茶生活场景中的创新表达。",
+
+  process: [
+    "/images/projects/henan/process-01.jpg",
+    "/images/projects/henan/process-02.jpg",
+    "/images/projects/henan/process-03.jpg",
+    "/images/projects/henan/process-04.jpg",
+  ],
+
+  gallery: [
+    "/images/projects/henan/gallery-01.jpg",
+    "/images/projects/henan/gallery-02.jpg",
+    "/images/projects/henan/gallery-03.jpg",
+    "/images/projects/henan/gallery-04.jpg",
+    "/images/projects/henan/gallery-05.jpg",
+    "/images/projects/henan/gallery-06.jpg",
+  ],
+
+  processTitles: [
+    "馆藏文物研究",
+    "纹样语言转译",
+    "文化视觉构建",
+    "产品场景呈现",
+  ],
+
+  processDescriptions: [
+    "提取杜岭方鼎核心文化元素",
+    "重构青铜纹饰视觉体系",
+    "融合青铜器色彩与装饰语言",
+    "构建东方茶文化使用场景",
+  ],
+},
   ];
 
   const currentProject = projects[0];
