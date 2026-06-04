@@ -834,6 +834,15 @@ function ProductDesignPage({ onBack }) {
           </div>
 
           {projects.map((project, projectIndex) => (
+            <div className="mb-16 pt-20">
+  <p className="text-[120px] font-black leading-none text-white/6">
+    {String(projectIndex + 1).padStart(2, "0")}
+  </p>
+
+  <p className="mt-2 text-xs tracking-[0.4em] text-white/35">
+    PRODUCT DESIGN
+  </p>
+</div>
   <div key={project.title} className="space-y-8">
     <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.025]">
       <div className="relative aspect-[16/9] overflow-hidden">
