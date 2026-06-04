@@ -952,7 +952,7 @@ function ProductDesignPage({ onBack }) {
                   {currentProject.intro}
                 </p>
               </div>
-            </div>
+            </main>
           </div>
 
           <div className="grid gap-6 md:grid-cols-[0.7fr_1fr]">
@@ -1025,8 +1025,8 @@ function ProductDesignPage({ onBack }) {
   </div>
 </div>
 
-            </main>
-      </div>
+            </section>
+
     </section>
   );
 }
