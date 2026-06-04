@@ -791,7 +791,7 @@ function ProductDesignPage({ onBack }) {
           </div>
 
           <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.025]">
-            <div className="aspect-square overflow-hidden">
+            <div className="relative aspect-[16/9] overflow-hidden">
               <img
                 src={currentProject.cover}
                 alt={currentProject.title}
