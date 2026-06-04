@@ -908,41 +908,6 @@ function ProductDesignPage({ onBack }) {
   </div>
 </div>
 
-             <div className="mt-5 grid gap-4 md:grid-cols-2">
-  {[
-    "文化元素提取",
-    "图案设计",
-    "器型与产品设计",
-    "包装与礼赠体验",
-  ].map((step, index) => (
-    <div
-      key={step}
-      className="overflow-hidden rounded-[1rem] border border-white/10 bg-white/[0.035]"
-    >
-      <div className="aspect-[4/3] overflow-hidden">
-        <img
-          src={currentProject.process[index]}
-          alt={step}
-          className="h-full w-full object-cover"
-        />
-      </div>
-
-      <div className="p-4">
-        <p className="text-2xl font-black text-white/22">
-          0{index + 1}
-        </p>
-
-        <p className="mt-2 text-sm font-semibold text-white/75">
-          {step}
-        </p>
-
-        <p className="mt-2 text-xs leading-5 text-white/42">
-          {processDescriptions[index]}
-        </p>
-      </div>
-    </div>
-  ))}
-</div>
             </main>
       </div>
     </section>
