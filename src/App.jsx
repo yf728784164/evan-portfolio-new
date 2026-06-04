@@ -840,9 +840,7 @@ function ProductDesignPage({ onBack }) {
     {String(projectIndex + 1).padStart(2, "0")}
   </p>
 
-  <p className="mt-2 text-xs tracking-[0.4em] text-white/35">
-    PRODUCT DESIGN
-  </p>
+  
 </div>
     <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.025]">
       <div className="relative aspect-[16/9] overflow-hidden">
