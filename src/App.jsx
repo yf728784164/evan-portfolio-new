@@ -919,7 +919,7 @@ function ProductDesignPage({ onBack }) {
             </p>
 
             <p className="mt-1 text-[11px] leading-5 text-white/42">
-              {currentProject.processDescriptions[index]}
+              {(currentProject.processDescriptions || processDescriptions)[index]}
             </p>
           </div>
         </div>
