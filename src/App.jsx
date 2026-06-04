@@ -1021,12 +1021,9 @@ function ProductDesignPage({ onBack }) {
           className="h-full w-full object-cover"
         />
       </div>
-    ))}
-  </div>
-</div>
-
-            </section>
-
+           ))}
+        </main>
+      </div>
     </section>
   );
 }
