@@ -858,6 +858,7 @@ function ProductDesignPage({ onBack }) {
         <div
           key={step}
          className="overflow-hidden rounded-[0.75rem] border border-white/10 bg-white/[0.035]"
+         >
           <div className="aspect-square overflow-hidden">
   <img
               src={currentProject.process[index]}
