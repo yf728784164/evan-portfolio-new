@@ -797,7 +797,7 @@ function ProductDesignPage({ onBack }) {
 },
   ];
 
-  const currentProject = projects[0];
+  const currentProject = projects[1];
 
   const processDescriptions = [
     "提取敦煌翼马文化元素",
