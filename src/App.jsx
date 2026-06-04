@@ -844,7 +844,6 @@ function ProductDesignPage({ onBack }) {
     PRODUCT DESIGN
   </p>
 </div>
-  <div key={project.title} className="space-y-8">
     <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.025]">
       <div className="relative aspect-[16/9] overflow-hidden">
         <img
