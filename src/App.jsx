@@ -916,14 +916,12 @@ function ProductDesignPage({ onBack }) {
   processTitles: [
     "市场需求分析",
     "节日元素提取",
-    "图案视觉设计",
     "产品系列规划",
   ],
 
   processDescriptions: [
     "研究俄罗斯节庆消费市场趋势",
     "建立圣诞主题视觉符号体系",
-    "构建统一完整的节庆图案语言",
     "完成不同规格餐瓷组合设计",
   ],
 },
