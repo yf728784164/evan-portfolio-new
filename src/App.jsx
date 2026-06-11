@@ -927,6 +927,53 @@ function ProductDesignPage({ onBack }) {
     "构建统一完整的节庆图案语言",
   ],
 },
+{
+  id: "botanical-garden",
+
+  title: "林语花园·自然餐瓷系列",
+
+  subtitle: "BOTANICAL GARDEN TABLEWARE COLLECTION",
+
+  tags: ["产品设计", "餐瓷设计", "家居生活方式", "海外市场"],
+
+  cover: "/images/projects/botanical/cover.jpg",
+
+  intro:
+    "林语花园系列是一套以自然植物生态为设计灵感的现代餐瓷产品。项目围绕轻松自然的家庭用餐场景展开，通过植物、花卉、飞鸟与森林元素构建具有生活气息的视觉语言。设计采用简洁的线描表现手法，以柔和自然的绿色作为主色调，将自然之美融入日常餐桌之中。产品覆盖多种规格餐盘与配套器皿，满足不同用餐场景需求，在提升产品实用性的同时，为现代家庭创造更加舒适自然的用餐体验。",
+
+  background:
+    "随着自然主义生活方式与家居美学的不断发展，消费者对于餐具产品的需求已不仅停留在功能层面，而更加关注产品所传递的生活态度与情绪价值。植物、花卉与森林生态元素能够有效营造轻松、自然与舒适的用餐氛围。本项目以自然花园为设计主题，通过提取植物与飞鸟等自然元素进行视觉重构，结合现代餐瓷产品开发需求，打造兼具审美价值与市场竞争力的系列化餐瓷产品，希望让用户在日常生活中感受自然之美与慢生活的温度。",
+
+  process: [
+    "/images/projects/botanical/process-01.jpg",
+    "/images/projects/botanical/process-02.jpg",
+    "/images/projects/botanical/process-03.jpg",
+    "/images/projects/botanical/process-04.jpg",
+  ],
+
+  gallery: [
+    "/images/projects/botanical/gallery-01.jpg",
+    "/images/projects/botanical/gallery-02.jpg",
+    "/images/projects/botanical/gallery-03.jpg",
+    "/images/projects/botanical/gallery-04.jpg",
+    "/images/projects/botanical/gallery-05.jpg",
+    "/images/projects/botanical/gallery-06.jpg",
+  ],
+
+  processTitles: [
+    "市场趋势研究",
+    "自然元素提取",
+    "图案视觉设计",
+    "产品系列开发",
+  ],
+
+  processDescriptions: [
+    "分析海外家居餐瓷消费需求",
+    "构建植物与飞鸟主题视觉体系",
+    "建立统一完整的产品纹样语言",
+    "完成多规格餐瓷产品组合设计",
+  ],
+},
   ];
 
   const currentProject = projects[0];
