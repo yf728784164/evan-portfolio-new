@@ -883,6 +883,50 @@ function ProductDesignPage({ onBack }) {
     "打造专属于你的全新赠礼体验",
   ],
 },
+{
+  id: "christmas-tableware",
+
+  title: "冬日颂歌·圣诞餐瓷系列",
+
+  subtitle: "CHRISTMAS TABLEWARE COLLECTION",
+
+  tags: ["产品设计", "陶瓷设计", "节庆设计", "海外定制"],
+
+  cover: "/images/projects/christmas/cover.jpg",
+
+  intro:
+    "本项目为俄罗斯客户定制开发的圣诞主题餐瓷系列产品。设计围绕海外市场圣诞节消费场景展开，通过圣诞树、礼物盒、袜子、雪花与节日装饰等经典元素构建完整的节庆视觉体系。产品涵盖不同规格餐盘及马克杯，以统一的图案语言与色彩系统打造温暖欢乐的节日氛围，满足家庭聚会、节日餐桌布置与礼品消费等多元使用需求。项目兼顾市场审美趋势与产品落地需求，实现设计创意与商业价值的平衡。",
+
+  background:
+    "圣诞节是欧洲及俄罗斯市场最重要的传统节日之一，具有广泛的家庭消费与礼品消费需求。随着节庆主题餐具市场不断发展，消费者对于产品的视觉体验与节日氛围表达提出了更高要求。本项目基于俄罗斯客户市场需求，以圣诞文化符号为设计核心，通过统一的图案系统与产品规格规划，打造适用于家庭聚餐、节日装饰与礼赠场景的系列化餐瓷产品。希望通过富有温度的设计语言，让产品成为节日餐桌的重要组成部分。",
+
+  process: [
+    "/images/projects/christmas/process-01.jpg",
+    "/images/projects/christmas/process-02.jpg",
+    "/images/projects/christmas/process-03.jpg",
+    "/images/projects/christmas/process-04.jpg",
+  ],
+
+  gallery: [
+    "/images/projects/christmas/gallery-01.jpg",
+    "/images/projects/christmas/gallery-02.jpg",
+    "/images/projects/christmas/gallery-03.jpg",
+  ],
+
+  processTitles: [
+    "市场需求分析",
+    "节日元素提取",
+    "图案视觉设计",
+    "产品系列规划",
+  ],
+
+  processDescriptions: [
+    "研究俄罗斯节庆消费市场趋势",
+    "建立圣诞主题视觉符号体系",
+    "构建统一完整的节庆图案语言",
+    "完成不同规格餐瓷组合设计",
+  ],
+},
   ];
 
   const currentProject = projects[0];
