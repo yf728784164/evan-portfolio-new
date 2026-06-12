@@ -5,7 +5,64 @@ const categories = ["全部", "产品设计", "包装设计", "平面设计", "�
 
 const projects = [
   {
-    id: 1,
+    {
+  id: "bamboo-moon",
+
+  title: "竹香云禧·阿里云中秋礼盒",
+
+  subtitle: "BAMBOO FRAGRANCE & MOONLIGHT",
+
+  tags: ["包装设计", "企业礼赠", "中秋礼盒", "商业项目"],
+
+  cover: "/images/projects/bamboo-moon/cover.jpg",
+
+  intro:
+    "竹香云禧是为阿里云2025中秋礼赠场景打造的一款企业定制礼盒。项目以“竹香”“月圆”“团聚”为核心概念，将东方节令文化与现代企业礼赠需求相结合，通过礼盒包装、香氛体验与非遗文创产品共同构建完整的节日礼赠体验。礼盒内包含定制月饼、宋韵桂花龙井香氛套装以及非遗竹编冰箱贴等内容，希望通过多维度的感官体验，让收礼者在品味节日美食的同时，感受东方生活美学与传统文化魅力，打造兼具文化温度与企业品牌价值的中秋礼赠产品。",
+
+  background:
+    "中秋节是中国最具代表性的传统节日之一，也是企业传递品牌温度与客户关怀的重要节点。面对同质化严重的礼赠市场，如何在礼盒设计中兼顾文化表达、情感体验与品牌价值，成为本项目的重要课题。设计以“竹香云禧”为主题，从中国传统文人雅集与宋代生活美学中汲取灵感，将竹林、明月、桂花与山水意境融入视觉设计之中。同时结合香氛文化与非遗竹编工艺，构建视觉、嗅觉与情感体验相融合的礼赠体系，让中秋礼盒不仅是一份节日礼品，更是一场关于东方生活方式的文化表达。",
+
+  strategy:
+    "以传统节令文化为基础，融合企业礼赠场景需求，通过视觉设计、香氛体验与非遗工艺共同构建具有文化温度的品牌礼赠体验。",
+
+  strategyTags: [
+    "东方文化",
+    "企业礼赠",
+    "宋韵美学",
+    "多感官体验",
+  ],
+
+  process: [
+    "/images/projects/bamboo-moon/process-01.jpg",
+    "/images/projects/bamboo-moon/process-02.jpg",
+    "/images/projects/bamboo-moon/process-03.jpg",
+    "/images/projects/bamboo-moon/process-04.jpg",
+  ],
+
+  gallery: [
+    "/images/projects/bamboo-moon/gallery-01.jpg",
+    "/images/projects/bamboo-moon/gallery-02.jpg",
+    "/images/projects/bamboo-moon/gallery-03.jpg",
+    "/images/projects/bamboo-moon/gallery-04.jpg",
+    "/images/projects/bamboo-moon/gallery-05.jpg",
+    "/images/projects/bamboo-moon/gallery-06.jpg",
+  ],
+
+  processTitles: [
+    "文化概念研究",
+    "礼盒视觉设计",
+    "内容物策划",
+    "礼赠体验设计",
+  ],
+
+  processDescriptions: [
+    "提炼中秋节令与宋韵生活美学",
+    "构建竹香月色主题视觉体系",
+    "整合香氛与非遗文创产品体验",
+    "打造完整的企业中秋礼赠场景",
+  ],
+},
+id: 1,
     category: "产品设计",
     title: "灵璧御茗 · 博物院文创茶礼",
     tag: "Museum Tea Set",
