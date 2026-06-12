@@ -955,9 +955,6 @@ function ProductDesignPage({ onBack }) {
     "/images/projects/botanical/gallery-01.jpg",
     "/images/projects/botanical/gallery-02.jpg",
     "/images/projects/botanical/gallery-03.jpg",
-    "/images/projects/botanical/gallery-04.jpg",
-    "/images/projects/botanical/gallery-05.jpg",
-    "/images/projects/botanical/gallery-06.jpg",
   ],
 
   processTitles: [
