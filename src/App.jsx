@@ -957,19 +957,19 @@ function ProductDesignPage({ onBack }) {
     "/images/projects/botanical/gallery-03.jpg",
   ],
 
-  processTitles: [
-    "市场趋势研究",
-    "自然元素提取",
-    "图案视觉设计",
-    "产品系列开发",
-  ],
+processTitles: [
+  "灵感采集",
+  "元素重构",
+  "图案设计",
+  "场景应用",
+],
 
-  processDescriptions: [
-    "分析海外家居餐瓷消费需求",
-    "构建植物与飞鸟主题视觉体系",
-    "建立统一完整的产品纹样语言",
-    "完成多规格餐瓷产品组合设计",
-  ],
+ processDescriptions: [
+  "从自然生态中获取创作灵感",
+  "提炼植物与飞鸟视觉语言",
+  "构建系列化产品纹样体系",
+  "呈现自然舒适的餐桌体验",
+],
 },
   ];
 
