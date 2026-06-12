@@ -5,64 +5,7 @@ const categories = ["全部", "产品设计", "包装设计", "平面设计", "�
 
 const projects = [
   {
-    {
-  id: "bamboo-moon",
-
-  title: "竹香云禧·阿里云中秋礼盒",
-
-  subtitle: "BAMBOO FRAGRANCE & MOONLIGHT",
-
-  tags: ["包装设计", "企业礼赠", "中秋礼盒", "商业项目"],
-
-  cover: "/images/projects/bamboo-moon/cover.jpg",
-
-  intro:
-    "竹香云禧是为阿里云2025中秋礼赠场景打造的一款企业定制礼盒。项目以“竹香”“月圆”“团聚”为核心概念，将东方节令文化与现代企业礼赠需求相结合，通过礼盒包装、香氛体验与非遗文创产品共同构建完整的节日礼赠体验。礼盒内包含定制月饼、宋韵桂花龙井香氛套装以及非遗竹编冰箱贴等内容，希望通过多维度的感官体验，让收礼者在品味节日美食的同时，感受东方生活美学与传统文化魅力，打造兼具文化温度与企业品牌价值的中秋礼赠产品。",
-
-  background:
-    "中秋节是中国最具代表性的传统节日之一，也是企业传递品牌温度与客户关怀的重要节点。面对同质化严重的礼赠市场，如何在礼盒设计中兼顾文化表达、情感体验与品牌价值，成为本项目的重要课题。设计以“竹香云禧”为主题，从中国传统文人雅集与宋代生活美学中汲取灵感，将竹林、明月、桂花与山水意境融入视觉设计之中。同时结合香氛文化与非遗竹编工艺，构建视觉、嗅觉与情感体验相融合的礼赠体系，让中秋礼盒不仅是一份节日礼品，更是一场关于东方生活方式的文化表达。",
-
-  strategy:
-    "以传统节令文化为基础，融合企业礼赠场景需求，通过视觉设计、香氛体验与非遗工艺共同构建具有文化温度的品牌礼赠体验。",
-
-  strategyTags: [
-    "东方文化",
-    "企业礼赠",
-    "宋韵美学",
-    "多感官体验",
-  ],
-
-  process: [
-    "/images/projects/bamboo-moon/process-01.jpg",
-    "/images/projects/bamboo-moon/process-02.jpg",
-    "/images/projects/bamboo-moon/process-03.jpg",
-    "/images/projects/bamboo-moon/process-04.jpg",
-  ],
-
-  gallery: [
-    "/images/projects/bamboo-moon/gallery-01.jpg",
-    "/images/projects/bamboo-moon/gallery-02.jpg",
-    "/images/projects/bamboo-moon/gallery-03.jpg",
-    "/images/projects/bamboo-moon/gallery-04.jpg",
-    "/images/projects/bamboo-moon/gallery-05.jpg",
-    "/images/projects/bamboo-moon/gallery-06.jpg",
-  ],
-
-  processTitles: [
-    "文化概念研究",
-    "礼盒视觉设计",
-    "内容物策划",
-    "礼赠体验设计",
-  ],
-
-  processDescriptions: [
-    "提炼中秋节令与宋韵生活美学",
-    "构建竹香月色主题视觉体系",
-    "整合香氛与非遗文创产品体验",
-    "打造完整的企业中秋礼赠场景",
-  ],
-},
-id: 1,
+    id: 1,
     category: "产品设计",
     title: "灵璧御茗 · 博物院文创茶礼",
     tag: "Museum Tea Set",
@@ -676,7 +619,7 @@ function About() {
   );
 }
 
-function Works({ onOpenProduct }) {
+function Works({ onOpenProduct, onOpenPackaging }) {
   const workCategories = [
 {
   title: "产品设计",
@@ -733,6 +676,11 @@ onClick={(e) => {
   if (item.title === "产品设计") {
     e.preventDefault();
     onOpenProduct();
+  }
+  
+  if (item.title === "包装设计") {
+    e.preventDefault();
+    onOpenPackaging();
   }
 }}
               className="group relative min-h-[420px] overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.025] md:min-h-[520px]"
@@ -1189,6 +1137,141 @@ processTitles: [
  </section>
   );
 }
+function PackagingDesignPage({ onBack }) {
+  const projects = [
+    {
+      id: "bamboo-moon",
+      title: "竹香云禧·阿里云中秋礼盒",
+      subtitle: "BAMBOO FRAGRANCE & MOONLIGHT",
+      tags: ["包装设计", "企业礼赠", "中秋礼盒", "商业项目"],
+      cover: "/images/projects/bamboo-moon/cover.jpg",
+      intro:
+        "竹香云禧是为阿里云2025中秋礼赠场景打造的一款企业定制礼盒。项目以“竹香”“月圆”“团聚”为核心概念，将东方节令文化与现代企业礼赠需求相结合，通过礼盒包装、香氛体验与非遗文创产品共同构建完整的节日礼赠体验。",
+      background:
+        "中秋节是中国最具代表性的传统节日之一，也是企业传递品牌温度与客户关怀的重要节点。设计以“竹香云禧”为主题，从中国传统文人雅集与宋代生活美学中汲取灵感，将竹林、明月、桂花与山水意境融入视觉设计之中。",
+      strategy:
+        "以传统节令文化为基础，融合企业礼赠场景需求，通过视觉设计、香氛体验与非遗工艺共同构建具有文化温度的品牌礼赠体验。",
+      process: [
+        "/images/projects/bamboo-moon/process-01.jpg",
+        "/images/projects/bamboo-moon/process-02.jpg",
+        "/images/projects/bamboo-moon/process-03.jpg",
+        "/images/projects/bamboo-moon/process-04.jpg",
+      ],
+      gallery: [
+        "/images/projects/bamboo-moon/gallery-01.jpg",
+        "/images/projects/bamboo-moon/gallery-02.jpg",
+        "/images/projects/bamboo-moon/gallery-03.jpg",
+        "/images/projects/bamboo-moon/gallery-04.jpg",
+        "/images/projects/bamboo-moon/gallery-05.jpg",
+        "/images/projects/bamboo-moon/gallery-06.jpg",
+      ],
+      processTitles: ["文化概念研究", "礼盒视觉设计", "内容物策划", "礼赠体验设计"],
+      processDescriptions: [
+        "提炼中秋节令与宋韵生活美学",
+        "构建竹香月色主题视觉体系",
+        "整合香氛与非遗文创产品体验",
+        "打造完整的企业中秋礼赠场景",
+      ],
+    },
+  ];
+
+  return (
+    <section className="relative min-h-screen overflow-hidden bg-[#030303] px-5 py-20 text-white md:px-10 md:py-24">
+      <ParticleField />
+      <div className="absolute inset-0 bg-black/82" />
+
+      <div className="relative z-10 mx-auto max-w-[1680px]">
+        <main className="space-y-8">
+          <div className="relative flex h-[42vh] flex-col items-center justify-center text-center">
+            <button onClick={onBack} className="absolute left-0 top-0 text-xs tracking-[0.25em] text-white/45 transition hover:text-white">
+              ← 返回作品案例
+            </button>
+
+            <p className="text-xs tracking-[0.55em] text-white/30">PACKAGING DESIGN</p>
+
+            <h1 className="mt-5 text-5xl font-bold tracking-[0.15em] text-white md:text-7xl">
+              包装设计
+            </h1>
+
+            <div className="mt-10 h-12 w-px bg-gradient-to-b from-white/40 to-transparent" />
+          </div>
+
+          {projects.map((project, projectIndex) => (
+            <div key={project.title} className="space-y-8">
+              <div className="mb-16 pt-20">
+                <p className="text-[120px] font-black leading-none text-white/6">
+                  PKG {String(projectIndex + 1).padStart(2, "0")}
+                </p>
+              </div>
+
+              <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.025]">
+                <div className="relative aspect-[16/9] overflow-hidden">
+                  <img src={project.cover} alt={project.title} className="h-full w-full object-cover" />
+                </div>
+
+                <div className="grid gap-8 p-6 md:grid-cols-[0.9fr_1fr] md:p-8">
+                  <div>
+                    <h2 className="mt-4 text-3xl font-bold tracking-[0.04em] md:text-4xl">{project.title}</h2>
+                    <p className="mt-3 text-xs tracking-[0.16em] text-white/45">{project.subtitle}</p>
+                  </div>
+
+                  <div>
+                    <h3 className="text-sm font-semibold tracking-[0.16em] text-white/70">项目介绍</h3>
+                    <p className="mt-4 text-sm leading-8 text-white/55">{project.intro}</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="grid gap-6 md:grid-cols-[0.7fr_1fr]">
+                <div className="rounded-[1.5rem] border border-white/10 bg-white/[0.025] p-6">
+                  <h3 className="text-sm font-semibold tracking-[0.16em] text-white/70">设计背景</h3>
+                  <p className="mt-4 text-sm leading-8 text-white/50">{project.background}</p>
+                </div>
+
+                <div className="rounded-[1.5rem] border border-white/10 bg-white/[0.025] p-6">
+                  <h3 className="text-sm font-semibold tracking-[0.16em] text-white/70">设计策略</h3>
+                  <p className="mt-4 text-sm leading-8 text-white/50">{project.strategy}</p>
+                </div>
+              </div>
+
+              <div className="rounded-[1.5rem] border border-white/10 bg-white/[0.025] p-6">
+                <h3 className="text-sm font-semibold tracking-[0.16em] text-white/70">设计过程</h3>
+
+                <div className="mt-5 grid max-w-[720px] grid-cols-2 gap-3">
+                  {project.processTitles.map((step, index) => (
+                    <div key={step} className="overflow-hidden rounded-[0.75rem] border border-white/10 bg-white/[0.035]">
+                      <div className="aspect-square overflow-hidden">
+                        <img src={project.process[index]} alt={step} className="h-full w-full object-contain" />
+                      </div>
+
+                      <div className="p-2">
+                        <p className="text-base font-black text-white/22">0{index + 1}</p>
+                        <p className="mt-1 text-[11px] font-semibold text-white/75">{step}</p>
+                        <p className="mt-1 text-[11px] leading-5 text-white/42">{project.processDescriptions[index]}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="rounded-[1.5rem] border border-white/10 bg-white/[0.025] p-6">
+                <h3 className="text-sm font-semibold tracking-[0.16em] text-white/70">作品展示</h3>
+
+                <div className="mt-5 grid gap-4 md:grid-cols-3">
+                  {project.gallery.map((img, index) => (
+                    <div key={index} className="aspect-[4/3] overflow-hidden rounded-[1rem] border border-white/10">
+                      <img src={img} alt="" className="h-full w-full object-cover" />
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))}
+        </main>
+      </div>
+    </section>
+  );
+}
 export default function App() {
   const [page, setPage] = useState("home");
   const [homeScrollY, setHomeScrollY] = useState(0);
@@ -1221,34 +1304,52 @@ export default function App() {
       <CustomCursor />
 
       <AnimatePresence mode="wait">
-        {page === "home" ? (
-          <motion.div
-            key="home"
-            initial={{ opacity: 0, y: 32, scale: 0.985 }}
-animate={{ opacity: 1, y: 0, scale: 1 }}
-exit={{ opacity: 0, y: -32, scale: 0.985 }}
-transition={{
-  duration: 0.9,
-  ease: [0.22, 1, 0.36, 1],
-}}
-          >
-            <Nav />
-            <Hero />
-            <About />
-            <Works onOpenProduct={openProductPage} />
-          </motion.div>
-        ) : (
-          <motion.div
-            key="product"
-            initial={{ opacity: 0, y: 18, filter: "blur(8px)" }}
-            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-            exit={{ opacity: 0, y: -18, filter: "blur(8px)" }}
-            transition={{ duration: 0.65, ease: [0.76, 0, 0.24, 1] }}
-          >
-            <ProductDesignPage onBack={backToWorks} />
-          </motion.div>
-        )}
-      </AnimatePresence>
+  {page === "home" ? (
+    <motion.div
+      key="home"
+      initial={{ opacity: 0, y: 32, scale: 0.985 }}
+      animate={{ opacity: 1, y: 0, scale: 1 }}
+      exit={{ opacity: 0, y: -32, scale: 0.985 }}
+      transition={{
+        duration: 0.9,
+        ease: [0.22, 1, 0.36, 1],
+      }}
+    >
+      <Nav />
+      <Hero />
+      <About />
+      <Works
+        onOpenProduct={openProductPage}
+        onOpenPackaging={() => setPage("packaging")}
+      />
+    </motion.div>
+
+  ) : page === "product" ? (
+
+    <motion.div
+      key="product"
+      initial={{ opacity: 0, y: 18, filter: "blur(8px)" }}
+      animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+      exit={{ opacity: 0, y: -18, filter: "blur(8px)" }}
+      transition={{ duration: 0.65, ease: [0.76, 0, 0.24, 1] }}
+    >
+      <ProductDesignPage onBack={backToWorks} />
+    </motion.div>
+
+  ) : (
+
+    <motion.div
+      key="packaging"
+      initial={{ opacity: 0, y: 18, filter: "blur(8px)" }}
+      animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+      exit={{ opacity: 0, y: -18, filter: "blur(8px)" }}
+      transition={{ duration: 0.65, ease: [0.76, 0, 0.24, 1] }}
+    >
+      <PackagingDesignPage onBack={backToWorks} />
+    </motion.div>
+
+  )}
+</AnimatePresence>
     </main>
   );
 }
