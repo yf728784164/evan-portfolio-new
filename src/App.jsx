@@ -1,5 +1,6 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { AnimatePresence, motion, useMotionValue, useTransform, useSpring } from "framer-motion";
+import ContactPage from "./ContactPage";
 
 const categories = ["全部", "产品设计", "包装设计", "平面设计", "手绘设计"];
 
@@ -1314,6 +1315,24 @@ export default function App() {
     });
   };
 
+  const openPackagingPage = () => {
+    setHomeScrollY(window.scrollY);
+    setPage("packaging");
+
+    requestAnimationFrame(() => {
+      window.scrollTo({ top: 0, behavior: "auto" });
+    });
+  };
+
+  const openContactPage = () => {
+    setHomeScrollY(window.scrollY);
+    setPage("contact");
+
+    requestAnimationFrame(() => {
+      window.scrollTo({ top: 0, behavior: "auto" });
+    });
+  };
+
   const backToWorks = () => {
     setPage("home");
 
@@ -1333,52 +1352,31 @@ export default function App() {
       <CustomCursor />
 
       <AnimatePresence mode="wait">
-  {page === "home" ? (
-    <motion.div
-      key="home"
-      initial={{ opacity: 0, y: 32, scale: 0.985 }}
-      animate={{ opacity: 1, y: 0, scale: 1 }}
-      exit={{ opacity: 0, y: -32, scale: 0.985 }}
-      transition={{
-        duration: 0.9,
-        ease: [0.22, 1, 0.36, 1],
-      }}
-    >
-      <Nav />
-      <Hero />
-      <About />
-      <Works
-        onOpenProduct={openProductPage}
-        onOpenPackaging={() => setPage("packaging")}
-      />
-    </motion.div>
-
-  ) : page === "product" ? (
-
-    <motion.div
-      key="product"
-      initial={{ opacity: 0, y: 18, filter: "blur(8px)" }}
-      animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-      exit={{ opacity: 0, y: -18, filter: "blur(8px)" }}
-      transition={{ duration: 0.65, ease: [0.76, 0, 0.24, 1] }}
-    >
-      <ProductDesignPage onBack={backToWorks} />
-    </motion.div>
-
-  ) : (
-
-    <motion.div
-      key="packaging"
-      initial={{ opacity: 0, y: 18, filter: "blur(8px)" }}
-      animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-      exit={{ opacity: 0, y: -18, filter: "blur(8px)" }}
-      transition={{ duration: 0.65, ease: [0.76, 0, 0.24, 1] }}
-    >
-      <PackagingDesignPage onBack={backToWorks} />
-    </motion.div>
-
-  )}
-</AnimatePresence>
+        {page === "home" ? (
+          <motion.div key="home">
+            <Nav />
+            <Hero />
+            <About />
+            <Works
+              onOpenProduct={openProductPage}
+              onOpenPackaging={openPackagingPage}
+              onOpenContact={openContactPage}  
+            />
+          </motion.div>
+        ) : page === "product" ? (
+          <motion.div key="product">
+            <ProductDesignPage onBack={backToWorks} />
+          </motion.div>
+        ) : page === "packaging" ? (
+          <motion.div key="packaging">
+            <PackagingDesignPage onBack={backToWorks} />
+          </motion.div>
+        ) : (
+          <motion.div key="contact">
+            <ContactPage onBack={backToWorks} />
+          </motion.div>
+        )}
+      </AnimatePresence>
     </main>
   );
 }
