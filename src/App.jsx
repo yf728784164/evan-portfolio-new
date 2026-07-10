@@ -354,8 +354,9 @@ function CustomCursor() {
     </>
   );
 }
-function Nav() {
+function Nav({ onOpenContact }) {
   const [activeNav, setActiveNav] = useState("个人简介");
+
   const navItems = [
     { label: "个人简介", href: "#about" },
     { label: "作品案例", href: "#works" },
@@ -370,28 +371,41 @@ function Nav() {
       transition={{ delay: 0.8, duration: 0.75 }}
     >
       <div className="mx-auto flex max-w-[1720px] items-center justify-between gap-3">
-        <a href="#top" className="text-3xl font-black tracking-[-0.14em] text-white/90 drop-shadow-[0_0_20px_rgba(255,255,255,0.28)] md:text-4xl">
+        <a
+          href="#top"
+          className="text-3xl font-black tracking-[-0.14em] text-white/90 drop-shadow-[0_0_20px_rgba(255,255,255,0.28)] md:text-4xl"
+        >
           E<span className="text-white/45">.</span>
         </a>
 
         <div className="flex max-w-[74vw] items-center gap-1 overflow-x-auto rounded-full border border-white/12 bg-white/[0.045] px-2 py-2 shadow-[0_0_70px_rgba(255,255,255,0.06)] backdrop-blur-2xl [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:absolute md:left-1/2 md:top-6 md:max-w-none md:-translate-x-1/2 md:gap-2 md:px-4">
-          {navItems.map((item, index) => (
-           <a
-           key={item.label}
-           href={item.href}
-           onClick={() => setActiveNav(item.label)}
-           className="group relative shrink-0 rounded-full px-4 py-2 text-xs font-medium tracking-[0.08em] text-white/76 transition hover:bg-white hover:text-black md:px-10 md:text-sm"
-         >
-           {item.label}
-         
-           {activeNav === item.label && (
-             <span className="absolute bottom-0 left-1/2 h-1.5 w-1.5 -translate-x-1/2 translate-y-2 rounded-full bg-white" />
-           )}
-         </a>
+          {navItems.map((item) => (
+            <a
+              key={item.label}
+              href={item.href}
+              onClick={(event) => {
+                setActiveNav(item.label);
+
+                if (item.label === "合作联系") {
+                  event.preventDefault();
+                  onOpenContact();
+                }
+              }}
+              className="group relative shrink-0 rounded-full px-4 py-2 text-xs font-medium tracking-[0.08em] text-white/76 transition hover:bg-white hover:text-black md:px-10 md:text-sm"
+            >
+              {item.label}
+
+              {activeNav === item.label && (
+                <span className="absolute bottom-0 left-1/2 h-1.5 w-1.5 -translate-x-1/2 translate-y-2 rounded-full bg-white" />
+              )}
+            </a>
           ))}
         </div>
 
-        <a href="#works" className="grid h-9 w-9 shrink-0 place-items-center rounded-full border border-white/12 bg-white/[0.045] text-base backdrop-blur-xl transition hover:bg-white hover:text-black md:h-11 md:w-11 md:text-xl">
+        <a
+          href="#works"
+          className="grid h-9 w-9 shrink-0 place-items-center rounded-full border border-white/12 bg-white/[0.045] text-base backdrop-blur-xl transition hover:bg-white hover:text-black md:h-11 md:w-11 md:text-xl"
+        >
           ✦
         </a>
       </div>
@@ -619,7 +633,11 @@ function About() {
   );
 }
 
-function Works({ onOpenProduct, onOpenPackaging }) {
+function Works({
+  onOpenProduct,
+  onOpenPackaging,
+  onOpenContact,
+}) {
   const workCategories = [
 {
   title: "产品设计",
@@ -677,10 +695,15 @@ onClick={(e) => {
     e.preventDefault();
     onOpenProduct();
   }
-  
+
   if (item.title === "包装设计") {
     e.preventDefault();
     onOpenPackaging();
+  }
+
+  if (item.title === "合作联系") {
+    e.preventDefault();
+    onOpenContact();
   }
 }}
               className="group relative min-h-[420px] overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.025] md:min-h-[520px]"
