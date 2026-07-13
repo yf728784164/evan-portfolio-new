@@ -462,26 +462,30 @@ function Hero() {
         transition={{ delay: 1.05, duration: 1.35, ease: [0.16, 1, 0.3, 1] }}
       >
         <h1 className="select-none uppercase leading-[0.95] text-white md:leading-[0.9]">
-          <span className="block text-[18vw] font-black tracking-[0.12em] drop-shadow-[0_0_38px_rgba(255,255,255,0.34)] md:text-[8vw] md:tracking-[0.22em]">
-            EVAN
-          </span>
+        <span className="block text-[18vw] font-black tracking-[0.12em] drop-shadow-[0_0_38px_rgba(255,255,255,0.34)] md:text-[8vw] md:tracking-[0.22em]">
+  EV<span className="text-[#0049ff]">A</span>N
+</span>
           <span className="mt-4 block text-[12vw] font-black tracking-[0.16em] text-white/90 drop-shadow-[0_0_48px_rgba(255,255,255,0.32)] md:text-[6.4vw] md:tracking-[0.34em]">
             PORTFOLIO
           </span>
         </h1>
-        <p className="mt-8 text-sm tracking-[0.28em] text-white/55 md:mt-10 md:text-lg md:tracking-[0.55em]">设计｜开发｜创意</p>
       </motion.div>
       <motion.div
-  className="absolute bottom-[7%] left-1/2 z-20 flex -translate-x-1/2 flex-col items-center gap-4 text-xs tracking-[0.2em] text-white/54 md:bottom-[8%] md:gap-5 md:text-sm md:tracking-[0.24em]"
-  initial={{ opacity: 0, y: 22 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ delay: 2.1, duration: 0.8 }}
+  className="relative z-20 mx-auto flex w-full max-w-[1320px] flex-col items-center text-center"
+  style={{ x: titleX, y: titleY }}
+  initial={{ opacity: 0, scale: 0.96, filter: "blur(22px)" }}
+  animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+  transition={{ delay: 1.05, duration: 1.35, ease: [0.16, 1, 0.3, 1] }}
 >
-  <span>向下滚动</span>
-  <span className="h-10 w-px bg-gradient-to-b from-white/70 to-transparent md:h-12" />
-  <span className="grid h-9 w-5 place-items-center rounded-full border border-white/25 md:h-10 md:w-6">
-    <span className="h-1.5 w-1.5 rounded-full bg-white/70" />
-  </span>
+  <h1 className="select-none uppercase leading-[0.95] text-white md:leading-[0.9]">
+    <span className="block text-[18vw] font-black tracking-[0.12em] drop-shadow-[0_0_38px_rgba(255,255,255,0.34)] md:text-[8vw] md:tracking-[0.22em]">
+      EV<span className="text-[#0049ff]">A</span>N
+    </span>
+
+    <span className="mt-4 block text-[12vw] font-black tracking-[0.16em] text-white/90 drop-shadow-[0_0_48px_rgba(255,255,255,0.32)] md:text-[6.4vw] md:tracking-[0.34em]">
+      PORTFOLIO
+    </span>
+  </h1>
 </motion.div>
     </motion.section>
   );
