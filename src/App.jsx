@@ -463,8 +463,13 @@ function Hero() {
       >
       </motion.div>
       <motion.div
-  className="relative z-20 mx-auto flex w-full max-w-[1320px] flex-col items-center text-center"
-  style={{ x: titleX, y: titleY }}
+  className="relative z-20 mx-auto flex w-full max-w-[1320px] flex-col items-center justify-center text-center"
+  style={{
+    x: titleX,
+    y: titleY,
+    left: "50%",
+    transform: "translateX(-50%)",
+  }}
   initial={{ opacity: 0, scale: 0.96, filter: "blur(22px)" }}
   animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
   transition={{ delay: 1.05, duration: 1.35, ease: [0.16, 1, 0.3, 1] }}
