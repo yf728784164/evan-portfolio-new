@@ -1377,7 +1377,7 @@ export default function App() {
       <AnimatePresence mode="wait">
         {page === "home" ? (
           <motion.div key="home">
-            <Nav />
+            <Nav onOpenContact={openContactPage} />
             <Hero />
             <About />
             <Works
