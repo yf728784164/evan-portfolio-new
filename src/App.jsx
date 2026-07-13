@@ -1,6 +1,5 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { AnimatePresence, motion, useMotionValue, useTransform, useSpring } from "framer-motion";
-import ContactPage from "./ContactPage";
 
 const categories = ["全部", "产品设计", "包装设计", "平面设计", "手绘设计"];
 
@@ -355,7 +354,7 @@ function CustomCursor() {
     </>
   );
 }
-function Nav({ onOpenContact }) {
+function Nav() {
   const [activeNav, setActiveNav] = useState("个人简介");
 
   const navItems = [
@@ -384,14 +383,7 @@ function Nav({ onOpenContact }) {
             <a
               key={item.label}
               href={item.href}
-              onClick={(event) => {
-                setActiveNav(item.label);
-
-                if (item.label === "合作联系") {
-                  event.preventDefault();
-                  onOpenContact();
-                }
-              }}
+              onClick={() => setActiveNav(item.label)}
               className="group relative shrink-0 rounded-full px-4 py-2 text-xs font-medium tracking-[0.08em] text-white/76 transition hover:bg-white hover:text-black md:px-10 md:text-sm"
             >
               {item.label}
@@ -634,11 +626,7 @@ function About() {
   );
 }
 
-function Works({
-  onOpenProduct,
-  onOpenPackaging,
-  onOpenContact,
-}) {
+function Works({ onOpenProduct, onOpenPackaging }) {
   const workCategories = [
 {
   title: "产品设计",
@@ -701,11 +689,6 @@ onClick={(e) => {
     e.preventDefault();
     onOpenPackaging();
   }
-
-  if (item.title === "合作联系") {
-    e.preventDefault();
-    onOpenContact();
-  }
 }}
               className="group relative min-h-[420px] overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.025] md:min-h-[520px]"
               initial={{ opacity: 0, y: 36 }}
@@ -755,6 +738,143 @@ onClick={(e) => {
             </motion.a>
           ))}
         </div>
+      </div>
+    </section>
+  );
+}
+function Contact() {
+  return (
+    <section
+      id="contact"
+      className="relative overflow-hidden bg-[#030303] px-5 py-20 text-white md:px-10 md:py-28"
+    >
+      <ParticleField />
+      <div className="absolute inset-0 bg-black/80" />
+
+      <div className="relative z-10 mx-auto max-w-[1500px]">
+        <div className="mb-12 flex flex-col gap-4 border-b border-white/10 pb-8 md:mb-16 md:flex-row md:items-end md:justify-between">
+          <h2 className="text-xl font-bold tracking-[0.08em] text-white md:text-3xl">
+            合作联系
+          </h2>
+
+          <p className="max-w-xl text-left text-sm leading-7 tracking-[0.08em] text-white/48 md:text-right md:leading-8 md:tracking-[0.12em]">
+            期待与你一起，把情绪与想法转化为真实的产品体验
+          </p>
+        </div>
+
+        <motion.div
+          className="grid gap-5 md:grid-cols-2"
+          initial={{ opacity: 0, y: 36 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.25 }}
+          transition={{ duration: 0.8 }}
+        >
+          {/* 微信 */}
+          <div className="group rounded-[2rem] border border-white/10 bg-white/[0.025] p-8 transition duration-500 hover:border-white/25 hover:bg-white/[0.045] md:p-10">
+            <div className="flex items-center gap-4">
+              <div className="grid h-12 w-12 place-items-center rounded-full border border-white/12 bg-white/[0.04] transition duration-500 group-hover:bg-white group-hover:text-black">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  className="h-5 w-5"
+                  stroke="currentColor"
+                  strokeWidth="1.6"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M8.5 16.5c-3.6 0-6.5-2.4-6.5-5.5s2.9-5.5 6.5-5.5S15 7.9 15 11s-2.9 5.5-6.5 5.5Z" />
+                  <path d="m5.2 15.5-1.1 2.7 3-1.8" />
+                  <path d="M15.5 10.5c3.6 0 6.5 2.2 6.5 5s-2.9 5-6.5 5c-1 0-2-.2-2.9-.5l-3 1.5 1-2.5c-1-.9-1.6-2.1-1.6-3.5" />
+                  <path d="M6.8 10h.01M10.2 10h.01M14.2 15h.01M17.6 15h.01" />
+                </svg>
+              </div>
+
+              <div>
+                <p className="text-xs tracking-[0.45em] text-white/35">
+                  WECHAT
+                </p>
+
+                <p className="mt-2 text-sm text-white/35">
+                  微信联系
+                </p>
+              </div>
+            </div>
+
+            <p className="mt-12 text-3xl font-light tracking-[0.08em] text-white md:text-4xl">
+              F-y0053
+            </p>
+
+            <div className="mt-8 h-px bg-white/10" />
+
+            <p className="mt-6 text-sm leading-7 text-white/42">
+              欢迎添加微信，沟通产品设计、包装设计、品牌视觉及文创项目合作。
+            </p>
+          </div>
+
+          {/* 邮箱 */}
+          <a
+            href="mailto:728784164@qq.com"
+            className="group rounded-[2rem] border border-white/10 bg-white/[0.025] p-8 transition duration-500 hover:border-white/25 hover:bg-white/[0.045] md:p-10"
+          >
+            <div className="flex items-center gap-4">
+              <div className="grid h-12 w-12 place-items-center rounded-full border border-white/12 bg-white/[0.04] transition duration-500 group-hover:bg-white group-hover:text-black">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  className="h-5 w-5"
+                  stroke="currentColor"
+                  strokeWidth="1.6"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <rect x="3" y="5" width="18" height="14" rx="2" />
+                  <path d="m4 7 8 6 8-6" />
+                </svg>
+              </div>
+
+              <div>
+                <p className="text-xs tracking-[0.45em] text-white/35">
+                  EMAIL
+                </p>
+
+                <p className="mt-2 text-sm text-white/35">
+                  商务邮箱
+                </p>
+              </div>
+            </div>
+
+            <p className="mt-12 break-all text-2xl font-light tracking-[0.04em] text-white md:text-3xl">
+              728784164@qq.com
+            </p>
+
+            <div className="mt-8 h-px bg-white/10" />
+
+            <p className="mt-6 text-sm leading-7 text-white/42">
+              商务合作、项目邀约与作品咨询，可通过邮件与我取得联系。
+            </p>
+          </a>
+        </motion.div>
+
+        {/* Slogan */}
+        <motion.div
+          className="mt-24 border-t border-white/10 pt-16 text-center md:mt-32 md:pt-20"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.4 }}
+          transition={{ duration: 0.8 }}
+        >
+          <p className="text-3xl font-light tracking-[0.08em] text-white md:text-5xl">
+            Always designing with emotion.
+          </p>
+
+          <p className="mt-6 text-sm tracking-[0.25em] text-white/35">
+            永远将情绪瞬间作为设计核心
+          </p>
+
+          <p className="mt-20 text-xs tracking-[0.35em] text-white/18">
+            EVAN PORTFOLIO · 2026
+          </p>
+        </motion.div>
       </div>
     </section>
   );
@@ -1346,16 +1466,6 @@ export default function App() {
       window.scrollTo({ top: 0, behavior: "auto" });
     });
   };
-
-  const openContactPage = () => {
-    setHomeScrollY(window.scrollY);
-    setPage("contact");
-
-    requestAnimationFrame(() => {
-      window.scrollTo({ top: 0, behavior: "auto" });
-    });
-  };
-
   const backToWorks = () => {
     setPage("home");
 
@@ -1373,33 +1483,58 @@ export default function App() {
     <main className="bg-[#030303] selection:bg-white selection:text-black">
       <LoadingScreen />
       <CustomCursor />
-
+  
       <AnimatePresence mode="wait">
         {page === "home" ? (
-          <motion.div key="home">
-            <Nav onOpenContact={openContactPage} />
+          <motion.div
+            key="home"
+            initial={{ opacity: 0, y: 32, scale: 0.985 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -32, scale: 0.985 }}
+            transition={{
+              duration: 0.9,
+              ease: [0.22, 1, 0.36, 1],
+            }}
+          >
+            <Nav />
             <Hero />
             <About />
+  
             <Works
               onOpenProduct={openProductPage}
               onOpenPackaging={openPackagingPage}
-              onOpenContact={openContactPage}  
             />
+  
+            <Contact />
           </motion.div>
         ) : page === "product" ? (
-          <motion.div key="product">
+          <motion.div
+            key="product"
+            initial={{ opacity: 0, y: 18, filter: "blur(8px)" }}
+            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            exit={{ opacity: 0, y: -18, filter: "blur(8px)" }}
+            transition={{
+              duration: 0.65,
+              ease: [0.76, 0, 0.24, 1],
+            }}
+          >
             <ProductDesignPage onBack={backToWorks} />
           </motion.div>
-        ) : page === "packaging" ? (
-          <motion.div key="packaging">
-            <PackagingDesignPage onBack={backToWorks} />
-          </motion.div>
         ) : (
-          <motion.div key="contact">
-            <ContactPage onBack={backToWorks} />
+          <motion.div
+            key="packaging"
+            initial={{ opacity: 0, y: 18, filter: "blur(8px)" }}
+            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            exit={{ opacity: 0, y: -18, filter: "blur(8px)" }}
+            transition={{
+              duration: 0.65,
+              ease: [0.76, 0, 0.24, 1],
+            }}
+          >
+            <PackagingDesignPage onBack={backToWorks} />
           </motion.div>
         )}
       </AnimatePresence>
-    </main>
+      </main>
   );
 }
