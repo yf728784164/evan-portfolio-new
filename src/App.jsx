@@ -789,9 +789,12 @@ function Contact() {
               </div>
             </div>
 
-            <p className="mt-12 text-3xl font-light tracking-[0.08em] text-white md:text-4xl">
-              F-y0053
-            </p>
+            <p
+  className="mt-12 text-3xl font-medium tracking-[0.04em] text-white md:text-4xl"
+  style={{ fontFamily: '"Alibaba PuHuiTi","Alibaba PuHuiTi 3.0","PingFang SC","Microsoft YaHei",sans-serif' }}
+>
+  F-y0053
+</p>
 
             <div className="mt-8 h-px bg-white/10" />
 
@@ -832,9 +835,12 @@ function Contact() {
               </div>
             </div>
 
-            <p className="mt-12 break-all text-2xl font-light tracking-[0.04em] text-white md:text-3xl">
-              728784164@qq.com
-            </p>
+            <p
+  className="mt-12 break-all text-2xl font-medium tracking-[0.02em] text-white md:text-3xl"
+  style={{ fontFamily: '"Alibaba PuHuiTi","Alibaba PuHuiTi 3.0","PingFang SC","Microsoft YaHei",sans-serif' }}
+>
+  Evanye1910@gmail.com
+</p>
 
             <div className="mt-8 h-px bg-white/10" />
 
