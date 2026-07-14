@@ -956,89 +956,23 @@ function Contact() {
 function IllustrationDesignPage({ onBack }) {
   const projects = [
     {
-      id: "oriental-pattern",
+      id: "tropical-garden",
 
-      title: "东方纹样手绘",
+      title: "热带花园手绘",
 
-      subtitle: "ORIENTAL PATTERN ILLUSTRATION",
+      subtitle: "TROPICAL GARDEN ILLUSTRATION",
 
-      tags: ["手绘设计", "东方纹样", "文化提取", "图形设计"],
+      tags: ["手绘设计", "植物插画", "动物插画", "线描艺术"],
 
-      cover: "/images/projects/oriental-pattern/cover.jpg",
+      inspiration:
+        "灵感来源于热带雨林丰富的生态景观，以巨嘴鸟、鹦鹉、棕榈叶、龟背竹、兰花与热带花卉作为主要视觉元素，通过细腻的线描笔触记录自然生命的形态与纹理。作品以植物与动物相互交织的构图方式营造层次丰富的画面，在保留自然真实感的同时，强调装饰性与图案化表达，使其能够应用于包装、家居、文创及品牌视觉等不同设计场景。",
 
-      intro:
-        "东方纹样手绘项目围绕传统文化符号的当代表达展开，从麒麟、敦煌飞马、山茶花、桂花、祥云与传统器物中提取视觉元素，通过线描、构图重组与装饰语言转译，形成适用于包装、陶瓷、品牌视觉与文创产品的原创纹样体系。",
-
-      background:
-        "传统文化元素并不是简单复制古代纹样，而是需要重新理解其结构、寓意与视觉节奏。项目从文化资料研究与手绘记录开始，对不同元素进行拆分、提炼和重组，在保留东方文化气质的同时，降低传统图形的复杂度，使纹样更适合当代产品与商业传播场景。",
-
-      strategy:
-        "设计首先通过铅笔草图寻找造型与构图关系，再使用黑白线描统一图形语言。通过控制线条粗细、疏密、留白与图形层级，使纹样在不同尺寸中保持清晰识别。最终将手绘内容转化为可延展的数字图形，并应用于礼盒封面、陶瓷器物、品牌图案与视觉物料中。",
-
-        cover: "/images/projects/illustration-01-pattern/cover.jpg",
-
-        gallery: [
-          "/images/projects/illustration-01-pattern/gallery-01.jpg",
-          "/images/projects/illustration-01-pattern/gallery-02.jpg",
-          "/images/projects/illustration-01-pattern/gallery-03.jpg",
-        ],
-    },
-
-    {
-      id: "commercial-illustration",
-
-      title: "商业插画设计",
-
-      subtitle: "COMMERCIAL ILLUSTRATION DESIGN",
-
-      tags: ["插画设计", "品牌视觉", "节日营销", "商业传播"],
-
-      cover: "/images/projects/commercial-illustration/cover.jpg",
-
-      intro:
-        "商业插画设计围绕品牌传播、节日营销与产品推广场景展开，通过角色、场景、色彩与故事元素建立具有情绪感染力的视觉内容。项目覆盖企业礼赠、节日海报、产品包装、品牌活动与社交媒体传播等不同应用场景。",
-
-      background:
-        "商业插画既需要保持独立的艺术表达，也需要服务于品牌识别和传播目标。相比单纯的装饰图形，插画能够通过人物动作、场景关系与情绪氛围，为产品建立更加完整的故事，使品牌信息以更加自然、亲切且具有记忆点的方式被用户感知。",
-
-      strategy:
-        "设计根据不同品牌的性格建立相应的造型与色彩语言，通过草图确定角色动作、视觉重心与画面节奏，再逐步完成线稿、色彩和细节。插画在创作阶段同步考虑包装印刷、屏幕显示与活动物料等实际应用，保证视觉内容在不同媒介中保持统一。",
+      cover: "/images/projects/illustration-01-pattern/cover.jpg",
 
       gallery: [
-        "/images/projects/commercial-illustration/gallery-01.jpg",
-        "/images/projects/commercial-illustration/gallery-02.jpg",
-        "/images/projects/commercial-illustration/gallery-03.jpg",
-        "/images/projects/commercial-illustration/gallery-04.jpg",
-        "/images/projects/commercial-illustration/gallery-05.jpg",
-      ],
-    },
-
-    {
-      id: "concept-sketch",
-
-      title: "产品概念草图",
-
-      subtitle: "PRODUCT CONCEPT SKETCH ARCHIVE",
-
-      tags: ["概念草图", "产品设计", "造型推演", "设计过程"],
-
-      cover: "/images/projects/concept-sketch/cover.jpg",
-
-      intro:
-        "产品概念草图记录从设计灵感到产品方案形成的思考过程，内容包括陶瓷器型、礼盒结构、文创产品、生活用品与IP衍生产品等。手绘在项目中承担快速验证造型、比例、结构与使用方式的重要作用。",
-
-      background:
-        "在设计初期，过早进入三维建模或精细效果图容易限制创意方向。快速手绘能够以更低的成本验证不同方案，并直观呈现产品的结构关系与使用体验。每一张草图不仅是造型记录，也是设计判断、方案比较与问题解决的过程。",
-
-      strategy:
-        "设计从关键词、情绪板与使用场景出发，通过大量小尺寸草图快速探索方向，再选择具有潜力的方案进行比例、结构和细节深化。最终结合尺寸标注、材质说明、爆炸结构与场景示意，将手绘概念转化为可继续建模和落地生产的设计方案。",
-
-      gallery: [
-        "/images/projects/concept-sketch/gallery-01.jpg",
-        "/images/projects/concept-sketch/gallery-02.jpg",
-        "/images/projects/concept-sketch/gallery-03.jpg",
-        "/images/projects/concept-sketch/gallery-04.jpg",
-        "/images/projects/concept-sketch/gallery-05.jpg",
+        "/images/projects/illustration-01-pattern/gallery-01.jpg",
+        "/images/projects/illustration-01-pattern/gallery-02.jpg",
+        "/images/projects/illustration-01-pattern/gallery-03.jpg",
       ],
     },
   ];
@@ -1172,11 +1106,17 @@ function IllustrationDesignPage({ onBack }) {
             className="h-full w-full object-cover"
           />
         </motion.div>
-      )}
-    </div>
-  </section>
-))}
-}
+                 )}
+                 </div>
+               </section>
+             ))}
+                     </main>
+                   </div>
+                 </section>
+               );
+             }
+       
+       
 function GraphicDesignPage({ onBack }) {
   const projects = [
     {
@@ -1192,8 +1132,7 @@ function GraphicDesignPage({ onBack }) {
 
       cover: "/images/projects/commercial-visual/cover.jpg",
 
-      inspiration:
-"灵感来源于热带雨林丰富的生态景观，以巨嘴鸟、鹦鹉、棕榈叶、龟背竹、兰花与热带花卉作为主要视觉元素，通过细腻的线描笔触记录自然生命的形态与纹理。作品以植物与动物相互交织的构图方式营造层次丰富的画面，在保留自然真实感的同时，强调装饰性与图案化表达，使其能够应用于包装、家居、文创及品牌视觉等不同设计场景。",
+      
         gallery: [
           "/images/projects/commercial-visual/poster-01.jpg",
           "/images/projects/commercial-visual/poster-02.jpg",
