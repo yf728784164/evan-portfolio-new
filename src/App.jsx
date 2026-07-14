@@ -783,9 +783,7 @@ function Contact() {
                   WECHAT
                 </p>
 
-                <p className="mt-2 text-sm text-white/35">
-                  微信联系
-                </p>
+               
               </div>
             </div>
 
