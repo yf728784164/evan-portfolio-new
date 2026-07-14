@@ -798,9 +798,7 @@ function Contact() {
 
             <div className="mt-8 h-px bg-white/10" />
 
-            <p className="mt-6 text-sm leading-7 text-white/42">
-              欢迎添加微信，沟通产品设计、包装设计、品牌视觉及文创项目合作。
-            </p>
+          
           </div>
 
           {/* 邮箱 */}
@@ -829,9 +827,7 @@ function Contact() {
                   EMAIL
                 </p>
 
-                <p className="mt-2 text-sm text-white/35">
-                  商务邮箱
-                </p>
+               
               </div>
             </div>
 
