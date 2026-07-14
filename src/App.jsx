@@ -953,7 +953,7 @@ function GraphicDesignPage({ onBack }) {
     {
       id: "commercial-visual",
 
-      title: "商业产品视觉",
+      title: "商业产品视觉宣传",
 
       subtitle: "COMMERCIAL PRODUCT VISUAL DESIGN",
 
@@ -984,7 +984,7 @@ function GraphicDesignPage({ onBack }) {
     {
       id: "ecommerce-design",
 
-      title: "电商设计",
+      title: "电商相关物料",
 
       subtitle: "E-COMMERCE DETAIL PAGE DESIGN",
 
@@ -1082,6 +1082,15 @@ function GraphicDesignPage({ onBack }) {
 
               {/* 右侧视觉内容 */}
               <div className="w-full min-w-0 space-y-4 md:space-y-6">
+              <div className="mb-12 border-b border-white/10 pb-6">
+  <p className="text-xs uppercase tracking-[0.45em] text-white/35">
+    {project.subtitle}
+  </p>
+
+  <h2 className="mt-3 text-4xl font-bold tracking-[0.08em] text-white">
+    {project.title}
+  </h2>
+</div>
                 {/* 封面 */}
                 <div className="aspect-[16/9] w-full overflow-hidden rounded-[1.25rem] border border-white/10 md:rounded-[2rem]">
                   <img
