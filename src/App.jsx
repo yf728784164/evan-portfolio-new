@@ -975,13 +975,13 @@ function IllustrationDesignPage({ onBack }) {
       strategy:
         "设计首先通过铅笔草图寻找造型与构图关系，再使用黑白线描统一图形语言。通过控制线条粗细、疏密、留白与图形层级，使纹样在不同尺寸中保持清晰识别。最终将手绘内容转化为可延展的数字图形，并应用于礼盒封面、陶瓷器物、品牌图案与视觉物料中。",
 
-      gallery: [
-        "/images/projects/oriental-pattern/gallery-01.jpg",
-        "/images/projects/oriental-pattern/gallery-02.jpg",
-        "/images/projects/oriental-pattern/gallery-03.jpg",
-        "/images/projects/oriental-pattern/gallery-04.jpg",
-        "/images/projects/oriental-pattern/gallery-05.jpg",
-      ],
+        cover: "/images/projects/illustration-01-pattern/cover.jpg",
+
+        gallery: [
+          "/images/projects/illustration-01-pattern/gallery-01.jpg",
+          "/images/projects/illustration-01-pattern/gallery-02.jpg",
+          "/images/projects/illustration-01-pattern/gallery-03.jpg",
+        ],
     },
 
     {
@@ -1069,9 +1069,7 @@ function IllustrationDesignPage({ onBack }) {
               插画手绘
             </h1>
 
-            <p className="mt-6 max-w-xl text-sm leading-7 tracking-[0.08em] text-white/42">
-              从笔触、纹样与概念草图出发，记录设计形成之前最直接的思考过程
-            </p>
+            
 
             <div className="mt-10 h-12 w-px bg-gradient-to-b from-white/40 to-transparent" />
           </div>
@@ -1083,51 +1081,17 @@ function IllustrationDesignPage({ onBack }) {
               className="grid grid-cols-1 items-start gap-10 md:grid-cols-[0.9fr_1.1fr] md:gap-16"
             >
               {/* 左侧文字 */}
-              <div className="space-y-8 md:sticky md:top-24">
-                <p className="text-[68px] font-black leading-none text-white/10 md:text-[96px]">
-                  ILL {String(projectIndex + 1).padStart(2, "0")}
-                </p>
+              <div>
+  <h3 className="text-sm tracking-[0.2em] text-white/70">
+    DESIGN INSPIRATION
+  </h3>
 
-                <div>
-                  <h2 className="text-3xl font-bold tracking-[0.04em]">
-                    {project.title}
-                  </h2>
+  <div className="mt-4 h-px w-12 bg-white/20" />
 
-                  <p className="mt-2 text-xs tracking-[0.2em] text-white/40">
-                    {project.subtitle}
-                  </p>
-
-                  <div className="mt-5 flex flex-wrap gap-2">
-                    {project.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="rounded-full border border-white/10 px-3 py-1 text-xs text-white/50"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                <div>
-                  <h3 className="text-sm tracking-[0.2em] text-white/70">
-                    PROJECT INTRO
-                  </h3>
-
-                  <p className="mt-3 text-sm leading-7 text-white/50">
-                    {project.intro}
-                  </p>
-                </div>
-
-                <div>
-                  <h3 className="text-sm tracking-[0.2em] text-white/70">
-                    DESIGN BACKGROUND
-                  </h3>
-
-                  <p className="mt-3 text-sm leading-7 text-white/50">
-                    {project.background}
-                  </p>
-                </div>
+  <p className="mt-6 text-[15px] leading-8 tracking-[0.03em] text-white/55">
+    {project.inspiration}
+  </p>
+</div>
 
                 <div>
                   <h3 className="text-sm tracking-[0.2em] text-white/70">
@@ -1240,15 +1204,8 @@ function GraphicDesignPage({ onBack }) {
 
       cover: "/images/projects/commercial-visual/cover.jpg",
 
-      intro:
-        "商业产品视觉项目围绕产品推广与品牌传播场景展开，通过主视觉、产品海报、场景宣传图与社交媒体图像，建立统一而具有辨识度的商业视觉体系。设计以产品本身的功能、材质与情绪价值为核心，将产品信息转化为更具吸引力和传播力的视觉内容，帮助品牌在电商平台、社交媒体与市场推广中形成清晰的视觉印象。",
-
-      background:
-        "在当代商业传播中，消费者往往首先通过图片感知产品。产品宣传图不只是对产品外观的展示，也承担着塑造品牌气质、传递产品卖点与建立消费情绪的重要作用。本项目整合不同类型的产品视觉实践，从构图、场景、光影、字体与信息层级等方面建立统一方法，使视觉内容兼顾品牌表达、销售转化与社交传播需求。",
-
-      strategy:
-        "设计从产品特征出发，为不同使用场景建立相应的视觉叙事。通过主视觉负责建立第一印象，场景图负责呈现使用体验，细节图负责强化材质与功能，并以统一的排版、字体与色彩体系连接不同图片。整体控制画面信息密度，使产品始终保持视觉中心，同时通过环境氛围提升画面的情绪感染力。",
-
+      inspiration:
+"灵感来源于热带雨林丰富的生态景观，以巨嘴鸟、鹦鹉、棕榈叶、龟背竹、兰花与热带花卉作为主要视觉元素，通过细腻的线描笔触记录自然生命的形态与纹理。作品以植物与动物相互交织的构图方式营造层次丰富的画面，在保留自然真实感的同时，强调装饰性与图案化表达，使其能够应用于包装、家居、文创及品牌视觉等不同设计场景。",
         gallery: [
           "/images/projects/commercial-visual/poster-01.jpg",
           "/images/projects/commercial-visual/poster-02.jpg",
