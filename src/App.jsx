@@ -1106,22 +1106,46 @@ function GraphicDesignPage({ onBack }) {
     />
   </div>
 )}
-               {/* 商业产品视觉宣传：A4竖版全宽展示 */}
+{/* 商业产品视觉宣传 */}
 {project.id === "commercial-visual" && (
-  <div className="space-y-8 md:space-y-12">
-    {project.gallery.map((img, index) => (
-      <div
-        key={img}
-        className="mx-auto w-full max-w-[1100px] overflow-hidden rounded-[1rem] border border-white/10 bg-white/[0.02] shadow-[0_24px_80px_rgba(0,0,0,0.28)] md:rounded-[1.5rem]"
-      >
-        <img
-          src={img}
-          alt={`${project.title} 宣传图 ${index + 1}`}
-          className="block h-auto w-full"
-          loading="lazy"
-        />
-      </div>
-    ))}
+  <div className="grid grid-cols-1 gap-x-8 gap-y-12 md:grid-cols-2">
+    {project.gallery.map((img, index) => {
+      const posterTitles = [
+        "阿里云开放式耳机",
+        "阿里云 × 南航礼盒",
+        "敦煌花马陶瓷茶礼",
+        "海洋之渔餐盘",
+        "森屿童话下午茶礼",
+        "奉进遗珍文创茶礼",
+        "数字马力端午宣发",
+        "阿里云中秋茶礼宣发",
+        "动物世界餐盘",
+      ];
+
+      return (
+        <figure
+          key={img}
+          className={`flex flex-col ${
+            index === posterTitles.length - 1
+              ? "md:col-span-2 md:mx-auto md:max-w-[48%]"
+              : ""
+          }`}
+        >
+          <div className="overflow-hidden rounded-[1.25rem] border border-white/10 bg-white/[0.02]">
+            <img
+              src={img}
+              alt={posterTitles[index]}
+              className="block h-auto w-full"
+              loading="lazy"
+            />
+          </div>
+
+          <figcaption className="mt-5 text-center text-base font-medium tracking-[0.08em] text-white/65">
+            {posterTitles[index]}
+          </figcaption>
+        </figure>
+      );
+    })}
   </div>
 )}
 
