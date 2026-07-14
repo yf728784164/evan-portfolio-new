@@ -840,9 +840,7 @@ function Contact() {
 
             <div className="mt-8 h-px bg-white/10" />
 
-            <p className="mt-6 text-sm leading-7 text-white/42">
-              商务合作、项目邀约与作品咨询，可通过邮件与我取得联系。
-            </p>
+           
           </a>
         </motion.div>
 
