@@ -699,11 +699,7 @@ onClick={(e) => {
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-black/10" />
               <div className="absolute inset-0 bg-gradient-to-r from-black/35 via-transparent to-black/20" />
 
-              <div className="absolute left-6 top-6 md:left-8 md:top-8">
-                <p className="text-xs tracking-[0.45em] text-white/32">
-                  {item.en}
-                </p>
-              </div>
+              
 
               <div className="absolute bottom-6 left-6 right-6 md:bottom-8 md:left-8 md:right-8">
               
