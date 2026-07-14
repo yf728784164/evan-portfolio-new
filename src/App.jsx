@@ -686,7 +686,11 @@ function About() {
   );
 }
 
-function Works({ onOpenProduct, onOpenPackaging }) {
+function Works({
+  onOpenProduct,
+  onOpenPackaging,
+  onOpenGraphic,
+}) {
   const workCategories = [
 {
   title: "产品设计",
@@ -739,17 +743,22 @@ function Works({ onOpenProduct, onOpenPackaging }) {
             <motion.a
               key={item.title}
               href="#works"
-onClick={(e) => {
-  if (item.title === "产品设计") {
-    e.preventDefault();
-    onOpenProduct();
-  }
-
-  if (item.title === "包装设计") {
-    e.preventDefault();
-    onOpenPackaging();
-  }
-}}
+              onClick={(e) => {
+                if (item.title === "产品设计") {
+                  e.preventDefault();
+                  onOpenProduct();
+                }
+              
+                if (item.title === "包装设计") {
+                  e.preventDefault();
+                  onOpenPackaging();
+                }
+              
+                if (item.title === "平面设计") {
+                  e.preventDefault();
+                  onOpenGraphic();
+                }
+              }}
               className="group relative min-h-[420px] overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.025] md:min-h-[520px]"
               initial={{ opacity: 0, y: 36 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -935,6 +944,272 @@ function Contact() {
             EVAN PORTFOLIO · 2026
           </p>
         </motion.div>
+      </div>
+    </section>
+  );
+}
+function GraphicDesignPage({ onBack }) {
+  const projects = [
+    {
+      id: "commercial-visual",
+
+      title: "商业产品视觉",
+
+      subtitle: "COMMERCIAL PRODUCT VISUAL DESIGN",
+
+      tags: ["平面设计", "产品宣传", "商业视觉", "社交传播"],
+
+      layout: "campaign",
+
+      cover: "/images/projects/commercial-visual/cover.jpg",
+
+      intro:
+        "商业产品视觉项目围绕产品推广与品牌传播场景展开，通过主视觉、产品海报、场景宣传图与社交媒体图像，建立统一而具有辨识度的商业视觉体系。设计以产品本身的功能、材质与情绪价值为核心，将产品信息转化为更具吸引力和传播力的视觉内容，帮助品牌在电商平台、社交媒体与市场推广中形成清晰的视觉印象。",
+
+      background:
+        "在当代商业传播中，消费者往往首先通过图片感知产品。产品宣传图不只是对产品外观的展示，也承担着塑造品牌气质、传递产品卖点与建立消费情绪的重要作用。本项目整合不同类型的产品视觉实践，从构图、场景、光影、字体与信息层级等方面建立统一方法，使视觉内容兼顾品牌表达、销售转化与社交传播需求。",
+
+      strategy:
+        "设计从产品特征出发，为不同使用场景建立相应的视觉叙事。通过主视觉负责建立第一印象，场景图负责呈现使用体验，细节图负责强化材质与功能，并以统一的排版、字体与色彩体系连接不同图片。整体控制画面信息密度，使产品始终保持视觉中心，同时通过环境氛围提升画面的情绪感染力。",
+
+      gallery: [
+        "/images/projects/commercial-visual/gallery-01.jpg",
+        "/images/projects/commercial-visual/gallery-02.jpg",
+        "/images/projects/commercial-visual/gallery-03.jpg",
+        "/images/projects/commercial-visual/gallery-04.jpg",
+        "/images/projects/commercial-visual/gallery-05.jpg",
+      ],
+    },
+
+    {
+      id: "ecommerce-design",
+
+      title: "电商设计",
+
+      subtitle: "E-COMMERCE DETAIL PAGE DESIGN",
+
+      tags: ["平面设计", "电商设计", "详情页", "信息设计"],
+
+      layout: "detail",
+
+      cover: "/images/projects/ecommerce-design/cover.jpg",
+
+      intro:
+        "电商设计项目聚焦产品详情页、平台主图与销售内容的系统化呈现。设计围绕消费者浏览路径展开，将产品卖点、使用场景、材质工艺、功能信息与品牌表达进行合理排序，使长页面既能够持续吸引用户阅读，也能够清晰地完成产品信息传达。",
+
+      background:
+        "详情页是连接产品与消费者的重要销售界面。用户往往在较短时间内完成对产品价值、功能与品质的判断，因此设计不仅需要具有视觉吸引力，也必须建立明确的信息层级。本项目通过对内容结构、视觉节奏与阅读顺序的规划，使不同类型产品能够在移动端长页面中保持连贯、清晰且具有说服力的体验。",
+
+      strategy:
+        "设计按照“建立印象、呈现卖点、解释功能、强化细节、完成转化”的阅读逻辑组织页面。首屏负责建立产品定位，中段通过场景与功能模块强化产品价值，后段以材质、参数与细节内容解决用户疑问。通过统一字体、留白、色彩与图像比例，使长页面在信息丰富的同时保持稳定的视觉秩序。",
+
+      details: [
+        "/images/projects/ecommerce-design/detail-01.jpg",
+        "/images/projects/ecommerce-design/detail-02.jpg",
+        "/images/projects/ecommerce-design/detail-03.jpg",
+        "/images/projects/ecommerce-design/detail-04.jpg",
+      ],
+    },
+
+    {
+      id: "brand-event",
+
+      title: "品牌活动视觉",
+
+      subtitle: "BRAND EVENT VISUAL SYSTEM",
+
+      tags: ["平面设计", "活动视觉", "线下物料", "视觉系统"],
+
+      layout: "campaign",
+
+      cover: "/images/projects/brand-event/cover.jpg",
+
+      intro:
+        "品牌活动视觉项目围绕线下活动与企业传播场景展开，从活动主视觉出发，将视觉语言延展至签到墙、门头、导视、易拉宝、桌牌、手举牌与周边物料中，形成统一完整的活动视觉系统。项目重点关注视觉识别在不同尺寸、材质与空间环境中的适配，使活动现场具备清晰的品牌氛围与传播记忆点。",
+
+      background:
+        "线下活动是品牌与用户建立真实连接的重要场景。与单一海报设计不同，活动视觉需要面对不同尺寸、距离、材质与空间条件，并确保每一项物料都能够延续主视觉的核心识别。本项目通过系统化的视觉规划，将品牌信息、活动主题与现场体验纳入同一设计语言中。",
+
+      strategy:
+        "设计首先建立活动主视觉与核心图形，再根据现场传播层级进行延展。远距离物料强调主题识别与色彩冲击，中距离物料强调信息阅读，近距离物料则强化细节与互动体验。通过统一字体、色彩、图形比例与版式规则，使门头、签到墙、导视及周边在不同应用中保持一致，同时兼顾实际制作与现场落地。",
+
+      gallery: [
+        "/images/projects/brand-event/gallery-01.jpg",
+        "/images/projects/brand-event/gallery-02.jpg",
+        "/images/projects/brand-event/gallery-03.jpg",
+        "/images/projects/brand-event/gallery-04.jpg",
+        "/images/projects/brand-event/gallery-05.jpg",
+      ],
+    },
+  ];
+
+  return (
+    <section className="relative min-h-screen overflow-hidden bg-[#030303] px-5 py-20 text-white md:px-10 md:py-24">
+      <ParticleField />
+
+      <div className="absolute inset-0 bg-black/82" />
+
+      <div className="relative z-10 mx-auto max-w-[1680px]">
+        <main className="space-y-32">
+          {/* 页面标题 */}
+          <div className="relative flex h-[42vh] flex-col items-center justify-center text-center">
+            <button
+              onClick={onBack}
+              className="absolute left-0 top-0 text-xs tracking-[0.25em] text-white/45 transition hover:text-white"
+            >
+              ← 返回作品案例
+            </button>
+
+            <p className="text-xs tracking-[0.55em] text-white/30">
+              GRAPHIC DESIGN
+            </p>
+
+            <h1 className="mt-5 text-5xl font-bold tracking-[0.15em] text-white md:text-7xl">
+              平面设计
+            </h1>
+
+            <div className="mt-10 h-12 w-px bg-gradient-to-b from-white/40 to-transparent" />
+          </div>
+
+          {/* 三个项目 */}
+          {projects.map((project, projectIndex) => (
+            <section
+              key={project.id}
+              className="grid grid-cols-1 items-start gap-10 md:grid-cols-[0.9fr_1.1fr] md:gap-16"
+            >
+              {/* 左侧项目文字 */}
+              <div className="space-y-8 md:sticky md:top-24">
+                <p className="text-[72px] font-black leading-none text-white/10 md:text-[100px]">
+                  GRA {String(projectIndex + 1).padStart(2, "0")}
+                </p>
+
+                <div>
+                  <h2 className="text-3xl font-bold tracking-[0.04em]">
+                    {project.title}
+                  </h2>
+
+                  <p className="mt-2 text-xs tracking-[0.2em] text-white/40">
+                    {project.subtitle}
+                  </p>
+
+                  <div className="mt-5 flex flex-wrap gap-2">
+                    {project.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="rounded-full border border-white/10 px-3 py-1 text-xs text-white/50"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                <div>
+                  <h3 className="text-sm tracking-[0.2em] text-white/70">
+                    PROJECT INTRO
+                  </h3>
+
+                  <p className="mt-3 text-sm leading-7 text-white/50">
+                    {project.intro}
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className="text-sm tracking-[0.2em] text-white/70">
+                    DESIGN BACKGROUND
+                  </h3>
+
+                  <p className="mt-3 text-sm leading-7 text-white/50">
+                    {project.background}
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className="text-sm tracking-[0.2em] text-white/70">
+                    DESIGN STRATEGY
+                  </h3>
+
+                  <p className="mt-3 text-sm leading-7 text-white/50">
+                    {project.strategy}
+                  </p>
+                </div>
+              </div>
+
+              {/* 右侧视觉内容 */}
+              <div className="w-full min-w-0 space-y-4 md:space-y-6">
+                {/* 封面 */}
+                <div className="aspect-[16/9] w-full overflow-hidden rounded-[1.25rem] border border-white/10 md:rounded-[2rem]">
+                  <img
+                    src={project.cover}
+                    alt={`${project.title} 封面`}
+                    className="h-full w-full object-cover"
+                  />
+                </div>
+
+                {/* 商业视觉与活动视觉 */}
+                {project.layout === "campaign" && (
+                  <>
+                    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                      {project.gallery.slice(0, 2).map((img, index) => (
+                        <div
+                          key={img}
+                          className="aspect-[4/3] w-full overflow-hidden rounded-[1rem] border border-white/10"
+                        >
+                          <img
+                            src={img}
+                            alt={`${project.title} 展示图 ${index + 1}`}
+                            className="h-full w-full object-cover"
+                          />
+                        </div>
+                      ))}
+                    </div>
+
+                    <div className="aspect-[16/9] w-full overflow-hidden rounded-[1.25rem] border border-white/10 md:rounded-[1.5rem]">
+                      <img
+                        src={project.gallery[2]}
+                        alt={`${project.title} 主视觉`}
+                        className="h-full w-full object-cover"
+                      />
+                    </div>
+
+                    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                      {project.gallery.slice(3, 5).map((img, index) => (
+                        <div
+                          key={img}
+                          className="aspect-[4/3] w-full overflow-hidden rounded-[1rem] border border-white/10"
+                        >
+                          <img
+                            src={img}
+                            alt={`${project.title} 细节图 ${index + 1}`}
+                            className="h-full w-full object-cover"
+                          />
+                        </div>
+                      ))}
+                    </div>
+                  </>
+                )}
+
+                {/* 电商详情页长图 */}
+                {project.layout === "detail" && (
+                  <div className="space-y-4 md:space-y-6">
+                    {project.details.map((img, index) => (
+                      <div
+                        key={img}
+                        className="w-full overflow-hidden rounded-[1rem] border border-white/10 bg-white/[0.02]"
+                      >
+                        <img
+                          src={img}
+                          alt={`${project.title} 详情页 ${index + 1}`}
+                          className="block h-auto w-full"
+                        />
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </section>
+          ))}
+        </main>
       </div>
     </section>
   );
@@ -1678,56 +1953,70 @@ export default function App() {
       <CustomCursor />
   
       <AnimatePresence mode="wait">
-        {page === "home" ? (
-          <motion.div
-            key="home"
-            initial={{ opacity: 0, y: 32, scale: 0.985 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: -32, scale: 0.985 }}
-            transition={{
-              duration: 0.9,
-              ease: [0.22, 1, 0.36, 1],
-            }}
-          >
-            <Nav />
-            <Hero />
-            <About />
-  
-            <Works
-              onOpenProduct={openProductPage}
-              onOpenPackaging={openPackagingPage}
-            />
-  
-            <Contact />
-          </motion.div>
-        ) : page === "product" ? (
-          <motion.div
-            key="product"
-            initial={{ opacity: 0, y: 18, filter: "blur(8px)" }}
-            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-            exit={{ opacity: 0, y: -18, filter: "blur(8px)" }}
-            transition={{
-              duration: 0.65,
-              ease: [0.76, 0, 0.24, 1],
-            }}
-          >
-            <ProductDesignPage onBack={backToWorks} />
-          </motion.div>
-        ) : (
-          <motion.div
-            key="packaging"
-            initial={{ opacity: 0, y: 18, filter: "blur(8px)" }}
-            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-            exit={{ opacity: 0, y: -18, filter: "blur(8px)" }}
-            transition={{
-              duration: 0.65,
-              ease: [0.76, 0, 0.24, 1],
-            }}
-          >
-            <PackagingDesignPage onBack={backToWorks} />
-          </motion.div>
-        )}
-      </AnimatePresence>
+  {page === "home" ? (
+    <motion.div
+      key="home"
+      initial={{ opacity: 0, y: 32, scale: 0.985 }}
+      animate={{ opacity: 1, y: 0, scale: 1 }}
+      exit={{ opacity: 0, y: -32, scale: 0.985 }}
+      transition={{
+        duration: 0.9,
+        ease: [0.22, 1, 0.36, 1],
+      }}
+    >
+      <Nav />
+      <Hero />
+      <About />
+
+      <Works
+        onOpenProduct={openProductPage}
+        onOpenPackaging={openPackagingPage}
+        onOpenGraphic={openGraphicPage}
+      />
+
+      <Contact />
+    </motion.div>
+  ) : page === "product" ? (
+    <motion.div
+      key="product"
+      initial={{ opacity: 0, y: 18, filter: "blur(8px)" }}
+      animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+      exit={{ opacity: 0, y: -18, filter: "blur(8px)" }}
+      transition={{
+        duration: 0.65,
+        ease: [0.76, 0, 0.24, 1],
+      }}
+    >
+      <ProductDesignPage onBack={backToWorks} />
+    </motion.div>
+  ) : page === "packaging" ? (
+    <motion.div
+      key="packaging"
+      initial={{ opacity: 0, y: 18, filter: "blur(8px)" }}
+      animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+      exit={{ opacity: 0, y: -18, filter: "blur(8px)" }}
+      transition={{
+        duration: 0.65,
+        ease: [0.76, 0, 0.24, 1],
+      }}
+    >
+      <PackagingDesignPage onBack={backToWorks} />
+    </motion.div>
+  ) : (
+    <motion.div
+      key="graphic"
+      initial={{ opacity: 0, y: 18, filter: "blur(8px)" }}
+      animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+      exit={{ opacity: 0, y: -18, filter: "blur(8px)" }}
+      transition={{
+        duration: 0.65,
+        ease: [0.76, 0, 0.24, 1],
+      }}
+    >
+      <GraphicDesignPage onBack={backToWorks} />
+    </motion.div>
+  )}
+</AnimatePresence>
       </main>
   );
 }
