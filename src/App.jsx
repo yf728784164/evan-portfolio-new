@@ -490,7 +490,7 @@ function Hero() {
 >
   <h1 className="select-none uppercase leading-[0.95] text-white md:leading-[0.9]">
     <span className="block text-[18vw] font-black tracking-[0.12em] drop-shadow-[0_0_38px_rgba(255,255,255,0.34)] md:text-[8vw] md:tracking-[0.22em]">
-      EV<span className="text-[#0049ff]">A</span>N
+      EV<span className="text-[#1677ff]">A</span>N
     </span>
 
     <span className="mt-4 block text-[12vw] font-black tracking-[0.16em] text-white/90 drop-shadow-[0_0_48px_rgba(255,255,255,0.32)] md:text-[6.4vw] md:tracking-[0.34em]">
