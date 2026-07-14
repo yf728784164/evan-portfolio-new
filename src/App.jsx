@@ -1399,6 +1399,34 @@ function PackagingDesignPage({ onBack }) {
       "/images/projects/hainan-huatie/gallery-05.jpg",
     ],
   },
+  {
+    id: "cloud-bao",
+  
+    title: "好彩云小宝·阿里云陶瓷盲盒",
+  
+    subtitle: "ALIBABA CLOUD CERAMIC BLIND BOX COLLECTION",
+  
+    tags: ["包装设计", "陶瓷设计", "IP衍生", "盲盒设计"],
+  
+    cover: "/images/projects/cloud-bao/cover.jpg",
+  
+    intro:
+      "好彩云小宝是围绕阿里云品牌IP形象开发的一套陶瓷盲盒系列。项目以云朵般圆润柔和的角色造型为基础，通过多种釉色、表面肌理与装饰工艺，塑造具有差异化性格的系列化收藏产品。设计从IP造型、陶瓷工艺、色彩体系到盲盒包装进行整体规划，将阿里云的科技属性转化为更加亲切、有趣且具收藏价值的实体产品，为品牌礼赠、用户互动与线下传播提供新的体验载体。",
+  
+    background:
+      "随着品牌IP逐渐成为企业连接用户的重要媒介，IP衍生产品已经不再只是简单的形象复制，而需要兼顾品牌识别、产品体验与情绪价值。阿里云希望借助陶瓷材料独特的质感与工艺表现力，将数字化的品牌形象转化为可触摸、可收藏的实体角色。本项目以“云”为视觉与情绪起点，通过柔和圆润的造型、丰富多变的釉色及具有惊喜感的盲盒机制，让科技品牌以更具温度和趣味性的方式进入用户日常生活。",
+  
+    strategy:
+      "设计以统一角色造型和差异化工艺表达为核心，建立完整的系列化产品体系。造型上保留云小宝简洁圆润的识别特征，使不同款式保持一致的品牌基因；视觉上运用渐变釉、金属釉、窑变釉、结晶釉及高亮镜面效果，增强盲盒之间的差异性与收藏感；包装上以黑色作为视觉基底，结合渐变云形图案和系列角色索引，使产品在零售陈列、开箱体验与社交传播中形成鲜明且统一的品牌识别。",
+  
+    gallery: [
+      "/images/projects/cloud-bao/gallery-01.jpg",
+      "/images/projects/cloud-bao/gallery-02.jpg",
+      "/images/projects/cloud-bao/gallery-03.jpg",
+      "/images/projects/cloud-bao/gallery-04.jpg",
+      "/images/projects/cloud-bao/gallery-05.jpg",
+    ],
+  },
 ];
 
 return (
