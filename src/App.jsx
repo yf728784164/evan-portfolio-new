@@ -1409,12 +1409,12 @@ return (
         {/* 项目列表 */}
         {projects.map((project, index) => (
           <section
-            key={project.id}
-            className="grid gap-16 md:grid-cols-[0.9fr_1.1fr] items-start"
-          >
+          key={project.id}
+          className="grid grid-cols-1 items-start gap-10 md:grid-cols-[0.9fr_1.1fr] md:gap-16"
+        >
 
             {/* 左侧信息 */}
-            <div className="sticky top-24 space-y-8">
+            <div className="space-y-8 md:sticky md:top-24">
 
               <p className="text-[100px] font-black text-white/10 leading-none">
                 PKG {String(index + 1).padStart(2, "0")}
@@ -1470,60 +1470,60 @@ return (
             </div>
 
            {/* 右侧视觉 */}
-<div className="space-y-6">
+<div className="w-full min-w-0 space-y-4 md:space-y-6">
+  {/* 封面 · 16:9 */}
+  <div className="aspect-[16/9] w-full overflow-hidden rounded-[1.25rem] border border-white/10 md:rounded-[2rem]">
+    <img
+      src={project.cover}
+      alt={`${project.title} 封面`}
+      className="h-full w-full object-cover"
+    />
+  </div>
 
-{/* 封面 Cover · 16:9 */}
-<div className="aspect-[16/9] overflow-hidden rounded-[2rem] border border-white/10">
-  <img
-    src={project.cover}
-    alt={`${project.title} 封面`}
-    className="h-full w-full object-cover"
-  />
+  {/* 礼盒打开、产品组合 */}
+  <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+    {project.gallery.slice(0, 2).map((img, index) => (
+      <div
+        key={img}
+        className="aspect-[4/3] w-full overflow-hidden rounded-[1rem] border border-white/10"
+      >
+        <img
+          src={img}
+          alt={`${project.title} 展示图 ${index + 1}`}
+          className="h-full w-full object-cover"
+        />
+      </div>
+    ))}
+  </div>
+
+  {/* 氛围图 · 全宽 16:9 */}
+  <div className="aspect-[16/9] w-full overflow-hidden rounded-[1.25rem] border border-white/10 md:rounded-[1.5rem]">
+    <img
+      src={project.gallery[2]}
+      alt={`${project.title} 氛围图`}
+      className="h-full w-full object-cover"
+    />
+  </div>
+
+  {/* 两张细节图 */}
+  <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+    {project.gallery.slice(3, 5).map((img, index) => (
+      <div
+        key={img}
+        className="aspect-[4/3] w-full overflow-hidden rounded-[1rem] border border-white/10"
+      >
+        <img
+          src={img}
+          alt={`${project.title} 细节图 ${index + 1}`}
+          className="h-full w-full object-cover"
+        />
+      </div>
+    ))}
+  </div>
 </div>
 
-{/* 礼盒打开 + 产品组合 · 两张 4:3 */}
-<div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-  {project.gallery.slice(0, 2).map((img, index) => (
-    <div
-      key={img}
-      className="aspect-[4/3] overflow-hidden rounded-[1rem] border border-white/10"
-    >
-      <img
-        src={img}
-        alt={`${project.title} 展示图 ${index + 1}`}
-        className="h-full w-full object-cover"
-      />
-    </div>
-  ))}
-</div>
-
-{/* 氛围图 · 单张全宽 16:9 */}
-<div className="aspect-[16/9] overflow-hidden rounded-[1.5rem] border border-white/10">
-  <img
-    src={project.gallery[2]}
-    alt={`${project.title} 氛围图`}
-    className="h-full w-full object-cover"
-  />
-</div>
-
-{/* 细节图 · 两张 4:3 */}
-<div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-  {project.gallery.slice(3, 5).map((img, index) => (
-    <div
-      key={img}
-      className="aspect-[4/3] overflow-hidden rounded-[1rem] border border-white/10"
-    >
-      <img
-        src={img}
-        alt={`${project.title} 细节图 ${index + 1}`}
-        className="h-full w-full object-cover"
-      />
-    </div>
-  ))}
-</div>
-
-</div>
-          </section>
+</section>
+          
         ))}
 
       </main>
