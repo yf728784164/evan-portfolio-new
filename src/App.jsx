@@ -1455,6 +1455,34 @@ function PackagingDesignPage({ onBack }) {
       "/images/projects/red-ryo/gallery-05.jpg",
     ],
   },
+  {
+    id: "qilin-rock-tea",
+  
+    title: "“麒”福·岩茶包装设计",
+  
+    subtitle: "QILIN BLESSING ROCK TEA PACKAGING DESIGN",
+  
+    tags: ["包装设计", "茶叶包装", "东方视觉", "礼盒设计"],
+  
+    cover: "/images/projects/qilin-rock-tea/cover.jpg",
+  
+    intro:
+      "“麒”福岩茶包装以中国传统瑞兽麒麟为核心视觉意象，围绕岩茶礼赠场景进行整体设计。项目从麒麟所象征的祥瑞、守护与福运中提取文化寓意，并结合岩茶沉稳厚重的产品属性，构建兼具东方气韵与现代审美的包装系统。整体以红色作为主色调，通过麒麟线描、金色工艺与层次化版式强化礼盒的仪式感，使产品在节庆赠礼、商务往来与高端茶礼场景中具备鲜明的文化识别与收藏价值。",
+  
+    background:
+      "岩茶具有深厚的地域文化与品饮传统，其包装不仅需要传递茶叶本身的品质，也承担着文化表达与礼赠情绪的塑造作用。本项目以麒麟为核心图腾，借助其在传统文化中“招福纳瑞、守护安康”的象征意义，为岩茶礼盒建立更加完整的故事体系。设计希望在传统纹样与现代包装之间取得平衡，使麒麟形象既保留古典神韵，又能以简洁、克制的方式融入当代消费场景，提升产品的品牌感与礼赠价值。",
+  
+    strategy:
+      "设计以“瑞兽图腾、层次红色、金色工艺”构成核心视觉系统。礼盒正面采用麒麟线描作为主体图案，通过不同透明度与大小层级形成远近关系，并将“麒福”二字置于视觉中心，建立明确的识别焦点。色彩上以深红与朱红营造温暖庄重的东方氛围，辅以金色烫印、局部压纹及细腻纸张肌理增强触觉与光泽层次。整体控制图形密度与留白比例，使包装既具有传统文化厚度，也保持现代、精致且适合高端礼赠的视觉气质。",
+  
+    gallery: [
+      "/images/projects/qilin-rock-tea/gallery-01.jpg",
+      "/images/projects/qilin-rock-tea/gallery-02.jpg",
+      "/images/projects/qilin-rock-tea/gallery-03.jpg",
+      "/images/projects/qilin-rock-tea/gallery-04.jpg",
+      "/images/projects/qilin-rock-tea/gallery-05.jpg",
+    ],
+  },
 ];
 
 return (
