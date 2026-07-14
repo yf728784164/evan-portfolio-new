@@ -972,13 +972,17 @@ function GraphicDesignPage({ onBack }) {
       strategy:
         "设计从产品特征出发，为不同使用场景建立相应的视觉叙事。通过主视觉负责建立第一印象，场景图负责呈现使用体验，细节图负责强化材质与功能，并以统一的排版、字体与色彩体系连接不同图片。整体控制画面信息密度，使产品始终保持视觉中心，同时通过环境氛围提升画面的情绪感染力。",
 
-      gallery: [
-        "/images/projects/commercial-visual/gallery-01.jpg",
-        "/images/projects/commercial-visual/gallery-02.jpg",
-        "/images/projects/commercial-visual/gallery-03.jpg",
-        "/images/projects/commercial-visual/gallery-04.jpg",
-        "/images/projects/commercial-visual/gallery-05.jpg",
-      ],
+        gallery: [
+          "/images/projects/commercial-visual/poster-01.jpg",
+          "/images/projects/commercial-visual/poster-02.jpg",
+          "/images/projects/commercial-visual/poster-03.jpg",
+          "/images/projects/commercial-visual/poster-04.jpg",
+          "/images/projects/commercial-visual/poster-05.jpg",
+          "/images/projects/commercial-visual/poster-06.jpg",
+          "/images/projects/commercial-visual/poster-07.jpg",
+          "/images/projects/commercial-visual/poster-08.jpg",
+          "/images/projects/commercial-visual/poster-09.jpg",
+        ],
     },
 
     {
@@ -1091,57 +1095,81 @@ function GraphicDesignPage({ onBack }) {
     {project.title}
   </h2>
 </div>
-                {/* 封面 */}
-                <div className="aspect-[16/9] w-full overflow-hidden rounded-[1.25rem] border border-white/10 md:rounded-[2rem]">
-                  <img
-                    src={project.cover}
-                    alt={`${project.title} 封面`}
-                    className="h-full w-full object-cover"
-                  />
-                </div>
+               {/* 电商与品牌活动保留封面，商业产品视觉直接展示A4图片 */}
+{project.id !== "commercial-visual" && (
+  <div className="aspect-[16/9] w-full overflow-hidden rounded-[1.25rem] border border-white/10 md:rounded-[2rem]">
+    <img
+      src={project.cover}
+      alt={`${project.title} 封面`}
+      className="h-full w-full object-cover"
+      loading="lazy"
+    />
+  </div>
+)}
+               {/* 商业产品视觉宣传：A4竖版全宽展示 */}
+{project.id === "commercial-visual" && (
+  <div className="space-y-8 md:space-y-12">
+    {project.gallery.map((img, index) => (
+      <div
+        key={img}
+        className="mx-auto w-full max-w-[1100px] overflow-hidden rounded-[1rem] border border-white/10 bg-white/[0.02] shadow-[0_24px_80px_rgba(0,0,0,0.28)] md:rounded-[1.5rem]"
+      >
+        <img
+          src={img}
+          alt={`${project.title} 宣传图 ${index + 1}`}
+          className="block h-auto w-full"
+          loading="lazy"
+        />
+      </div>
+    ))}
+  </div>
+)}
 
-                {/* 商业视觉与活动视觉 */}
-                {project.layout === "campaign" && (
-                  <>
-                    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                      {project.gallery.slice(0, 2).map((img, index) => (
-                        <div
-                          key={img}
-                          className="aspect-[4/3] w-full overflow-hidden rounded-[1rem] border border-white/10"
-                        >
-                          <img
-                            src={img}
-                            alt={`${project.title} 展示图 ${index + 1}`}
-                            className="h-full w-full object-cover"
-                          />
-                        </div>
-                      ))}
-                    </div>
+{/* 品牌活动视觉：保留原来的组合排版 */}
+{project.id === "brand-event" && (
+  <>
+    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+      {project.gallery.slice(0, 2).map((img, index) => (
+        <div
+          key={img}
+          className="aspect-[4/3] w-full overflow-hidden rounded-[1rem] border border-white/10"
+        >
+          <img
+            src={img}
+            alt={`${project.title} 展示图 ${index + 1}`}
+            className="h-full w-full object-cover"
+            loading="lazy"
+          />
+        </div>
+      ))}
+    </div>
 
-                    <div className="aspect-[16/9] w-full overflow-hidden rounded-[1.25rem] border border-white/10 md:rounded-[1.5rem]">
-                      <img
-                        src={project.gallery[2]}
-                        alt={`${project.title} 主视觉`}
-                        className="h-full w-full object-cover"
-                      />
-                    </div>
+    <div className="aspect-[16/9] w-full overflow-hidden rounded-[1.25rem] border border-white/10 md:rounded-[1.5rem]">
+      <img
+        src={project.gallery[2]}
+        alt={`${project.title} 主视觉`}
+        className="h-full w-full object-cover"
+        loading="lazy"
+      />
+    </div>
 
-                    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                      {project.gallery.slice(3, 5).map((img, index) => (
-                        <div
-                          key={img}
-                          className="aspect-[4/3] w-full overflow-hidden rounded-[1rem] border border-white/10"
-                        >
-                          <img
-                            src={img}
-                            alt={`${project.title} 细节图 ${index + 1}`}
-                            className="h-full w-full object-cover"
-                          />
-                        </div>
-                      ))}
-                    </div>
-                  </>
-                )}
+    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+      {project.gallery.slice(3, 5).map((img, index) => (
+        <div
+          key={img}
+          className="aspect-[4/3] w-full overflow-hidden rounded-[1rem] border border-white/10"
+        >
+          <img
+            src={img}
+            alt={`${project.title} 细节图 ${index + 1}`}
+            className="h-full w-full object-cover"
+            loading="lazy"
+          />
+        </div>
+      ))}
+    </div>
+  </>
+)}
 
                 {/* 电商详情页长图 */}
                 {project.layout === "detail" && (
