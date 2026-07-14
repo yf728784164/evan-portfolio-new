@@ -1010,8 +1010,6 @@ function GraphicDesignPage({ onBack }) {
       details: [
         "/images/projects/ecommerce-design/detail-01.jpg",
         "/images/projects/ecommerce-design/detail-02.jpg",
-        "/images/projects/ecommerce-design/detail-03.jpg",
-        "/images/projects/ecommerce-design/detail-04.jpg",
       ],
     },
 
@@ -1213,8 +1211,11 @@ function GraphicDesignPage({ onBack }) {
         </div>
 
         <figcaption className="mt-5 text-center text-base tracking-[0.08em] text-white/65">
-          阿里云运动环保双肩包详情页
-        </figcaption>
+  {[
+    "阿里云运动环保双肩包详情页",
+    "阿里云中秋礼盒详情页",
+  ][index]}
+</figcaption>
       </figure>
     ))}
   </div>
