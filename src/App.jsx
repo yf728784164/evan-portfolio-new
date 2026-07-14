@@ -1076,118 +1076,106 @@ function IllustrationDesignPage({ onBack }) {
 
           {/* 项目列表 */}
           {projects.map((project, projectIndex) => (
-            <section
-              key={project.id}
-              className="grid grid-cols-1 items-start gap-10 md:grid-cols-[0.9fr_1.1fr] md:gap-16"
+  <section
+    key={project.id}
+    className="grid grid-cols-1 items-start gap-10 md:grid-cols-[0.72fr_1.28fr] md:gap-16"
+  >
+    {/* 左侧文字 */}
+    <div className="space-y-8 md:sticky md:top-24">
+      <p className="text-[42px] font-black tracking-[0.12em] text-white/12 md:text-[56px]">
+        ILL {String(projectIndex + 1).padStart(2, "0")}
+      </p>
+
+      <div>
+        <h2 className="text-3xl font-bold tracking-[0.04em]">
+          {project.title}
+        </h2>
+
+        <p className="mt-2 text-xs tracking-[0.2em] text-white/40">
+          {project.subtitle}
+        </p>
+
+        <div className="mt-8 flex flex-wrap gap-3">
+          {project.tags.map((tag) => (
+            <span
+              key={tag}
+              className="rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 text-xs tracking-[0.08em] text-white/45"
             >
-              {/* 左侧文字 */}
-              <div>
-  <h3 className="text-sm tracking-[0.2em] text-white/70">
-    DESIGN INSPIRATION
-  </h3>
-
-  <div className="mt-4 h-px w-12 bg-white/20" />
-
-  <p className="mt-6 text-[15px] leading-8 tracking-[0.03em] text-white/55">
-    {project.inspiration}
-  </p>
-</div>
-
-                <div>
-                  <h3 className="text-sm tracking-[0.2em] text-white/70">
-                    DESIGN STRATEGY
-                  </h3>
-
-                  <p className="mt-3 text-sm leading-7 text-white/50">
-                    {project.strategy}
-                  </p>
-                </div>
-              </div>
-
-              {/* 右侧图片 */}
-              <div className="w-full min-w-0 space-y-4 md:space-y-6">
-                {/* 封面 */}
-                <motion.div
-                  className="aspect-[16/9] w-full overflow-hidden rounded-[1.25rem] border border-white/10 bg-[#f2f0eb] md:rounded-[2rem]"
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.2 }}
-                  transition={{ duration: 0.8 }}
-                >
-                  <img
-                    src={project.cover}
-                    alt={`${project.title} 封面`}
-                    className="h-full w-full object-cover transition duration-700 hover:scale-[1.02]"
-                  />
-                </motion.div>
-
-                {/* 两张并排图 */}
-                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                  {project.gallery.slice(0, 2).map((img, index) => (
-                    <motion.div
-                      key={img}
-                      className="aspect-[4/3] w-full overflow-hidden rounded-[1rem] border border-white/10 bg-[#f2f0eb]"
-                      initial={{ opacity: 0, y: 24 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true, amount: 0.2 }}
-                      transition={{
-                        duration: 0.7,
-                        delay: index * 0.08,
-                      }}
-                    >
-                      <img
-                        src={img}
-                        alt={`${project.title} 手绘图 ${index + 1}`}
-                        className="h-full w-full object-cover transition duration-700 hover:scale-[1.03]"
-                      />
-                    </motion.div>
-                  ))}
-                </div>
-
-                {/* 中间全宽图 */}
-                <motion.div
-                  className="aspect-[16/9] w-full overflow-hidden rounded-[1.25rem] border border-white/10 bg-[#f2f0eb] md:rounded-[1.5rem]"
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.2 }}
-                  transition={{ duration: 0.8 }}
-                >
-                  <img
-                    src={project.gallery[2]}
-                    alt={`${project.title} 过程展示`}
-                    className="h-full w-full object-cover transition duration-700 hover:scale-[1.02]"
-                  />
-                </motion.div>
-
-                {/* 底部两张图 */}
-                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                  {project.gallery.slice(3, 5).map((img, index) => (
-                    <motion.div
-                      key={img}
-                      className="aspect-[4/3] w-full overflow-hidden rounded-[1rem] border border-white/10 bg-[#f2f0eb]"
-                      initial={{ opacity: 0, y: 24 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true, amount: 0.2 }}
-                      transition={{
-                        duration: 0.7,
-                        delay: index * 0.08,
-                      }}
-                    >
-                      <img
-                        src={img}
-                        alt={`${project.title} 应用图 ${index + 1}`}
-                        className="h-full w-full object-cover transition duration-700 hover:scale-[1.03]"
-                      />
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
-            </section>
+              {tag}
+            </span>
           ))}
-        </main>
+        </div>
       </div>
-    </section>
-  );
+
+      <div>
+        <h3 className="text-sm tracking-[0.2em] text-white/70">
+          DESIGN INSPIRATION
+        </h3>
+
+        <div className="mt-4 h-px w-12 bg-white/20" />
+
+        <p className="mt-6 text-[15px] leading-8 tracking-[0.03em] text-white/55">
+          {project.inspiration}
+        </p>
+      </div>
+    </div>
+
+    {/* 右侧图片 */}
+    <div className="w-full min-w-0 space-y-4 md:space-y-6">
+      <motion.div
+        className="aspect-[16/9] w-full overflow-hidden rounded-[1.25rem] border border-white/10 bg-[#f2f0eb] md:rounded-[2rem]"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.8 }}
+      >
+        <img
+          src={project.cover}
+          alt={`${project.title} 封面`}
+          className="h-full w-full object-cover"
+        />
+      </motion.div>
+
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+        {project.gallery.slice(0, 2).map((img, index) => (
+          <motion.div
+            key={img}
+            className="aspect-[4/3] overflow-hidden rounded-[1rem] border border-white/10 bg-[#f2f0eb]"
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{
+              duration: 0.7,
+              delay: index * 0.08,
+            }}
+          >
+            <img
+              src={img}
+              alt={`${project.title} 手绘图 ${index + 1}`}
+              className="h-full w-full object-cover"
+            />
+          </motion.div>
+        ))}
+      </div>
+
+      {project.gallery[2] && (
+        <motion.div
+          className="aspect-[16/9] w-full overflow-hidden rounded-[1.25rem] border border-white/10 bg-[#f2f0eb]"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.8 }}
+        >
+          <img
+            src={project.gallery[2]}
+            alt={`${project.title} 作品展示`}
+            className="h-full w-full object-cover"
+          />
+        </motion.div>
+      )}
+    </div>
+  </section>
+))}
 }
 function GraphicDesignPage({ onBack }) {
   const projects = [
