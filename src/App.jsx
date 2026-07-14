@@ -690,6 +690,7 @@ function Works({
   onOpenProduct,
   onOpenPackaging,
   onOpenGraphic,
+  onOpenIllustration,
 }) {
   const workCategories = [
 {
@@ -757,6 +758,10 @@ function Works({
                 if (item.title === "平面设计") {
                   e.preventDefault();
                   onOpenGraphic();
+                }
+                if (item.title === "插画手绘") {
+                  e.preventDefault();
+                  onOpenIllustration();
                 }
               }}
               className="group relative min-h-[420px] overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.025] md:min-h-[520px]"
@@ -944,6 +949,278 @@ function Contact() {
             EVAN PORTFOLIO · 2026
           </p>
         </motion.div>
+      </div>
+    </section>
+  );
+}
+function IllustrationDesignPage({ onBack }) {
+  const projects = [
+    {
+      id: "oriental-pattern",
+
+      title: "东方纹样手绘",
+
+      subtitle: "ORIENTAL PATTERN ILLUSTRATION",
+
+      tags: ["手绘设计", "东方纹样", "文化提取", "图形设计"],
+
+      cover: "/images/projects/oriental-pattern/cover.jpg",
+
+      intro:
+        "东方纹样手绘项目围绕传统文化符号的当代表达展开，从麒麟、敦煌飞马、山茶花、桂花、祥云与传统器物中提取视觉元素，通过线描、构图重组与装饰语言转译，形成适用于包装、陶瓷、品牌视觉与文创产品的原创纹样体系。",
+
+      background:
+        "传统文化元素并不是简单复制古代纹样，而是需要重新理解其结构、寓意与视觉节奏。项目从文化资料研究与手绘记录开始，对不同元素进行拆分、提炼和重组，在保留东方文化气质的同时，降低传统图形的复杂度，使纹样更适合当代产品与商业传播场景。",
+
+      strategy:
+        "设计首先通过铅笔草图寻找造型与构图关系，再使用黑白线描统一图形语言。通过控制线条粗细、疏密、留白与图形层级，使纹样在不同尺寸中保持清晰识别。最终将手绘内容转化为可延展的数字图形，并应用于礼盒封面、陶瓷器物、品牌图案与视觉物料中。",
+
+      gallery: [
+        "/images/projects/oriental-pattern/gallery-01.jpg",
+        "/images/projects/oriental-pattern/gallery-02.jpg",
+        "/images/projects/oriental-pattern/gallery-03.jpg",
+        "/images/projects/oriental-pattern/gallery-04.jpg",
+        "/images/projects/oriental-pattern/gallery-05.jpg",
+      ],
+    },
+
+    {
+      id: "commercial-illustration",
+
+      title: "商业插画设计",
+
+      subtitle: "COMMERCIAL ILLUSTRATION DESIGN",
+
+      tags: ["插画设计", "品牌视觉", "节日营销", "商业传播"],
+
+      cover: "/images/projects/commercial-illustration/cover.jpg",
+
+      intro:
+        "商业插画设计围绕品牌传播、节日营销与产品推广场景展开，通过角色、场景、色彩与故事元素建立具有情绪感染力的视觉内容。项目覆盖企业礼赠、节日海报、产品包装、品牌活动与社交媒体传播等不同应用场景。",
+
+      background:
+        "商业插画既需要保持独立的艺术表达，也需要服务于品牌识别和传播目标。相比单纯的装饰图形，插画能够通过人物动作、场景关系与情绪氛围，为产品建立更加完整的故事，使品牌信息以更加自然、亲切且具有记忆点的方式被用户感知。",
+
+      strategy:
+        "设计根据不同品牌的性格建立相应的造型与色彩语言，通过草图确定角色动作、视觉重心与画面节奏，再逐步完成线稿、色彩和细节。插画在创作阶段同步考虑包装印刷、屏幕显示与活动物料等实际应用，保证视觉内容在不同媒介中保持统一。",
+
+      gallery: [
+        "/images/projects/commercial-illustration/gallery-01.jpg",
+        "/images/projects/commercial-illustration/gallery-02.jpg",
+        "/images/projects/commercial-illustration/gallery-03.jpg",
+        "/images/projects/commercial-illustration/gallery-04.jpg",
+        "/images/projects/commercial-illustration/gallery-05.jpg",
+      ],
+    },
+
+    {
+      id: "concept-sketch",
+
+      title: "产品概念草图",
+
+      subtitle: "PRODUCT CONCEPT SKETCH ARCHIVE",
+
+      tags: ["概念草图", "产品设计", "造型推演", "设计过程"],
+
+      cover: "/images/projects/concept-sketch/cover.jpg",
+
+      intro:
+        "产品概念草图记录从设计灵感到产品方案形成的思考过程，内容包括陶瓷器型、礼盒结构、文创产品、生活用品与IP衍生产品等。手绘在项目中承担快速验证造型、比例、结构与使用方式的重要作用。",
+
+      background:
+        "在设计初期，过早进入三维建模或精细效果图容易限制创意方向。快速手绘能够以更低的成本验证不同方案，并直观呈现产品的结构关系与使用体验。每一张草图不仅是造型记录，也是设计判断、方案比较与问题解决的过程。",
+
+      strategy:
+        "设计从关键词、情绪板与使用场景出发，通过大量小尺寸草图快速探索方向，再选择具有潜力的方案进行比例、结构和细节深化。最终结合尺寸标注、材质说明、爆炸结构与场景示意，将手绘概念转化为可继续建模和落地生产的设计方案。",
+
+      gallery: [
+        "/images/projects/concept-sketch/gallery-01.jpg",
+        "/images/projects/concept-sketch/gallery-02.jpg",
+        "/images/projects/concept-sketch/gallery-03.jpg",
+        "/images/projects/concept-sketch/gallery-04.jpg",
+        "/images/projects/concept-sketch/gallery-05.jpg",
+      ],
+    },
+  ];
+
+  return (
+    <section className="relative min-h-screen overflow-hidden bg-[#030303] px-5 py-20 text-white md:px-10 md:py-24">
+      <ParticleField />
+
+      <div className="absolute inset-0 bg-black/82" />
+
+      <div className="relative z-10 mx-auto max-w-[1680px]">
+        <main className="space-y-32">
+          {/* 页面标题 */}
+          <div className="relative flex h-[42vh] flex-col items-center justify-center text-center">
+            <button
+              type="button"
+              onClick={onBack}
+              className="absolute left-0 top-0 text-xs tracking-[0.25em] text-white/45 transition hover:text-white"
+            >
+              ← 返回作品案例
+            </button>
+
+            <p className="text-xs tracking-[0.55em] text-white/30">
+              ILLUSTRATION &amp; SKETCH
+            </p>
+
+            <h1 className="mt-5 text-5xl font-bold tracking-[0.15em] text-white md:text-7xl">
+              插画手绘
+            </h1>
+
+            <p className="mt-6 max-w-xl text-sm leading-7 tracking-[0.08em] text-white/42">
+              从笔触、纹样与概念草图出发，记录设计形成之前最直接的思考过程
+            </p>
+
+            <div className="mt-10 h-12 w-px bg-gradient-to-b from-white/40 to-transparent" />
+          </div>
+
+          {/* 项目列表 */}
+          {projects.map((project, projectIndex) => (
+            <section
+              key={project.id}
+              className="grid grid-cols-1 items-start gap-10 md:grid-cols-[0.9fr_1.1fr] md:gap-16"
+            >
+              {/* 左侧文字 */}
+              <div className="space-y-8 md:sticky md:top-24">
+                <p className="text-[68px] font-black leading-none text-white/10 md:text-[96px]">
+                  ILL {String(projectIndex + 1).padStart(2, "0")}
+                </p>
+
+                <div>
+                  <h2 className="text-3xl font-bold tracking-[0.04em]">
+                    {project.title}
+                  </h2>
+
+                  <p className="mt-2 text-xs tracking-[0.2em] text-white/40">
+                    {project.subtitle}
+                  </p>
+
+                  <div className="mt-5 flex flex-wrap gap-2">
+                    {project.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="rounded-full border border-white/10 px-3 py-1 text-xs text-white/50"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                <div>
+                  <h3 className="text-sm tracking-[0.2em] text-white/70">
+                    PROJECT INTRO
+                  </h3>
+
+                  <p className="mt-3 text-sm leading-7 text-white/50">
+                    {project.intro}
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className="text-sm tracking-[0.2em] text-white/70">
+                    DESIGN BACKGROUND
+                  </h3>
+
+                  <p className="mt-3 text-sm leading-7 text-white/50">
+                    {project.background}
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className="text-sm tracking-[0.2em] text-white/70">
+                    DESIGN STRATEGY
+                  </h3>
+
+                  <p className="mt-3 text-sm leading-7 text-white/50">
+                    {project.strategy}
+                  </p>
+                </div>
+              </div>
+
+              {/* 右侧图片 */}
+              <div className="w-full min-w-0 space-y-4 md:space-y-6">
+                {/* 封面 */}
+                <motion.div
+                  className="aspect-[16/9] w-full overflow-hidden rounded-[1.25rem] border border-white/10 bg-[#f2f0eb] md:rounded-[2rem]"
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{ duration: 0.8 }}
+                >
+                  <img
+                    src={project.cover}
+                    alt={`${project.title} 封面`}
+                    className="h-full w-full object-cover transition duration-700 hover:scale-[1.02]"
+                  />
+                </motion.div>
+
+                {/* 两张并排图 */}
+                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                  {project.gallery.slice(0, 2).map((img, index) => (
+                    <motion.div
+                      key={img}
+                      className="aspect-[4/3] w-full overflow-hidden rounded-[1rem] border border-white/10 bg-[#f2f0eb]"
+                      initial={{ opacity: 0, y: 24 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true, amount: 0.2 }}
+                      transition={{
+                        duration: 0.7,
+                        delay: index * 0.08,
+                      }}
+                    >
+                      <img
+                        src={img}
+                        alt={`${project.title} 手绘图 ${index + 1}`}
+                        className="h-full w-full object-cover transition duration-700 hover:scale-[1.03]"
+                      />
+                    </motion.div>
+                  ))}
+                </div>
+
+                {/* 中间全宽图 */}
+                <motion.div
+                  className="aspect-[16/9] w-full overflow-hidden rounded-[1.25rem] border border-white/10 bg-[#f2f0eb] md:rounded-[1.5rem]"
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{ duration: 0.8 }}
+                >
+                  <img
+                    src={project.gallery[2]}
+                    alt={`${project.title} 过程展示`}
+                    className="h-full w-full object-cover transition duration-700 hover:scale-[1.02]"
+                  />
+                </motion.div>
+
+                {/* 底部两张图 */}
+                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                  {project.gallery.slice(3, 5).map((img, index) => (
+                    <motion.div
+                      key={img}
+                      className="aspect-[4/3] w-full overflow-hidden rounded-[1rem] border border-white/10 bg-[#f2f0eb]"
+                      initial={{ opacity: 0, y: 24 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true, amount: 0.2 }}
+                      transition={{
+                        duration: 0.7,
+                        delay: index * 0.08,
+                      }}
+                    >
+                      <img
+                        src={img}
+                        alt={`${project.title} 应用图 ${index + 1}`}
+                        className="h-full w-full object-cover transition duration-700 hover:scale-[1.03]"
+                      />
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+            </section>
+          ))}
+        </main>
       </div>
     </section>
   );
@@ -1939,6 +2216,18 @@ export default function App() {
     });
   };
 
+  const openIllustrationPage = () => {
+    setHomeScrollY(window.scrollY);
+    setPage("illustration");
+
+    requestAnimationFrame(() => {
+      window.scrollTo({
+        top: 0,
+        behavior: "auto",
+      });
+    });
+  };
+
   const backToWorks = () => {
     setPage("home");
 
@@ -1950,6 +2239,28 @@ export default function App() {
         });
       });
     });
+  };
+
+  const pageTransition = {
+    initial: {
+      opacity: 0,
+      y: 18,
+      filter: "blur(8px)",
+    },
+    animate: {
+      opacity: 1,
+      y: 0,
+      filter: "blur(0px)",
+    },
+    exit: {
+      opacity: 0,
+      y: -18,
+      filter: "blur(8px)",
+    },
+    transition: {
+      duration: 0.65,
+      ease: [0.76, 0, 0.24, 1],
+    },
   };
 
   return (
@@ -1977,48 +2288,26 @@ export default function App() {
               onOpenProduct={openProductPage}
               onOpenPackaging={openPackagingPage}
               onOpenGraphic={openGraphicPage}
+              onOpenIllustration={openIllustrationPage}
             />
 
             <Contact />
           </motion.div>
         ) : page === "product" ? (
-          <motion.div
-            key="product"
-            initial={{ opacity: 0, y: 18, filter: "blur(8px)" }}
-            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-            exit={{ opacity: 0, y: -18, filter: "blur(8px)" }}
-            transition={{
-              duration: 0.65,
-              ease: [0.76, 0, 0.24, 1],
-            }}
-          >
+          <motion.div key="product" {...pageTransition}>
             <ProductDesignPage onBack={backToWorks} />
           </motion.div>
         ) : page === "packaging" ? (
-          <motion.div
-            key="packaging"
-            initial={{ opacity: 0, y: 18, filter: "blur(8px)" }}
-            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-            exit={{ opacity: 0, y: -18, filter: "blur(8px)" }}
-            transition={{
-              duration: 0.65,
-              ease: [0.76, 0, 0.24, 1],
-            }}
-          >
+          <motion.div key="packaging" {...pageTransition}>
             <PackagingDesignPage onBack={backToWorks} />
           </motion.div>
         ) : page === "graphic" ? (
-          <motion.div
-            key="graphic"
-            initial={{ opacity: 0, y: 18, filter: "blur(8px)" }}
-            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-            exit={{ opacity: 0, y: -18, filter: "blur(8px)" }}
-            transition={{
-              duration: 0.65,
-              ease: [0.76, 0, 0.24, 1],
-            }}
-          >
+          <motion.div key="graphic" {...pageTransition}>
             <GraphicDesignPage onBack={backToWorks} />
+          </motion.div>
+        ) : page === "illustration" ? (
+          <motion.div key="illustration" {...pageTransition}>
+            <IllustrationDesignPage onBack={backToWorks} />
           </motion.div>
         ) : null}
       </AnimatePresence>
