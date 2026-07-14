@@ -1095,8 +1095,8 @@ function GraphicDesignPage({ onBack }) {
     {project.title}
   </h2>
 </div>
-               {/* 电商与品牌活动保留封面，商业产品视觉直接展示A4图片 */}
-{project.id !== "commercial-visual" && (
+{/* 品牌活动视觉保留封面，商业产品视觉和电商相关物料不显示封面 */}
+{project.id === "brand-event" && (
   <div className="aspect-[16/9] w-full overflow-hidden rounded-[1.25rem] border border-white/10 md:rounded-[2rem]">
     <img
       src={project.cover}
