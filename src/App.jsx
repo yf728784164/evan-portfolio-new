@@ -1427,6 +1427,34 @@ function PackagingDesignPage({ onBack }) {
       "/images/projects/cloud-bao/gallery-05.jpg",
     ],
   },
+  {
+    id: "red-ryo",
+  
+    title: "红吕·山茶焕养发膜礼盒",
+  
+    subtitle: "RYO CAMELLIA HAIR MASK PACKAGING DESIGN",
+  
+    tags: ["包装设计", "美妆个护", "礼盒设计", "东方视觉"],
+  
+    cover: "/images/projects/red-ryo/cover.jpg",
+  
+    intro:
+      "本项目为红吕发膜产品打造东方美学礼盒包装。设计以品牌标志性的红色为视觉基底，将山茶花作为核心图形元素，通过金色线描、烫金工艺与细腻纸张肌理，构建具有东方气质与高端礼赠感的包装视觉。项目围绕发膜产品的滋养、修护与焕亮功效展开，将山茶花所象征的丰盈、柔韧与生命力融入礼盒叙事，在强化品牌识别的同时，提升产品在节庆礼赠、品牌活动与高端陈列场景中的视觉价值。",
+  
+    background:
+      "在美妆个护市场中，包装不仅承担产品保护与信息传达功能，也直接影响消费者对于产品功效、品质与品牌气质的第一印象。红吕本身具有鲜明的东方品牌基因与红色视觉资产，因此本项目从东方花卉文化中选择山茶花作为核心意象。山茶花花型饱满、层次丰富，既能传递柔韧、滋养与生机，也与发膜产品所强调的修护与焕亮体验形成情绪上的呼应。设计希望在传统东方美学与现代美妆包装之间建立平衡，使产品既具文化辨识度，也符合当代高端消费审美。",
+  
+    strategy:
+      "设计以“品牌红、山茶花、金色工艺”构成核心视觉体系。整体采用深浅红色建立礼盒的层次与氛围，通过山茶花线描纹样形成视觉环绕，让花卉图形在礼盒正面呈现自然生长的节奏。中央品牌标识采用留白与金色形成视觉焦点，并结合烫金、压纹与细腻纸张材质强化触觉体验。通过控制图形密度、留白比例与光泽层次，使礼盒在保持东方华美气质的同时不过度繁复，最终形成兼具品牌识别、高级质感与礼赠属性的发膜包装系统。",
+  
+    gallery: [
+      "/images/projects/red-ryo/gallery-01.jpg",
+      "/images/projects/red-ryo/gallery-02.jpg",
+      "/images/projects/red-ryo/gallery-03.jpg",
+      "/images/projects/red-ryo/gallery-04.jpg",
+      "/images/projects/red-ryo/gallery-05.jpg",
+    ],
+  },
 ];
 
 return (
