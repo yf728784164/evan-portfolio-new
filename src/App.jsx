@@ -1196,22 +1196,29 @@ function GraphicDesignPage({ onBack }) {
 )}
 
                 {/* 电商详情页长图 */}
-                {project.layout === "detail" && (
-                  <div className="space-y-4 md:space-y-6">
-                    {project.details.map((img, index) => (
-                      <div
-                        key={img}
-                        className="w-full overflow-hidden rounded-[1rem] border border-white/10 bg-white/[0.02]"
-                      >
-                        <img
-                          src={img}
-                          alt={`${project.title} 详情页 ${index + 1}`}
-                          className="block h-auto w-full"
-                        />
-                      </div>
-                    ))}
-                  </div>
-                )}
+{project.layout === "detail" && (
+  <div className="space-y-10">
+    {project.details.map((img, index) => (
+      <figure
+        key={img}
+        className="mx-auto w-full max-w-[900px]"
+      >
+        <div className="overflow-hidden rounded-[1rem] border border-white/10 bg-white/[0.02]">
+          <img
+            src={img}
+            alt={`${project.title} 详情页 ${index + 1}`}
+            className="block h-auto w-full"
+            loading="lazy"
+          />
+        </div>
+
+        <figcaption className="mt-5 text-center text-base tracking-[0.08em] text-white/65">
+          阿里云运动环保双肩包详情页
+        </figcaption>
+      </figure>
+    ))}
+  </div>
+)}
               </div>
             </section>
           ))}
