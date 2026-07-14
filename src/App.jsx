@@ -1376,7 +1376,30 @@ function PackagingDesignPage({ onBack }) {
         "打造完整的企业中秋礼赠场景",
       ],
     },
-  ];
+ {
+    id: "hainan-huatie",
+    title: "蜂马奔腾·海南华铁2026新春礼盒",
+    subtitle: "HAINAN HUATIE 2026 NEW YEAR GIFT BOX",
+    tags: ["包装设计", "企业礼赠", "新春礼盒", "IP设计"],
+    cover: "/images/projects/hainan-huatie/cover.jpg",
+    intro:
+      "本项目为海南华铁打造2026年新春企业礼赠礼盒。设计以企业IP形象“小铁蜂”为核心，将醒狮、春联、烟花与新春祝福等节庆元素融入整体视觉系统，并以“蜂马奔腾”为主题，呼应马年昂扬向前的精神寓意。礼盒围绕新春礼赠场景进行系统化规划，内容涵盖新春礼盒、定制红包、零食礼包、车载香氛、陶瓷IP公仔、毛绒公仔及企业定制周边，通过统一的视觉语言与产品组合，构建兼具节日氛围、品牌识别与传播价值的新春礼赠体验。",
+
+    background:
+      "企业新春礼赠不仅承载节日祝福，也承担着品牌文化传播与员工情感连接的重要作用。海南华铁希望借助2026年春节节点，将企业IP形象与传统年俗文化进行融合，形成更具年轻感和互动性的品牌礼赠表达。设计从醒狮、对联、红包与红金配色中提取节庆语言，并结合“小铁蜂”的活泼形象，弱化传统企业礼盒的严肃感，让礼赠内容既保留浓厚的新春仪式感，也体现企业积极、热烈与向上生长的品牌气质。",
+  
+    strategy:
+      "以海南华铁企业IP“小铁蜂”为视觉核心，通过角色新春化、符号系列化与礼品场景化三个层次构建整体设计。视觉上采用高饱和红色作为主色，并以金色文字、醒狮造型及多彩装饰增强节庆氛围；产品上将礼盒、红包、零食、香氛与IP公仔统一纳入同一视觉体系，使不同礼品在开箱、陈列与传播过程中保持一致的品牌识别，最终形成兼具实用价值、情绪价值与社交传播属性的新春礼赠系统。",
+  
+    gallery: [
+      "/images/projects/hainan-huatie/gallery-01.jpg",
+      "/images/projects/hainan-huatie/gallery-02.jpg",
+      "/images/projects/hainan-huatie/gallery-03.jpg",
+      "/images/projects/hainan-huatie/gallery-04.jpg",
+      "/images/projects/hainan-huatie/gallery-05.jpg",
+    ],
+  },
+];
 
 return (
   <section className="relative min-h-screen overflow-hidden bg-[#030303] px-5 py-20 text-white md:px-10 md:py-24">
