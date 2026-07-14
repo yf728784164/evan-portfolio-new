@@ -1922,7 +1922,10 @@ export default function App() {
     setPage("product");
 
     requestAnimationFrame(() => {
-      window.scrollTo({ top: 0, behavior: "auto" });
+      window.scrollTo({
+        top: 0,
+        behavior: "auto",
+      });
     });
   };
 
@@ -1931,9 +1934,25 @@ export default function App() {
     setPage("packaging");
 
     requestAnimationFrame(() => {
-      window.scrollTo({ top: 0, behavior: "auto" });
+      window.scrollTo({
+        top: 0,
+        behavior: "auto",
+      });
     });
   };
+
+  const openGraphicPage = () => {
+    setHomeScrollY(window.scrollY);
+    setPage("graphic");
+
+    requestAnimationFrame(() => {
+      window.scrollTo({
+        top: 0,
+        behavior: "auto",
+      });
+    });
+  };
+
   const backToWorks = () => {
     setPage("home");
 
@@ -1951,72 +1970,72 @@ export default function App() {
     <main className="bg-[#030303] selection:bg-white selection:text-black">
       <LoadingScreen />
       <CustomCursor />
-  
+
       <AnimatePresence mode="wait">
-  {page === "home" ? (
-    <motion.div
-      key="home"
-      initial={{ opacity: 0, y: 32, scale: 0.985 }}
-      animate={{ opacity: 1, y: 0, scale: 1 }}
-      exit={{ opacity: 0, y: -32, scale: 0.985 }}
-      transition={{
-        duration: 0.9,
-        ease: [0.22, 1, 0.36, 1],
-      }}
-    >
-      <Nav />
-      <Hero />
-      <About />
+        {page === "home" ? (
+          <motion.div
+            key="home"
+            initial={{ opacity: 0, y: 32, scale: 0.985 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -32, scale: 0.985 }}
+            transition={{
+              duration: 0.9,
+              ease: [0.22, 1, 0.36, 1],
+            }}
+          >
+            <Nav />
+            <Hero />
+            <About />
 
-      <Works
-        onOpenProduct={openProductPage}
-        onOpenPackaging={openPackagingPage}
-        onOpenGraphic={openGraphicPage}
-      />
+            <Works
+              onOpenProduct={openProductPage}
+              onOpenPackaging={openPackagingPage}
+              onOpenGraphic={openGraphicPage}
+            />
 
-      <Contact />
-    </motion.div>
-  ) : page === "product" ? (
-    <motion.div
-      key="product"
-      initial={{ opacity: 0, y: 18, filter: "blur(8px)" }}
-      animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-      exit={{ opacity: 0, y: -18, filter: "blur(8px)" }}
-      transition={{
-        duration: 0.65,
-        ease: [0.76, 0, 0.24, 1],
-      }}
-    >
-      <ProductDesignPage onBack={backToWorks} />
-    </motion.div>
-  ) : page === "packaging" ? (
-    <motion.div
-      key="packaging"
-      initial={{ opacity: 0, y: 18, filter: "blur(8px)" }}
-      animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-      exit={{ opacity: 0, y: -18, filter: "blur(8px)" }}
-      transition={{
-        duration: 0.65,
-        ease: [0.76, 0, 0.24, 1],
-      }}
-    >
-      <PackagingDesignPage onBack={backToWorks} />
-    </motion.div>
-  ) : (
-    <motion.div
-      key="graphic"
-      initial={{ opacity: 0, y: 18, filter: "blur(8px)" }}
-      animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-      exit={{ opacity: 0, y: -18, filter: "blur(8px)" }}
-      transition={{
-        duration: 0.65,
-        ease: [0.76, 0, 0.24, 1],
-      }}
-    >
-      <GraphicDesignPage onBack={backToWorks} />
-    </motion.div>
-  )}
-</AnimatePresence>
-      </main>
+            <Contact />
+          </motion.div>
+        ) : page === "product" ? (
+          <motion.div
+            key="product"
+            initial={{ opacity: 0, y: 18, filter: "blur(8px)" }}
+            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            exit={{ opacity: 0, y: -18, filter: "blur(8px)" }}
+            transition={{
+              duration: 0.65,
+              ease: [0.76, 0, 0.24, 1],
+            }}
+          >
+            <ProductDesignPage onBack={backToWorks} />
+          </motion.div>
+        ) : page === "packaging" ? (
+          <motion.div
+            key="packaging"
+            initial={{ opacity: 0, y: 18, filter: "blur(8px)" }}
+            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            exit={{ opacity: 0, y: -18, filter: "blur(8px)" }}
+            transition={{
+              duration: 0.65,
+              ease: [0.76, 0, 0.24, 1],
+            }}
+          >
+            <PackagingDesignPage onBack={backToWorks} />
+          </motion.div>
+        ) : page === "graphic" ? (
+          <motion.div
+            key="graphic"
+            initial={{ opacity: 0, y: 18, filter: "blur(8px)" }}
+            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            exit={{ opacity: 0, y: -18, filter: "blur(8px)" }}
+            transition={{
+              duration: 0.65,
+              ease: [0.76, 0, 0.24, 1],
+            }}
+          >
+            <GraphicDesignPage onBack={backToWorks} />
+          </motion.div>
+        ) : null}
+      </AnimatePresence>
+    </main>
   );
 }
