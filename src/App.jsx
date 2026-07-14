@@ -1035,13 +1035,11 @@ function GraphicDesignPage({ onBack }) {
       strategy:
         "设计首先建立活动主视觉与核心图形，再根据现场传播层级进行延展。远距离物料强调主题识别与色彩冲击，中距离物料强调信息阅读，近距离物料则强化细节与互动体验。通过统一字体、色彩、图形比例与版式规则，使门头、签到墙、导视及周边在不同应用中保持一致，同时兼顾实际制作与现场落地。",
 
-      gallery: [
-        "/images/projects/brand-event/gallery-01.jpg",
-        "/images/projects/brand-event/gallery-02.jpg",
-        "/images/projects/brand-event/gallery-03.jpg",
-        "/images/projects/brand-event/gallery-04.jpg",
-        "/images/projects/brand-event/gallery-05.jpg",
-      ],
+        gallery: [
+          "/images/projects/brand-event/poster-01.jpg",
+          "/images/projects/brand-event/poster-02.jpg",
+          "/images/projects/brand-event/poster-03.jpg",
+        ],
     },
   ];
 
@@ -1093,17 +1091,6 @@ function GraphicDesignPage({ onBack }) {
     {project.title}
   </h2>
 </div>
-{/* 品牌活动视觉保留封面，商业产品视觉和电商相关物料不显示封面 */}
-{project.id === "brand-event" && (
-  <div className="aspect-[16/9] w-full overflow-hidden rounded-[1.25rem] border border-white/10 md:rounded-[2rem]">
-    <img
-      src={project.cover}
-      alt={`${project.title} 封面`}
-      className="h-full w-full object-cover"
-      loading="lazy"
-    />
-  </div>
-)}
 {/* 商业产品视觉宣传 */}
 {project.id === "commercial-visual" && (
   <div className="grid grid-cols-1 gap-x-8 gap-y-12 md:grid-cols-2">
@@ -1147,51 +1134,36 @@ function GraphicDesignPage({ onBack }) {
   </div>
 )}
 
-{/* 品牌活动视觉：保留原来的组合排版 */}
+{/* 品牌活动视觉 */}
 {project.id === "brand-event" && (
-  <>
-    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-      {project.gallery.slice(0, 2).map((img, index) => (
-        <div
-          key={img}
-          className="aspect-[4/3] w-full overflow-hidden rounded-[1rem] border border-white/10"
-        >
+  <div className="grid grid-cols-1 gap-x-8 gap-y-12 md:grid-cols-2">
+    {project.gallery.map((img, index) => (
+      <figure
+        key={img}
+        className={`flex flex-col ${
+          index === project.gallery.length - 1
+            ? "md:col-span-2 md:mx-auto md:max-w-[48%]"
+            : ""
+        }`}
+      >
+        <div className="overflow-hidden rounded-[1.25rem] border border-white/10 bg-white/[0.02]">
           <img
             src={img}
-            alt={`${project.title} 展示图 ${index + 1}`}
-            className="h-full w-full object-cover"
+            alt={`云栖大会相关物料 ${index + 1}`}
+            className="block h-auto w-full"
             loading="lazy"
           />
         </div>
-      ))}
-    </div>
 
-    <div className="aspect-[16/9] w-full overflow-hidden rounded-[1.25rem] border border-white/10 md:rounded-[1.5rem]">
-      <img
-        src={project.gallery[2]}
-        alt={`${project.title} 主视觉`}
-        className="h-full w-full object-cover"
-        loading="lazy"
-      />
-    </div>
-
-    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-      {project.gallery.slice(3, 5).map((img, index) => (
-        <div
-          key={img}
-          className="aspect-[4/3] w-full overflow-hidden rounded-[1rem] border border-white/10"
-        >
-          <img
-            src={img}
-            alt={`${project.title} 细节图 ${index + 1}`}
-            className="h-full w-full object-cover"
-            loading="lazy"
-          />
-        </div>
-      ))}
-    </div>
-  </>
+        <figcaption className="mt-5 text-center text-base font-medium tracking-[0.08em] text-white/65">
+          云栖大会相关物料
+        </figcaption>
+      </figure>
+    ))}
+  </div>
 )}
+
+    
 
                 {/* 电商详情页长图 */}
 {project.layout === "detail" && (
