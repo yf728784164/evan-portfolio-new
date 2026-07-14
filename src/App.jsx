@@ -207,7 +207,7 @@ function LoadingScreen() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 3600);
+    }, 4200);
 
     return () => clearTimeout(timer);
   }, []);
@@ -231,22 +231,45 @@ function LoadingScreen() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
           >
-            <div className="flex justify-center gap-2 text-5xl font-black tracking-[0.22em] md:text-7xl">
-              {letters.map((letter, index) => (
-                <motion.span
-                  key={index}
-                  initial={{ color: "rgba(255,255,255,0.16)" }}
-                  animate={{ color: "rgba(255,255,255,1)" }}
-                  transition={{
-                    duration: 1.15,
-                    delay: 0.25 + index * 0.32,
-                    ease: [0.22, 1, 0.36, 1],
-                  }}
-                >
-                  {letter}
-                </motion.span>
-              ))}
-            </div>
+            <div className="flex justify-center text-5xl font-black tracking-[0.22em] md:text-7xl">
+  {letters.map((letter, index) => (
+    <motion.span
+      key={index}
+      className="inline-block"
+      initial={{
+        x: index === 0 ? -180 : -90,
+        opacity: 0,
+        scaleX: 0.72,
+        scaleY: 1.18,
+        color: "rgba(255,255,255,0.18)",
+      }}
+      animate={{
+        x: [index === 0 ? -180 : -90, 10, -5, 0],
+        opacity: 1,
+        scaleX: [0.72, 1.16, 0.92, 1],
+        scaleY: [1.18, 0.86, 1.08, 1],
+        color: [
+          "rgba(255,255,255,0.18)",
+          "rgba(255,255,255,1)",
+          "rgba(255,255,255,0.72)",
+          "rgba(255,255,255,1)",
+        ],
+      }}
+      transition={{
+        duration: 0.72,
+        delay: 0.35 + index * 0.28,
+        times: [0, 0.55, 0.78, 1],
+        ease: [0.22, 1, 0.36, 1],
+      }}
+      style={{
+        marginRight: index === letters.length - 1 ? 0 : "0.16em",
+        transformOrigin: "center",
+      }}
+    >
+      {letter}
+    </motion.span>
+  ))}
+</div>
 
             <motion.p
               className="mt-6 text-xs tracking-[0.35em] text-white/38"
