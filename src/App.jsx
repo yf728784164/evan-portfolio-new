@@ -1402,7 +1402,7 @@ function PackagingDesignPage({ onBack }) {
   {
     id: "cloud-bao",
   
-    title: "好彩云小宝·阿里云陶瓷盲盒",
+    title: "阿里云·好彩云小宝陶瓷盲盒",
   
     subtitle: "ALIBABA CLOUD CERAMIC BLIND BOX COLLECTION",
   
