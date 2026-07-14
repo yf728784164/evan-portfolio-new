@@ -1075,65 +1075,10 @@ function GraphicDesignPage({ onBack }) {
           {projects.map((project, projectIndex) => (
             <section
               key={project.id}
-              className="grid grid-cols-1 items-start gap-10 md:grid-cols-[0.9fr_1.1fr] md:gap-16"
+              className="w-full"
             >
-              {/* 左侧项目文字 */}
-              <div className="space-y-8 md:sticky md:top-24">
-                <p className="text-[72px] font-black leading-none text-white/10 md:text-[100px]">
-                  GRA {String(projectIndex + 1).padStart(2, "0")}
-                </p>
-
-                <div>
-                  <h2 className="text-3xl font-bold tracking-[0.04em]">
-                    {project.title}
-                  </h2>
-
-                  <p className="mt-2 text-xs tracking-[0.2em] text-white/40">
-                    {project.subtitle}
-                  </p>
-
-                  <div className="mt-5 flex flex-wrap gap-2">
-                    {project.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="rounded-full border border-white/10 px-3 py-1 text-xs text-white/50"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                <div>
-                  <h3 className="text-sm tracking-[0.2em] text-white/70">
-                    PROJECT INTRO
-                  </h3>
-
-                  <p className="mt-3 text-sm leading-7 text-white/50">
-                    {project.intro}
-                  </p>
-                </div>
-
-                <div>
-                  <h3 className="text-sm tracking-[0.2em] text-white/70">
-                    DESIGN BACKGROUND
-                  </h3>
-
-                  <p className="mt-3 text-sm leading-7 text-white/50">
-                    {project.background}
-                  </p>
-                </div>
-
-                <div>
-                  <h3 className="text-sm tracking-[0.2em] text-white/70">
-                    DESIGN STRATEGY
-                  </h3>
-
-                  <p className="mt-3 text-sm leading-7 text-white/50">
-                    {project.strategy}
-                  </p>
-                </div>
-              </div>
+              
+                  
 
               {/* 右侧视觉内容 */}
               <div className="w-full min-w-0 space-y-4 md:space-y-6">
