@@ -180,34 +180,19 @@ function ParticleField() {
 
 function LoadingScreen() {
   const [loading, setLoading] = useState(true);
-  const letters = ["Y", "E", "F", "E", "I"];
-  <motion.h1
-  className="text-5xl font-black tracking-[0.22em] md:text-7xl"
-  initial={{
-    backgroundPosition: "0% 50%",
-  }}
-  animate={{
-    backgroundPosition: "100% 50%",
-  }}
-  transition={{
-    duration: 2.8,
-    ease: [0.22, 1, 0.36, 1],
-  }}
-  style={{
-    backgroundImage:
-      "linear-gradient(90deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.15) 35%, rgba(255,255,255,1) 50%, rgba(255,255,255,0.15) 65%, rgba(255,255,255,0.15) 100%)",
-    backgroundSize: "200% 100%",
-    WebkitBackgroundClip: "text",
-    WebkitTextFillColor: "transparent",
-  }}
->
-  YEFEI
-</motion.h1>
+
+  const letters = [
+    { char: "Y", x: -210, y: -90, rotate: -18 },
+    { char: "E", x: -115, y: 105, rotate: 14 },
+    { char: "F", x: 0, y: -135, rotate: -10 },
+    { char: "E", x: 120, y: 95, rotate: 16 },
+    { char: "I", x: 215, y: -75, rotate: 12 },
+  ];
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 4200);
+    }, 3600);
 
     return () => clearTimeout(timer);
   }, []);
@@ -216,66 +201,129 @@ function LoadingScreen() {
     <AnimatePresence>
       {loading && (
         <motion.div
-          className="fixed inset-0 z-[10000] flex items-center justify-center bg-[#030303]"
+          className="fixed inset-0 z-[10000] flex items-center justify-center overflow-hidden bg-[#030303]"
           initial={{ opacity: 1 }}
           animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
+          exit={{
+            opacity: 0,
+            scale: 1.02,
+            filter: "blur(8px)",
+          }}
           transition={{
-            duration: 1.4,
+            duration: 0.9,
             ease: [0.22, 1, 0.36, 1],
           }}
         >
           <motion.div
-            className="text-center"
-            initial={{ opacity: 0, y: 18, scale: 0.98 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
+            className="relative flex flex-col items-center text-center"
+            initial={{ opacity: 1 }}
+            animate={{ opacity: 1 }}
           >
-            <div className="flex justify-center text-5xl font-black tracking-[0.22em] md:text-7xl">
-  {letters.map((letter, index) => (
-    <motion.span
-      key={index}
-      className="inline-block"
-      initial={{
-        x: index === 0 ? -180 : -90,
-        opacity: 0,
-        scaleX: 0.72,
-        scaleY: 1.18,
-        color: "rgba(255,255,255,0.18)",
-      }}
-      animate={{
-        x: [index === 0 ? -180 : -90, 10, -5, 0],
-        opacity: 1,
-        scaleX: [0.72, 1.16, 0.92, 1],
-        scaleY: [1.18, 0.86, 1.08, 1],
-        color: [
-          "rgba(255,255,255,0.18)",
-          "rgba(255,255,255,1)",
-          "rgba(255,255,255,0.72)",
-          "rgba(255,255,255,1)",
-        ],
-      }}
-      transition={{
-        duration: 0.72,
-        delay: 0.35 + index * 0.28,
-        times: [0, 0.55, 0.78, 1],
-        ease: [0.22, 1, 0.36, 1],
-      }}
-      style={{
-        marginRight: index === letters.length - 1 ? 0 : "0.16em",
-        transformOrigin: "center",
-      }}
-    >
-      {letter}
-    </motion.span>
-  ))}
-</div>
+            {/* 磁吸拼合文字 */}
+            <div className="relative flex items-center justify-center">
+              <div className="relative flex items-center justify-center text-5xl font-black tracking-[0.18em] md:text-7xl">
+                {letters.map((item, index) => (
+                  <motion.span
+                    key={`${item.char}-${index}`}
+                    className="relative inline-block text-white"
+                    initial={{
+                      x: item.x,
+                      y: item.y,
+                      rotate: item.rotate,
+                      scale: 0.58,
+                      opacity: 0,
+                      filter: "blur(12px)",
+                    }}
+                    animate={{
+                      x: [item.x, item.x * 0.16, -5, 0],
+                      y: [item.y, item.y * 0.12, 3, 0],
+                      rotate: [item.rotate, item.rotate * 0.18, -2, 0],
+                      scale: [0.58, 1.08, 0.96, 1],
+                      opacity: [0, 1, 1, 1],
+                      filter: [
+                        "blur(12px)",
+                        "blur(3px)",
+                        "blur(0px)",
+                        "blur(0px)",
+                      ],
+                    }}
+                    transition={{
+                      duration: 1.15,
+                      delay: 0.18 + index * 0.11,
+                      times: [0, 0.68, 0.86, 1],
+                      ease: [0.22, 1, 0.36, 1],
+                    }}
+                    style={{
+                      marginRight:
+                        index === letters.length - 1 ? 0 : "0.18em",
+                      transformOrigin: "center",
+                    }}
+                  >
+                    {item.char}
+                  </motion.span>
+                ))}
+              </div>
+
+              {/* 蓝色扫描光 */}
+              <motion.div
+                className="pointer-events-none absolute inset-y-[-30%] w-8 bg-gradient-to-r from-transparent via-[#1677ff] to-transparent blur-[2px]"
+                initial={{
+                  left: "-24%",
+                  opacity: 0,
+                }}
+                animate={{
+                  left: ["-24%", "118%"],
+                  opacity: [0, 1, 1, 0],
+                }}
+                transition={{
+                  delay: 1.38,
+                  duration: 0.9,
+                  times: [0, 0.15, 0.82, 1],
+                  ease: [0.45, 0, 0.55, 1],
+                }}
+              />
+
+              {/* 扫描后的蓝色余光 */}
+              <motion.div
+                className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(22,119,255,0.18),transparent_62%)]"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{
+                  opacity: [0, 0, 0.85, 0],
+                  scale: [0.8, 0.8, 1.08, 1.2],
+                }}
+                transition={{
+                  delay: 1.55,
+                  duration: 1.05,
+                  times: [0, 0.15, 0.48, 1],
+                  ease: "easeOut",
+                }}
+              />
+            </div>
+
+            {/* 整体轻微回弹 */}
+            <motion.div
+              className="pointer-events-none absolute left-1/2 top-[34%] h-28 w-72 -translate-x-1/2 rounded-full bg-[#1677ff]/10 blur-[70px]"
+              initial={{ opacity: 0, scale: 0.7 }}
+              animate={{
+                opacity: [0, 0.55, 0],
+                scale: [0.7, 1.12, 1.28],
+              }}
+              transition={{
+                delay: 1.68,
+                duration: 1,
+                ease: "easeOut",
+              }}
+            />
 
             <motion.p
-              className="mt-6 text-xs tracking-[0.35em] text-white/38"
-              initial={{ opacity: 0, y: 8 }}
+              className="mt-7 text-xs tracking-[0.35em] text-white/38"
+              initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1.7, duration: 0.9 }}
+              transition={{
+                delay: 2.12,
+                duration: 0.7,
+                ease: [0.22, 1, 0.36, 1],
+              }}
             >
               Collection of Works 2026
             </motion.p>
