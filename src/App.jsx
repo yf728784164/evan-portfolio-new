@@ -852,9 +852,15 @@ function Contact() {
           viewport={{ once: true, amount: 0.4 }}
           transition={{ duration: 0.8 }}
         >
-          <p className="text-3xl font-light tracking-[0.08em] text-white md:text-5xl">
-            Always designing with emotion.
-          </p>
+          <p
+  className="text-3xl font-medium tracking-[0.04em] text-white md:text-5xl"
+  style={{
+    fontFamily:
+      '"Alibaba PuHuiTi","Alibaba PuHuiTi 3.0","PingFang SC","Microsoft YaHei",sans-serif',
+  }}
+>
+  Always designing with emotion.
+</p>
 
           <p className="mt-6 text-sm tracking-[0.25em] text-white/35">
             永远将情绪瞬间作为设计核心
