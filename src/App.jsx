@@ -2113,65 +2113,142 @@ export default function App() {
   const [page, setPage] = useState("home");
   const [homeScrollY, setHomeScrollY] = useState(0);
 
-  const openProductPage = () => {
-    setHomeScrollY(window.scrollY);
-    setPage("product");
-
-    requestAnimationFrame(() => {
-      window.scrollTo({
-        top: 0,
-        behavior: "auto",
-      });
-    });
-  };
-
-  const openPackagingPage = () => {
-    setHomeScrollY(window.scrollY);
-    setPage("packaging");
-
-    requestAnimationFrame(() => {
-      window.scrollTo({
-        top: 0,
-        behavior: "auto",
-      });
-    });
-  };
-
-  const openGraphicPage = () => {
-    setHomeScrollY(window.scrollY);
-    setPage("graphic");
-
-    requestAnimationFrame(() => {
-      window.scrollTo({
-        top: 0,
-        behavior: "auto",
-      });
-    });
-  };
-
-  const openIllustrationPage = () => {
-    setHomeScrollY(window.scrollY);
-    setPage("illustration");
-
-    requestAnimationFrame(() => {
-      window.scrollTo({
-        top: 0,
-        behavior: "auto",
-      });
-    });
-  };
-
-  const backToWorks = () => {
+  // 统一恢复首页及原来的滚动位置
+  const restoreHomePage = (scrollY = 0) => {
     setPage("home");
 
     requestAnimationFrame(() => {
       requestAnimationFrame(() => {
         window.scrollTo({
-          top: homeScrollY,
+          top: scrollY,
           behavior: "auto",
         });
       });
     });
+  };
+
+  // 初始化浏览器历史记录，并监听手机返回手势
+  useEffect(() => {
+    if ("scrollRestoration" in window.history) {
+      window.history.scrollRestoration = "manual";
+    }
+
+    // 第一次进入网站时，给首页写入历史状态
+    const currentState = window.history.state;
+
+    if (!currentState?.page) {
+      window.history.replaceState(
+        {
+          page: "home",
+          scrollY: window.scrollY,
+        },
+        "",
+        window.location.pathname
+      );
+    } else {
+      setPage(currentState.page);
+    }
+
+    const handlePopState = (event) => {
+      const state = event.state;
+
+      // 没有状态时默认回首页
+      if (!state?.page || state.page === "home") {
+        restoreHomePage(state?.scrollY ?? homeScrollY);
+        return;
+      }
+
+      // 支持浏览器前进按钮重新进入作品分类
+      setPage(state.page);
+
+      requestAnimationFrame(() => {
+        window.scrollTo({
+          top: 0,
+          behavior: "auto",
+        });
+      });
+    };
+
+    window.addEventListener("popstate", handlePopState);
+
+    return () => {
+      window.removeEventListener("popstate", handlePopState);
+    };
+  }, [homeScrollY]);
+
+  // 统一打开作品分类
+  const openDesignPage = (targetPage) => {
+    const currentScrollY = window.scrollY;
+
+    setHomeScrollY(currentScrollY);
+
+    // 更新当前首页记录，保存首页滚动位置
+    window.history.replaceState(
+      {
+        page: "home",
+        scrollY: currentScrollY,
+      },
+      "",
+      `${window.location.pathname}#works`
+    );
+
+    // 为作品分类增加一条真正的浏览器历史记录
+    window.history.pushState(
+      {
+        page: targetPage,
+        scrollY: currentScrollY,
+      },
+      "",
+      `${window.location.pathname}#${targetPage}`
+    );
+
+    setPage(targetPage);
+
+    requestAnimationFrame(() => {
+      window.scrollTo({
+        top: 0,
+        behavior: "auto",
+      });
+    });
+  };
+
+  const openProductPage = () => {
+    openDesignPage("product");
+  };
+
+  const openPackagingPage = () => {
+    openDesignPage("packaging");
+  };
+
+  const openGraphicPage = () => {
+    openDesignPage("graphic");
+  };
+
+  const openIllustrationPage = () => {
+    openDesignPage("illustration");
+  };
+
+  // 页面里的“返回作品案例”按钮
+  const backToWorks = () => {
+    const currentState = window.history.state;
+
+    // 正常从首页进入分类时，调用真正的浏览器返回
+    if (currentState?.page && currentState.page !== "home") {
+      window.history.back();
+      return;
+    }
+
+    // 防止特殊情况下没有历史记录
+    window.history.replaceState(
+      {
+        page: "home",
+        scrollY: homeScrollY,
+      },
+      "",
+      `${window.location.pathname}#works`
+    );
+
+    restoreHomePage(homeScrollY);
   };
 
   const pageTransition = {
