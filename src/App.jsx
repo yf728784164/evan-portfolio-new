@@ -443,10 +443,66 @@ function Nav() {
   const [activeNav, setActiveNav] = useState("个人简介");
 
   const navItems = [
-    { label: "个人简介", href: "#about" },
-    { label: "作品案例", href: "#works" },
-    { label: "合作联系", href: "#contact" },
+    { label: "个人简介", href: "#about", id: "about" },
+    { label: "作品案例", href: "#works", id: "works" },
+    { label: "合作联系", href: "#contact", id: "contact" },
   ];
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const triggerLine = window.innerHeight * 0.35;
+
+      let currentSection = "个人简介";
+
+      navItems.forEach((item) => {
+        const section = document.getElementById(item.id);
+
+        if (!section) return;
+
+        const rect = section.getBoundingClientRect();
+
+        if (rect.top <= triggerLine) {
+          currentSection = item.label;
+        }
+      });
+
+      setActiveNav(currentSection);
+    };
+
+    handleScroll();
+
+    window.addEventListener("scroll", handleScroll, {
+      passive: true,
+    });
+
+    window.addEventListener("resize", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+    };
+  }, []);
+
+  const handleNavClick = (event, item) => {
+    event.preventDefault();
+
+    const section = document.getElementById(item.id);
+
+    if (!section) return;
+
+    setActiveNav(item.label);
+
+    section.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+
+    window.history.replaceState(
+      window.history.state,
+      "",
+      item.href
+    );
+  };
 
   return (
     <motion.nav
@@ -468,7 +524,7 @@ function Nav() {
             <a
               key={item.label}
               href={item.href}
-              onClick={() => setActiveNav(item.label)}
+              onClick={(event) => handleNavClick(event, item)}
               className="group relative shrink-0 rounded-full px-4 py-2 text-xs font-medium tracking-[0.08em] text-white/76 transition hover:bg-white hover:text-black md:px-10 md:text-sm"
             >
               {item.label}
@@ -482,6 +538,13 @@ function Nav() {
 
         <a
           href="#works"
+          onClick={(event) =>
+            handleNavClick(event, {
+              label: "作品案例",
+              href: "#works",
+              id: "works",
+            })
+          }
           className="grid h-9 w-9 shrink-0 place-items-center rounded-full border border-white/12 bg-white/[0.045] text-base backdrop-blur-xl transition hover:bg-white hover:text-black md:h-11 md:w-11 md:text-xl"
         >
           ✦
