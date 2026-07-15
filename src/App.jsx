@@ -66,14 +66,14 @@ function ParticleField() {
     let width = 0;
     let height = 0;
     let animationFrame = 0;
-    const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+    const dpr = Math.min(window.devicePixelRatio || 1, 1.25);
 
     let particles = [];
     let lines = [];
 
     const createScene = () => {
       const isMobile = window.innerWidth < 768;
-      particles = Array.from({ length: isMobile ? 55 : 100 }, () => ({
+      particles = Array.from({ length: isMobile ? 40 : 70 }, () => ({
         x: Math.random(),
         y: Math.random(),
         r: Math.random() * (isMobile ? 1.35 : 1.8) + 0.35,
@@ -83,7 +83,7 @@ function ParticleField() {
         depth: Math.random() * 0.9 + 0.15,
       }));
 
-      lines = Array.from({ length: isMobile ? 5: 9 }, () => ({
+      lines = Array.from({ length: isMobile ? 3: 6 }, () => ({
         x: Math.random(),
         y: Math.random(),
         len: Math.random() * (isMobile ? 130 : 210) + 80,
@@ -545,7 +545,7 @@ function Nav() {
               id: "works",
             })
           }
-          className="grid h-9 w-9 shrink-0 place-items-center rounded-full border border-white/12 bg-white/[0.045] text-base backdrop-blur-xl transition hover:bg-white hover:text-black md:h-11 md:w-11 md:text-xl"
+          className="grid h-9 w-9 shrink-0 place-items-center rounded-full border border-white/12 bg-white/[0.045] text-base backdrop-blur-md transition hover:bg-white hover:text-black md:h-11 md:w-11 md:text-xl"
         >
           ✦
         </a>
@@ -671,8 +671,6 @@ function About() {
       id="about"
       className="relative overflow-hidden bg-[#030303] px-5 py-20 text-white md:px-10 md:py-28"
     >
-      <ParticleField />
-
       <div className="absolute inset-0 bg-black/80" />
 
       <div className="relative z-10 mx-auto max-w-[1500px]">
@@ -737,7 +735,7 @@ function About() {
               >
                 <div className="absolute -left-[25px] top-2 h-4 w-4 rounded-full border border-white/20 bg-white/70" />
 
-                <div className="rounded-[1.5rem] border border-white/10 bg-white/[0.02] p-6 backdrop-blur-xl">
+                <div className="rounded-[1.5rem] border border-white/10 bg-white/[0.02] p-6 backdrop-blur-sm
                   <p className="text-3xl font-black text-white/25">
                     {item.year}
                   </p>
@@ -801,8 +799,7 @@ function Works({
       id="works"
       className="relative overflow-hidden bg-[#030303] px-5 pb-20 pt-8 text-white md:px-10 md:pb-28 md:pt-12"
     >
-      <ParticleField />
-
+      
       <div className="absolute inset-0 bg-black/80" />
 
       <div className="relative z-10 mx-auto max-w-[1500px]">
@@ -895,7 +892,7 @@ function Contact() {
       id="contact"
       className="relative overflow-hidden bg-[#030303] px-5 py-20 text-white md:px-10 md:py-28"
     >
-      <ParticleField />
+     
       <div className="absolute inset-0 bg-black/80" />
 
       <div className="relative z-10 mx-auto max-w-[1500px]">
@@ -1105,7 +1102,7 @@ function IllustrationDesignPage({ onBack }) {
 
   return (
     <section className="relative min-h-screen overflow-hidden bg-[#030303] px-5 py-20 text-white md:px-10 md:py-24">
-      <ParticleField />
+      
 
       <div className="absolute inset-0 bg-black/82" />
 
@@ -1332,7 +1329,7 @@ function GraphicDesignPage({ onBack }) {
 
   return (
     <section className="relative min-h-screen overflow-hidden bg-[#030303] px-5 py-20 text-white md:px-10 md:py-24">
-      <ParticleField />
+     
 
       <div className="absolute inset-0 bg-black/82" />
 
@@ -1741,7 +1738,7 @@ processTitles: [
 
   return (
     <section className="relative min-h-screen overflow-hidden bg-[#030303] px-5 py-20 text-white md:px-10 md:py-24">
-      <ParticleField />
+     
       <div className="absolute inset-0 bg-black/82" />
 
       <div className="relative z-10 mx-auto max-w-[1680px]">
@@ -2035,7 +2032,7 @@ function PackagingDesignPage({ onBack }) {
 
 return (
   <section className="relative min-h-screen overflow-hidden bg-[#030303] px-5 py-20 text-white md:px-10 md:py-24">
-    <ParticleField />
+    
     <div className="absolute inset-0 bg-black/82" />
 
     <div className="relative z-10 mx-auto max-w-[1680px]">
