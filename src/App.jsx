@@ -179,9 +179,7 @@ function ParticleField() {
 }
 
 function LoadingScreen() {
-  const [loading, setLoading] = useState(() => {
-    return sessionStorage.getItem("evan-loaded") !== "true";
-  });
+  const [loading, setLoading] = useState(true);
 
   const letters = [
     { char: "Y", x: -210, y: -90, rotate: -18 },
@@ -192,12 +190,9 @@ function LoadingScreen() {
   ];
 
   useEffect(() => {
-    if (!loading) return undefined;
-  
     const timer = setTimeout(() => {
-      sessionStorage.setItem("evan-loaded", "true");
       setLoading(false);
-    }, 3600);
+    }, 2000);
   
     return () => clearTimeout(timer);
   }, [loading]);
