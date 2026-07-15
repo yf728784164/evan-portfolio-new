@@ -66,14 +66,14 @@ function ParticleField() {
     let width = 0;
     let height = 0;
     let animationFrame = 0;
-    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
 
     let particles = [];
     let lines = [];
 
     const createScene = () => {
       const isMobile = window.innerWidth < 768;
-      particles = Array.from({ length: isMobile ? 70 : 150 }, () => ({
+      particles = Array.from({ length: isMobile ? 55 : 100 }, () => ({
         x: Math.random(),
         y: Math.random(),
         r: Math.random() * (isMobile ? 1.35 : 1.8) + 0.35,
@@ -83,7 +83,7 @@ function ParticleField() {
         depth: Math.random() * 0.9 + 0.15,
       }));
 
-      lines = Array.from({ length: isMobile ? 6 : 14 }, () => ({
+      lines = Array.from({ length: isMobile ? 5: 9 }, () => ({
         x: Math.random(),
         y: Math.random(),
         len: Math.random() * (isMobile ? 130 : 210) + 80,
