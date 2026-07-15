@@ -1,5 +1,6 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { AnimatePresence, motion, useMotionValue, useTransform, useSpring } from "framer-motion";
+import { Analytics } from "@vercel/analytics/react";
 
 const categories = ["全部", "产品设计", "包装设计", "平面设计", "手绘设计"];
 
@@ -2321,6 +2322,7 @@ export default function App() {
 
   return (
     <main className="bg-[#030303] selection:bg-white selection:text-black">
+      <Analytics />
       <LoadingScreen />
       <div className="hidden md:block">
   <CustomCursor />
