@@ -996,6 +996,34 @@ function IllustrationDesignPage({ onBack }) {
         "/images/projects/illustration-02-spring-flower/gallery-03.jpg",
       ],
     },
+    {
+      id: "ip-character",
+    
+      title: "IP角色插画",
+    
+      subtitle: "IP CHARACTER ILLUSTRATION",
+    
+      tags: [
+        "IP设计",
+        "角色插画",
+        "商业视觉",
+        "品牌形象",
+      ],
+    
+      inspiration:
+        "灵感来源于日常生活中的物品与食物，通过拟人化设计赋予角色独特的性格与情绪表达。作品以简洁的几何造型、夸张的肢体动作和统一的线描语言建立完整的IP视觉体系，同时设计不同的表情、动作及配件，使角色能够适用于品牌传播、文创衍生、包装设计与数字媒体等多种应用场景。",
+    
+      cover:
+        "/images/projects/illustration-03-ip-character/cover.jpg",
+    
+      gallery: [
+        "/images/projects/illustration-03-ip-character/gallery-01.jpg",
+    
+        "/images/projects/illustration-03-ip-character/gallery-02.jpg",
+    
+        "/images/projects/illustration-03-ip-character/gallery-03.jpg",
+      ],
+    },
   ];
 
   return (
