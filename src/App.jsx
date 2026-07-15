@@ -179,7 +179,9 @@ function ParticleField() {
 }
 
 function LoadingScreen() {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(() => {
+    return sessionStorage.getItem("evan-loaded") !== "true";
+  });
 
   const letters = [
     { char: "Y", x: -210, y: -90, rotate: -18 },
@@ -190,12 +192,15 @@ function LoadingScreen() {
   ];
 
   useEffect(() => {
+    if (!loading) return undefined;
+  
     const timer = setTimeout(() => {
+      sessionStorage.setItem("evan-loaded", "true");
       setLoading(false);
     }, 3600);
-
+  
     return () => clearTimeout(timer);
-  }, []);
+  }, [loading]);
 
   return (
     <AnimatePresence>
@@ -334,6 +339,15 @@ function LoadingScreen() {
   );
 }
 function CustomCursor() {
+
+  // 手机、平板等触摸设备直接不启用自定义鼠标
+  if (
+    typeof window !== "undefined" &&
+    window.matchMedia("(pointer: coarse)").matches
+  ) {
+    return null;
+  }
+
   const dotX = useMotionValue(0);
   const dotY = useMotionValue(0);
   const ringX = useMotionValue(0);
@@ -2116,13 +2130,11 @@ export default function App() {
   // 统一恢复首页及原来的滚动位置
   const restoreHomePage = (scrollY = 0) => {
     setPage("home");
-
+  
     requestAnimationFrame(() => {
-      requestAnimationFrame(() => {
-        window.scrollTo({
-          top: scrollY,
-          behavior: "auto",
-        });
+      window.scrollTo({
+        top: scrollY,
+        behavior: "auto",
       });
     });
   };
@@ -2251,76 +2263,78 @@ export default function App() {
     restoreHomePage(homeScrollY);
   };
 
-  const pageTransition = {
-    initial: {
-      opacity: 0,
-      y: 18,
-      filter: "blur(8px)",
-    },
-    animate: {
-      opacity: 1,
-      y: 0,
-      filter: "blur(0px)",
-    },
-    exit: {
-      opacity: 0,
-      y: -18,
-      filter: "blur(8px)",
-    },
-    transition: {
-      duration: 0.65,
-      ease: [0.76, 0, 0.24, 1],
-    },
-  };
+  
 
   return (
     <main className="bg-[#030303] selection:bg-white selection:text-black">
       <LoadingScreen />
-      <CustomCursor />
+      <div className="hidden md:block">
+  <CustomCursor />
+</div>
 
-      <AnimatePresence mode="wait">
-        {page === "home" ? (
-          <motion.div
-            key="home"
-            initial={{ opacity: 0, y: 32, scale: 0.985 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: -32, scale: 0.985 }}
-            transition={{
-              duration: 0.9,
-              ease: [0.22, 1, 0.36, 1],
-            }}
-          >
-            <Nav />
-            <Hero />
-            <About />
+     {/* 首页始终保留，不再反复卸载和重新加载 */}
+     <div
+  className={
+    page === "home"
+      ? "relative z-10 opacity-100 pointer-events-auto"
+      : "fixed inset-0 opacity-0 pointer-events-none overflow-hidden"
+  }
+  aria-hidden={page !== "home"}
+>
+  <Nav />
+  <Hero />
+  <About />
 
-            <Works
-              onOpenProduct={openProductPage}
-              onOpenPackaging={openPackagingPage}
-              onOpenGraphic={openGraphicPage}
-              onOpenIllustration={openIllustrationPage}
-            />
+  <Works
+    onOpenProduct={openProductPage}
+    onOpenPackaging={openPackagingPage}
+    onOpenGraphic={openGraphicPage}
+    onOpenIllustration={openIllustrationPage}
+  />
 
-            <Contact />
-          </motion.div>
-        ) : page === "product" ? (
-          <motion.div key="product" {...pageTransition}>
-            <ProductDesignPage onBack={backToWorks} />
-          </motion.div>
-        ) : page === "packaging" ? (
-          <motion.div key="packaging" {...pageTransition}>
-            <PackagingDesignPage onBack={backToWorks} />
-          </motion.div>
-        ) : page === "graphic" ? (
-          <motion.div key="graphic" {...pageTransition}>
-            <GraphicDesignPage onBack={backToWorks} />
-          </motion.div>
-        ) : page === "illustration" ? (
-          <motion.div key="illustration" {...pageTransition}>
-            <IllustrationDesignPage onBack={backToWorks} />
-          </motion.div>
-        ) : null}
-      </AnimatePresence>
+  <Contact />
+</div>
+
+{/* 详情页单独做切换动画 */}
+<AnimatePresence mode="sync">
+  {page !== "home" && (
+    <motion.div
+      key={page}
+      initial={{
+        opacity: 0,
+        y: 12,
+      }}
+      animate={{
+        opacity: 1,
+        y: 0,
+      }}
+      exit={{
+        opacity: 0,
+        y: 8,
+      }}
+      transition={{
+        duration: 0.32,
+        ease: [0.22, 1, 0.36, 1],
+      }}
+    >
+      {page === "product" && (
+        <ProductDesignPage onBack={backToWorks} />
+      )}
+
+      {page === "packaging" && (
+        <PackagingDesignPage onBack={backToWorks} />
+      )}
+
+      {page === "graphic" && (
+        <GraphicDesignPage onBack={backToWorks} />
+      )}
+
+      {page === "illustration" && (
+        <IllustrationDesignPage onBack={backToWorks} />
+      )}
+    </motion.div>
+  )}
+</AnimatePresence>
     </main>
   );
 }
