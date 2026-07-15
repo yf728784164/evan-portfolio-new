@@ -957,22 +957,43 @@ function IllustrationDesignPage({ onBack }) {
   const projects = [
     {
       id: "tropical-garden",
-
+  
       title: "热带花园手绘",
-
+  
       subtitle: "TROPICAL GARDEN ILLUSTRATION",
-
+  
       tags: ["手绘设计", "植物插画", "动物插画", "线描艺术"],
-
+  
       inspiration:
         "灵感来源于热带雨林丰富的生态景观，以巨嘴鸟、鹦鹉、棕榈叶、龟背竹、兰花与热带花卉作为主要视觉元素，通过细腻的线描笔触记录自然生命的形态与纹理。作品以植物与动物相互交织的构图方式营造层次丰富的画面，在保留自然真实感的同时，强调装饰性与图案化表达，使其能够应用于包装、家居、文创及品牌视觉等不同设计场景。",
-
+  
       cover: "/images/projects/illustration-01-pattern/cover.jpg",
-
+  
       gallery: [
         "/images/projects/illustration-01-pattern/gallery-01.jpg",
         "/images/projects/illustration-01-pattern/gallery-02.jpg",
         "/images/projects/illustration-01-pattern/gallery-03.jpg",
+      ],
+    },
+  
+    {
+      id: "spring-flowering-trees",
+  
+      title: "春日繁花手绘",
+  
+      subtitle: "SPRING FLOWERING TREES ILLUSTRATION",
+  
+      tags: ["手绘设计", "花卉插画", "植物线描", "装饰图案"],
+  
+      inspiration:
+        "灵感来源于春日花木盛放时层叠交错的自然形态，以樱花、玉兰、紫藤、绣球与枝叶作为主要视觉元素，通过细密的蓝色线描表现花瓣、叶脉与枝干的纹理变化。画面采用环绕式构图，将不同花卉从四周向中心延展，在丰富细节与留白之间建立平衡，呈现春日生长、绽放与延续的生命感。作品兼具自然观察与装饰表现，可延展应用于包装、纺织、文创及品牌视觉设计。",
+  
+      cover: "/images/projects/illustration-02-spring-flower/cover.jpg",
+  
+      gallery: [
+        "/images/projects/illustration-02-spring-flower/gallery-01.jpg",
+        "/images/projects/illustration-02-spring-flower/gallery-02.jpg",
+        "/images/projects/illustration-02-spring-flower/gallery-03.jpg",
       ],
     },
   ];
