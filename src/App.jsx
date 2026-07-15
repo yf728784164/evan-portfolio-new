@@ -735,11 +735,10 @@ function About() {
               >
                 <div className="absolute -left-[25px] top-2 h-4 w-4 rounded-full border border-white/20 bg-white/70" />
 
-                <div className="rounded-[1.5rem] border border-white/10 bg-white/[0.02] p-6 backdrop-blur-sm
-                  <p className="text-3xl font-black text-white/25">
-                    {item.year}
-                  </p>
-
+                <div className="rounded-[1.5rem] border border-white/10 bg-white/[0.02] p-6 backdrop-blur-sm">
+  <p className="text-3xl font-black text-white/25">
+    {item.year}
+  </p>
                   <h4 className="mt-4 text-xl font-bold">
                   {item.title.split("\n").map((line, i) => (
   <span key={i} className="block">
